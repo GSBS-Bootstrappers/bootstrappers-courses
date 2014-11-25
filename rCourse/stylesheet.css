@@ -1,0 +1,71 @@
+
+#ses_header {
+	color: #13CFDA;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#ses_list {
+	color: #FC7551;
+	font-weight: bold;
+	font-family: cursive;
+}
+
+#ses_list li a{
+	color: #FED45F;
+	font-weight: bold;
+	font-family: sans;
+}
+
+
+.download_button{
+     background-color: #aa5050;
+     /*border: 1px solid #354449;
+     border-radius: 10%;*/
+     font-family: sans;
+     color: #FFFFFF;
+     margin: 0 0 0 10px;
+     
+}
+
+body{
+    background-color: #354449;
+}
+
+/*
+#ses_list_ad {
+	color: #5fffaf;
+	font-weight: bold;
+	font-family: cursive;
+}
+
+#ses_list a:hover{
+	color: #ff5f87;
+}
+
+li > a {
+    color : #5fafff;
+    text-decoration: none;
+}
+ul > li > a {
+    color : #5f87ff;
+    text-decoration: none;
+}
+
+body > a {
+    color : #5fafff;
+}
+
+#course_header{
+    color: #cc6666;
+}
+
+#index_body{
+    background-color: #354449;
+}
+#index_body a {
+    color : #5fafff;
+}
+
+
+
+*/

@@ -1,0 +1,200 @@
+---
+title: 'Data Visualization in R: Session 4'
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    toc: yes
+date: "October 8, 2014"
+---
+```{r setup, echo=FALSE, message=FALSE}
+require(knitr)
+library(png)
+library(grid)
+#turn off mesages and warnings and make it so output isn't prefixed by anything,
+#default is to put "##" in front of all output for some reason
+#also set tidy to true so code is wrapped properly 
+#opts_chunk$set(message=FALSE, warning=FALSE, comment = "", tidy = T)
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "", tidy=TRUE)
+options(width = 60)
+#options(rpubs.upload.method = "internal")
+
+options(RCurlOptions = list(verbose = FALSE, capath = system.file("CurlSSL", "cacert.pem", package = "RCurl"), ssl.verifypeer = FALSE))
+
+```
+
+************
+
+#Part 1 Installing and loading R packages
+In this session we will use an R package called `ggplot2` to provide us with easiers ways to create complex plots. But first we have to learn how to download the packages which can be done using `install.packages()` and `library()` or we can use RStudio to download them. 
+
+Using `install.packages()` and `library()`:
+```{r, eval=FALSE}
+#install package
+install.packages("ggplot2")
+#Once package is installed to actually use it you need to load it
+library("ggplot2")
+```  
+
+Or we can use RStudio to manually install the packages. In the bottom right corner of RStudio click the Packages tab and then the install icon.   
+```{r fig.width=8, echo=FALSE}
+grid.raster(readPNG("../images/installRPackage_1.png"))
+```  
+
+Type in ggplot2  
+```{r fig.width=4, echo=FALSE}
+grid.raster(readPNG("../images/install_ggplot.png"))
+```  
+
+To load click the check box next to ggplot2  
+
+```{r fig.width=8, echo=FALSE}
+grid.raster(readPNG("../images/install_ggplot2.png"))
+```  
+
+You can see the output in the console window when doing this by hand and it actually is doing what we did before by calling `install.packages()` and `library()`:  
+
+```{r fig.width=8, echo=FALSE}
+grid.raster(readPNG("../images/install_ggplot3.png"))
+```  
+
+# Part 2: Plotting using ggplot2
+
+## Part 2. Download data
+We are using the dataset from last session; frequency of several diseases in Boston since the 1880's [BosEpi.tab.txt](http://bib.umassmed.edu/~hathawan/rCourse/dataSets/BosEpi.tab.txt). Download and read the data into R.
+
+```{r, eval=FALSE}
+bosEpi <- read.delim(file.choose())
+```
+
+```{r, echo=FALSE}
+bosEpi <- read.delim("../dataSets/BosEpi.tab.txt")
+worEpi <- read.delim("../dataSets/WorEpi.tab.txt")
+```
+
+View data table 
+```{r, eval=FALSE}
+View(bosEpi)
+```
+
+`qplot()` is a superior alternative to `plot()`. It is part of the "ggplot2" package and provides easy ways to produce publication-quality figures. For example:  
+
+```{r}
+library(ggplot2) # be sure to load the "ggplot2" library!
+```
+
+```{r fig.width=10}
+qplot(Year, number, geom="histogram", stat="identity", fill=disease, position="dodge", data=bosEpi[bosEpi$event == "DEATHS",], xlim=c(1885, 1940))
+```
+
+# Part 3: step-by-step qplot()  
+We will now start with a few small examples of `qplot()`.
+
+First, let's generate some random data.
+```{r}
+randomData <- rnorm(10000) # normally distributed random data
+```
+
+The default for `qplot()` is to produce a histogram.
+```{r}
+qplot(randomData)
+```
+
+## Part 3. Boston disease data
+First, let's extract the data and sum it again, like in the last session.  
+```{r}
+dipScarDeaths <- bosEpi[(bosEpi$disease == "DIPHTHERIA" | bosEpi$disease == "SCARLET FEVER") & bosEpi$event == "DEATHS",]
+dipScarDeathsSum <- aggregate(number~disease*Year, dipScarDeaths, sum)
+head(dipScarDeathsSum)
+```
+
+Now, this is how we can use `qplot()` to plot the number of deaths per year, using the  aggregated data.  
+```{r}
+qplot(Year, number, data=dipScarDeathsSum)
+```
+
+In order to see which points correspond to which disease, we can color by disease.  
+```{r}
+qplot(Year, number, data=dipScarDeathsSum, color=disease)
+```
+
+Also, we may not be interested in the diphtheria death outlier in 1980, so, let's change the scale of the x-axis.  
+```{r}
+qplot(Year, number, data=dipScarDeathsSum, color=disease, xlim=c(1880, 1930))
+```
+
+What we see is that `qplot()` automatically chose reasonable colors and also produced a legend.  
+
+To turn this plot into a bar plot, we can do the following.  
+```{r, fig.width=10}
+qplot(Year, number, data=dipScarDeathsSum, color=disease, xlim=c(1880, 1930), geom="bar", stat="identity", position="dodge", fill=disease, main = "Deaths by Diphtheria vs Deaths by Scarlet Fever", xlab = "Year", ylab = "Number of Deaths")
+```
+
+The important parts of this command are:  
+
+*  **data** specifies the data frame to use  
+*  **Year** and **number** are columns from the data set  
+*  **color** sets the color of the border of the bars, in this case it is based on the "disease" column  
+*  **xlim** limits the scale of the x-axis, like in `plot()`  
+*  **xlab**, **ylab** and **main** are titles, like in `plot()`  
+
+To illustrate the difference between `plot()` and `qplot()`, below are the commands that were used last week to generate a similar figure. `qplot()` make this much simpler.  
+```{r}
+plot(dipScarDeathsSum[dipScarDeathsSum$disease == "SCARLET FEVER",]$Year,
+     dipScarDeathsSum[dipScarDeathsSum$disease == "SCARLET FEVER",]$number,
+     type = "h", xlab = "Year", ylab = "Number of Deaths", 
+     main = "Deaths by Diphtheria vs Deaths by Scarlet Fever",
+     bty = "none", lwd = 2, xlim=c(1880, 1930), 
+     ylim = range(dipScarDeathsSum$number), col= "red")  
+
+points(dipScarDeathsSum[dipScarDeathsSum$disease == "DIPHTHERIA",]$Year + 0.5,
+       dipScarDeathsSum[dipScarDeathsSum$disease == "DIPHTHERIA",]$number,
+       type = "h", lwd = 2, col = "darkblue") 
+
+legend("topright", legend = c("SCARLET FEVER", "DIPHTHERIA"),
+       lwd = 2, col = c("red", "darkblue"))
+```
+
+##Part 3 Exercises {#part3_questions}
+1.  Try customizing some plots for the diseases found in the [Worcester Epi Dataset](http://bib.umassmed.edu/~hathawan/rCourse/dataSets/WorEpi.tab.txt)  
+2.  For example trying to look how deaths have decreased over time for some diseases like measles (though maybe on the raise again), smallpox, etc.
+3.  Try creating a plot comparing deaths between "SCARLET FEVER"" and "TYPHOID FEVER [ENTERIC FEVER]"
+4.  Try ploting a couple of the big diseases in the 1920's 
+
+#Part 4 Complex plots on large data
+Here's the link to the data set you will be using for the next exercises. This dataset contains disease information from  major cities in the US.  
+
+[someEpi.tab.txt](http://bib.umassmed.edu/~hathawan/rCourse/dataSets/someEpi.tab.txt)  
+
+You can download the file and then read it into R using `read.delim()`. Also, you can read it directly, like this:
+
+```{r}
+epi <- read.delim("http://bib.umassmed.edu/~hathawan/rCourse/dataSets/someEpi.tab.txt")
+head(epi)
+```
+
+```{r}
+x <- aggregate(number ~ disease * month * event, epi[epi$disease == "INFLUENZA", ], sum)
+qplot(month, number, data=x, geom="path", facets=~event)
+```
+
+```{r}
+x <- aggregate(number ~ state * disease * month * event, epi[epi$disease == "INFLUENZA", ], sum)
+qplot(month, number, data=x, geom="path", group=state, color=state, facets=~event) + guides(col = guide_legend(ncol=3))
+```
+
+```{r}
+x <- aggregate(number ~ state * disease * month * event, epi[epi$disease == "INFLUENZA", ], sum)
+qplot(month, number, data=x, geom="smooth", facets=~event)
+```
+
+##Part 4. Exercises.
+1.  Pick a Nothern and a Southern state. Is there a noticable difference in the pattern of influenza cases and deaths?
+2.  Pick a couple of diseases and plot graphs for the cities chosen.
+3.  Facet the graphs by event and disease, i.e. look at whooping cough vs. measles.
+
+```{r fig.height=8}
+library(scales)
+qplot(disease, number, data=aggregate(number ~ disease, epi, sum), geom="bar", stat="identity", main="Total events per disease") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) + scale_y_continuous(labels = comma)
+```
+
