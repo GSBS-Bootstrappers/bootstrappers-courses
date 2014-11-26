@@ -206,7 +206,7 @@ dipScarDeathsMeanPerMonth
 ```
 
 To see more details about aggregate use the help function
-```{r}
+```{r, eval=FALSE}
 help(aggregate)
 ```
 ##Part 2 Exercises {#part2_questions}
