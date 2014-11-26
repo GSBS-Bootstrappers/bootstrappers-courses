@@ -1,0 +1,299 @@
+---
+title: "Hello Heatmaps!"
+author: "Jill E. Moore"
+date: "November 12, 2014"
+output:
+  html_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+```{r setup, echo=FALSE, message=FALSE}
+require(knitr)
+#turn off mesages and warnings and make it so output isn't prefixed by anything,
+#default is to put "##" in front of all output for some reason
+#also set tidy to true so code is wrapped properly 
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
+options(width = 60)
+```
+
+************
+
+This is a short lesson on how to create heatmaps. You will create two heatmaps in this session: one with step-by-step instructions and the other on your own in the exercises.
+
+You are provided two datasets:
+
+  1) One of the average high temperatures for cities in the US
+  
+  2) RNA-seq Data from the ENCODE Project
+  
+**Part One**
+===============
+
+
+While there are several ways that you can create heatmaps, we are going to use the `heatmap.2` function in the `gplots` package
+
+```{r,message=FALSE,warning=FALSE, results='hide'}
+library(gplots)
+```
+
+We are going to begin by importing our dataset 
+
+```{r,}
+Temperatures = read.delim("../dataSets/Temperatures.txt")
+```
+
+We can then preview our dataset:
+
+```{r,}
+head(Temperatures)
+```
+
+Notice that the first column of data, should be our row names instead of the first column.  To fix this:
+```{r,}
+row.names(Temperatures) = Temperatures[,1]
+Temperatures = Temperatures[,-1]
+```
+
+Now when we preview the dataset, the data frame has the appropriate row names.
+
+```{r,}
+head(Temperatures)
+```
+
+To plot data in a heatmap you must first transform the data frame into a data matrix.  This can be easily done using the `data.matrix()` function:
+```{r,}
+TempMatrix=data.matrix(Temperatures)
+```
+
+We are now ready to make our heatmap:
+```{r,}
+heatmap.2(TempMatrix)
+```
+
+*  *  *  *
+
+**Exercise #1**
+------------------
+
+Now you are going to do the same actions for your ENCODE RNA-seq dataset:
+
+  1. Load the data into a data frame
+  2. Clean up the data if needed (make sure you have proper column and row names)
+  3. Create a data matrix from the data frame
+  4. Plot the data using heatmap.2
+  
+*  *  *  *
+
+**Part Two**
+===============
+
+Congratulations! You have learned how to make a heatmap!  However, it looks rather awful.  This section is going to cover several options which you can change to improve your heatmap.
+
+**Clustering**
+
+By default the `heatmap.2()` function will cluster both the rows and columns.  This means that it will group rows and columns that are more similar closer together.  Depending on what you are plotting, you may way to remove this option.
+
+To remove column clustering:
+```{r,warning=FALSE}
+heatmap.2(TempMatrix, Colv=NA)
+```
+
+To remove row clustering:
+```{r,warning=FALSE}
+heatmap.2(TempMatrix, Rowv=NA)
+```
+
+To remove all clustering:
+```{r,warning=FALSE}
+heatmap.2(TempMatrix, Colv=NA, Rowv=NA)
+```
+
+**Dendrograms**
+
+By default the `heatmap.2()` function will add dendograms to your rows and columns demonstration how they are clustered.  If you disable clustering you will also remove the dendrograms.  However, you may want to keep the clustering and just remove the dendograms.
+
+To only have row dendrograms:
+```{r,}
+heatmap.2(TempMatrix, dendrogram="row")
+```
+
+To only have the column dendrograms:
+```{r,}
+heatmap.2(TempMatrix, dendrogram="column")
+```
+
+To have NO dendrograms
+```{r,}
+heatmap.2(TempMatrix, dendrogram="none")
+```
+
+**Trace**
+
+By default the `heatmap.2()` function will a trace to all of your columns which will plot the mean of each column and a dotted line indicated how far the cell derivates from the mean.
+
+To change this to a row trace:
+```{r,}
+heatmap.2(TempMatrix, trace="row")
+```
+
+To remove the trace altogether (which will be most of the time!):
+```{r,}
+heatmap.2(TempMatrix, trace="none")
+```
+
+**Denisty Info**
+
+By default the `heatmap.2()` function will add a histogram of the values in the heatmap to the color key.  
+
+To change the histogram to a density plot:
+```{r,}
+heatmap.2(TempMatrix, density.info="density")
+```
+
+To turn off the histogram:
+```{r,}
+heatmap.2(TempMatrix, density.info="none")
+```
+
+
+*  *  *  *
+
+**Exercise #2**
+------------------
+
+Now you are going to do the same actions for your ENCODE RNA-seq dataset.  Consider the following:
+
+  1. Should you cluster the rows? Should you cluster the columns?
+  2. Should you include dendrogram?
+  3. Does the trace add any important information to the heatmap?
+  4. Do you want to include any density information?
+  
+*  *  *  *
+
+**Part Three**
+===============
+
+We are now going to focus on making our heatmap asthetically pleasing.
+
+**Colors**
+
+You can create a color vector with any colors that you want and use them in your heatmap!
+```{r,warning=FALSE}
+Colors=c("blue","yellow","red")
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
+```
+
+Doesn't that heatmap look WONDERFUL :)
+
+In most cases you will want to smooth our your colors and you can do this with colorRampPalette
+
+```{r,warning=FALSE}
+Colors=c("blue","yellow","red")
+Colors=colorRampPalette(Colors)(100)
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
+```
+
+In many cases I like to use pre-made palette from RColorBrewer.  These are athestically pleasing and make your heatmaps/graphs look professional.
+
+```{r,warning=FALSE}
+library(RColorBrewer)
+Colors=brewer.pal(11,"Spectral")
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
+```
+
+The Spectral palette is in reverse of what we want (red = hot, blue= cold).  We can fix this using the rev() function:
+```{r,}
+Colors=rev(brewer.pal(11,"Spectral"))
+```
+
+We should also smooth out our palette:
+```{r,}
+Colors=rev(brewer.pal(11,"Spectral"))
+Colors=colorRampPalette(Colors)(100)
+```
+
+Now our heatmap is looking good...
+```{r,warning=FALSE}
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
+```
+
+**Breaks**
+
+You can choose how you want to break up the colors scale using a vector.  You must make sure that you have one more break than color:
+```{r,warning=FALSE}
+Breaks=seq(40,100,10)
+Colors=rev(brewer.pal(6,"Spectral"))
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none", colRow=NA, breaks=Breaks)
+```
+
+By changing the breaks in the data you can change how the colors are assigned.  This can be beneficial for avoiding over stauration by outliers.
+```{r,warning=FALSE}
+Breaks=seq(40,90,10)
+Colors=rev(brewer.pal(5,"Spectral"))
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none", colRow=NA, breaks=Breaks)
+```
+
+
+```{r,warning=FALSE}
+Breaks=seq(0,120,1)
+Colors=rev(brewer.pal(11,"Spectral"))
+Colors=colorRampPalette(Colors)(120)
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none", colRow=NA, breaks=Breaks)
+```
+
+
+**Labels**
+
+You can remove labels from the columns and row of your heatmap if they are not important.
+To remove the row labels:
+```{r,warning=FALSE}
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none", labRow=NA)
+```
+
+To remove the column labels:
+```{r,warning=FALSE}
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none", colRow=NA)
+```
+
+You also may want to add your own labels:
+```{r,warning=FALSE}
+Cities=c("Boston", "New York", "Miami", "Los Angeles", "Aspen", "Anchorage", "New Orleans", "San Diego", "San Francisco", "Austin", "Phoenix", "Chicago", "Honolulu", "Atlanta", "Washington D.C.", "Seattle", "St. Louis", "Minneapolis")
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none", labCol=Cities)
+```
+
+*  *  *  *
+
+**Exercise #3**
+------------------
+
+Now you are going to do the same actions for your ENCODE RNA-seq dataset.  Consider the following:
+
+  1. What colors do you want to use?  
+  2. How should you break up the colors?
+  3. Do you need labels for the rows and columns?
+  
+*  *  *  *
+
+
+**Part Four**
+===============
+
+**Margins**
+
+You also may want to increase the margins in order to read your labels.  Keep in mind that this will cut down on the amount of space for the heatmap itself.
+```{r,warning=FALSE}
+heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none", labCol=Cities, margins=c(8,6))
+```
+
+
+**Sorting by Average Values**
+
+You may not want to cluster your data, but you may still want to sort it.  Here we sort the columns by their averages.  Make sure to also sort your column titles!
+```{r,warning=FALSE}
+CityMean = colMeans(Temperatures, na.rm=TRUE)
+OrderTemp = Temperatures[,order(CityMean)]
+OrderMatrix = data.matrix(OrderTemp)
+Cities=Cities[order(CityMean)]
+heatmap.2(OrderMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none", labCol=Cities,margins=c(8,6))
+```

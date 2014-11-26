@@ -3,9 +3,9 @@ title: 'Confience Builder #1'
 author: "Nick Hathaway"
 date: "September 4, 2014"
 output:
+  html_document: default
   pdf_document:
     fig_caption: yes
-  html_document: default
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 require(knitr)
