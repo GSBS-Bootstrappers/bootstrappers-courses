@@ -17,3 +17,5 @@ rCourse/*/*.html
 *_files*
 .Rproj.user
 .DS_Store
+
+.brackets.json
