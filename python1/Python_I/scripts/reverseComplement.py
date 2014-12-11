@@ -14,7 +14,7 @@ def reverseComplement(sequence):
     
 def main():
     # main() - the main function
-    myGenome = ucscgenome.Genome("saCcer3")
+    myGenome = ucscgenome.Genome("sacCer3")
     mySequence = myGenome["chrIV"]
     print(mySequence[100:110])
     print(reverseComplement(mySequence[100:110]))
