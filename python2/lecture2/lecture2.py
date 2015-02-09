@@ -1,0 +1,84 @@
+#!/usr/bin/env python
+
+import os, errno
+import urllib
+
+class Utils:
+    @staticmethod
+    def mkdir_p(path):
+     # from http://stackoverflow.com/a/600612
+        try:
+            os.makedirs(path)
+        except OSError as exc:
+            if exc.errno == errno.EEXIST and os.path.isdir(path):
+                pass
+            else: 
+                raise
+
+    @staticmethod
+    def chrNumAsString(num):
+        return "chr" + str(num)
+
+    @staticmethod
+    def get_file_if_size_diff(url, path):
+        fn = url.split('/')[-1]
+        out_fnp = os.path.join(path, fn)
+        net_file_size = int(urllib.urlopen(url).info()['Content-Length'])
+        if os.path.exists(out_fnp):
+            fn_size = os.path.getsize(out_fnp)
+            if fn_size == net_file_size:
+                print "skipping download of", fn
+                return out_fnp
+            else: 
+                print "files sizes differed:"
+                print "\t", "on disk:", fn_size
+                print "\t", "from net:", net_file_size
+        print "retrieving", fn
+        urllib.urlretrieve(url, out_fnp)
+        return out_fnp
+
+class Paths():
+    def __init__(self, lectureNumber):
+        self.homeFolder = os.path.abspath(os.path.expanduser("~"))
+        self.desktopFolder = os.path.join(self.homeFolder, "Desktop")
+        self.python2folder = os.path.join(self.desktopFolder, "python_2")
+        lecture = "lecture_" + str(lectureNumber)
+        self.lectureFolder = os.path.join(self.python2folder, lecture)
+        print "today's lecture folder location will be:", self.lectureFolder
+        Utils.mkdir_p(self.lectureFolder)
+
+    def makeFilePath(self, fn):
+        return os.path.join(self.lectureFolder, fn)
+
+class ChipseqData:
+    def __init__(self, paths, url):
+        self.paths = paths
+        self.url = url
+        self.fnp = Utils.get_file_if_size_diff(self.url, paths.lectureFolder)
+
+    def getPeaks(self, chromosomeNum):
+        peaks = []
+        chr = Utils.chrNumAsString(chromosomeNum)
+        with open(self.fnp) as f:
+            for line in f:
+                toks = line.split()
+                if chr != toks[0]:
+                    continue
+                peaks.append(toks)
+        return peaks
+
+    def numPeaks(self, chromosomeNum):
+        return len(self.getPeaks(chromosomeNum))
+
+    def computePercentageChromosomeCovered(self, chromosomeNum, chromosomeLength):
+        peaks = self.getPeaks(chromosomeNum)
+        numBases = 0
+        for toks in peaks:
+            numBases += int(toks[2]) - int(toks[1])
+        return "{0:.2f}%".format(float(numBases) / chromosomeLength * 100)
+                
+paths = Paths(1)
+chipData = ChipseqData(paths, "http://bib3.umassmed.edu/~purcarom/Python2/Lecture1/ENCFF002COQ.narrowPeak")
+
+print "number of peaks on chromosome 7:", chipData.numPeaks(7)
+print "% of chromosome 7 covered by peaks:", chipData.computePercentageChromosomeCovered(7, 159138663)
