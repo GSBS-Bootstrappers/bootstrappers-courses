@@ -16,10 +16,6 @@ class Utils:
                 raise
 
     @staticmethod
-    def chrNumAsString(num):
-        return "chr" + str(num)
-
-    @staticmethod
     def get_file_if_size_diff(url, path):
         fn = url.split('/')[-1]
         out_fnp = os.path.join(path, fn)
@@ -56,9 +52,8 @@ class ChipseqData:
         self.url = url
         self.fnp = Utils.get_file_if_size_diff(self.url, paths.lectureFolder)
 
-    def getPeaks(self, chromosomeNum):
+    def getPeaks(self, chr):
         peaks = []
-        chr = Utils.chrNumAsString(chromosomeNum)
         with open(self.fnp) as f:
             for line in f:
                 toks = line.split()
@@ -80,5 +75,5 @@ class ChipseqData:
 paths = Paths(1)
 chipData = ChipseqData(paths, "http://bib3.umassmed.edu/~purcarom/Python2/Lecture1/ENCFF002COQ.narrowPeak")
 
-print "number of peaks on chromosome 7:", chipData.numPeaks(7)
-print "% of chromosome 7 covered by peaks:", chipData.computePercentageChromosomeCovered(7, 159138663)
+print "number of peaks on chromosome 7:", chipData.numPeaks("chr7")
+print "% of chromosome 7 covered by peaks:", chipData.computePercentageChromosomeCovered("chr7", 159138663)
