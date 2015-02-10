@@ -62,17 +62,17 @@ class ChipseqData:
                 peaks.append(toks)
         return peaks
 
-    def numPeaks(self, chromosomeNum):
-        return len(self.getPeaks(chromosomeNum))
+    def numPeaks(self, chr):
+        return len(self.getPeaks(chr))
 
-    def computePercentageChromosomeCovered(self, chromosomeNum, chromosomeLength):
-        peaks = self.getPeaks(chromosomeNum)
+    def computePercentageChromosomeCovered(self, chr, chromosomeLength):
+        peaks = self.getPeaks(chr)
         numBases = 0
         for toks in peaks:
             numBases += int(toks[2]) - int(toks[1])
         return "{0:.2f}%".format(float(numBases) / chromosomeLength * 100)
                 
-paths = Paths(1)
+paths = Paths(3)
 chipData = ChipseqData(paths, "http://bib3.umassmed.edu/~purcarom/Python2/Lecture1/ENCFF002COQ.narrowPeak")
 
 print "number of peaks on chromosome 7:", chipData.numPeaks("chr7")

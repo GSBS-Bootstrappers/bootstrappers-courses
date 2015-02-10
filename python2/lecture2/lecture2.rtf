@@ -1,0 +1,80 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fmodern\fprq1\fcharset0;}}{\colortbl;\red128\green128\blue128;\red186\green33\blue33;\red0\green64\blue208;\red102\green102\blue102;\red64\green128\blue128;\red160\green160\blue0;\red25\green23\blue124;\red0\green128\blue0;\red187\green102\blue136;\red187\green102\blue34;\red136\green0\blue0;\red170\green34\blue255;\red153\green153\blue153;\red0\green160\blue0;\red160\green0\blue0;\red255\green0\blue0;\red128\green0\blue128;\red176\green0\blue64;\red0\green0\blue255;\red187\green187\blue187;\red188\green122\blue0;\red0\green0\blue128;\red125\green144\blue41;\red210\green65\blue58;}\f0{\cf5\i #!/usr/bin/env python}\par
+\par
+{\cf8\b import} {\cf19\b os}{\cf4 ,} {\cf19\b errno}\par
+{\cf8\b import} {\cf19\b urllib}\par
+\par
+{\cf8\b class} {\cf19\b Utils}:\par
+    {\cf12 @staticmethod}\par
+    {\cf8\b def} {\cf19 mkdir_p}(path):\par
+     {\cf5\i # from http://stackoverflow.com/a/600612}\par
+        {\cf8\b try}:\par
+            os{\cf4 .}makedirs(path)\par
+        {\cf8\b except} {\cf24\b OSError} {\cf8\b as} exc:\par
+            {\cf8\b if} exc{\cf4 .}errno {\cf4 ==} errno{\cf4 .}EEXIST {\cf12\b and} os{\cf4 .}path{\cf4 .}isdir(path):\par
+                {\cf8\b pass}\par
+            {\cf8\b else}: \par
+                {\cf8\b raise}\par
+\par
+    {\cf12 @staticmethod}\par
+    {\cf8\b def} {\cf19 get_file_if_size_diff}(url, path):\par
+        fn {\cf4 =} url{\cf4 .}split({\cf2 '}{\cf2 /}{\cf2 '})[{\cf4 -}{\cf4 1}]\par
+        out_fnp {\cf4 =} os{\cf4 .}path{\cf4 .}join(path, fn)\par
+        net_file_size {\cf4 =} {\cf8 int}(urllib{\cf4 .}urlopen(url){\cf4 .}info()[{\cf2 '}{\cf2 Content-Length}{\cf2 '}])\par
+        {\cf8\b if} os{\cf4 .}path{\cf4 .}exists(out_fnp):\par
+            fn_size {\cf4 =} os{\cf4 .}path{\cf4 .}getsize(out_fnp)\par
+            {\cf8\b if} fn_size {\cf4 ==} net_file_size:\par
+                {\cf8\b print} {\cf2 "}{\cf2 skipping download of}{\cf2 "}, fn\par
+                {\cf8\b return} out_fnp\par
+            {\cf8\b else}: \par
+                {\cf8\b print} {\cf2 "}{\cf2 files sizes differed:}{\cf2 "}\par
+                {\cf8\b print} {\cf2 "}{\cf10\b \\t}{\cf2 "}, {\cf2 "}{\cf2 on disk:}{\cf2 "}, fn_size\par
+                {\cf8\b print} {\cf2 "}{\cf10\b \\t}{\cf2 "}, {\cf2 "}{\cf2 from net:}{\cf2 "}, net_file_size\par
+        {\cf8\b print} {\cf2 "}{\cf2 retrieving}{\cf2 "}, fn\par
+        urllib{\cf4 .}urlretrieve(url, out_fnp)\par
+        {\cf8\b return} out_fnp\par
+\par
+{\cf8\b class} {\cf19\b Paths}():\par
+    {\cf8\b def} {\cf19 __init__}({\cf8 self}, lectureNumber):\par
+        {\cf8 self}{\cf4 .}homeFolder {\cf4 =} os{\cf4 .}path{\cf4 .}abspath(os{\cf4 .}path{\cf4 .}expanduser({\cf2 "}{\cf2 ~}{\cf2 "}))\par
+        {\cf8 self}{\cf4 .}desktopFolder {\cf4 =} os{\cf4 .}path{\cf4 .}join({\cf8 self}{\cf4 .}homeFolder, {\cf2 "}{\cf2 Desktop}{\cf2 "})\par
+        {\cf8 self}{\cf4 .}python2folder {\cf4 =} os{\cf4 .}path{\cf4 .}join({\cf8 self}{\cf4 .}desktopFolder, {\cf2 "}{\cf2 python_2}{\cf2 "})\par
+        lecture {\cf4 =} {\cf2 "}{\cf2 lecture_}{\cf2 "} {\cf4 +} {\cf8 str}(lectureNumber)\par
+        {\cf8 self}{\cf4 .}lectureFolder {\cf4 =} os{\cf4 .}path{\cf4 .}join({\cf8 self}{\cf4 .}python2folder, lecture)\par
+        {\cf8\b print} {\cf2 "}{\cf2 today}{\cf2 '}{\cf2 s lecture folder location will be:}{\cf2 "}, {\cf8 self}{\cf4 .}lectureFolder\par
+        Utils{\cf4 .}mkdir_p({\cf8 self}{\cf4 .}lectureFolder)\par
+\par
+    {\cf8\b def} {\cf19 makeFilePath}({\cf8 self}, fn):\par
+        {\cf8\b return} os{\cf4 .}path{\cf4 .}join({\cf8 self}{\cf4 .}lectureFolder, fn)\par
+\par
+{\cf8\b class} {\cf19\b ChipseqData}:\par
+    {\cf8\b def} {\cf19 __init__}({\cf8 self}, paths, url):\par
+        {\cf8 self}{\cf4 .}paths {\cf4 =} paths\par
+        {\cf8 self}{\cf4 .}url {\cf4 =} url\par
+        {\cf8 self}{\cf4 .}fnp {\cf4 =} Utils{\cf4 .}get_file_if_size_diff({\cf8 self}{\cf4 .}url, paths{\cf4 .}lectureFolder)\par
+\par
+    {\cf8\b def} {\cf19 getPeaks}({\cf8 self}, {\cf8 chr}):\par
+        peaks {\cf4 =} []\par
+        {\cf8\b with} {\cf8 open}({\cf8 self}{\cf4 .}fnp) {\cf8\b as} f:\par
+            {\cf8\b for} line {\cf12\b in} f:\par
+                toks {\cf4 =} line{\cf4 .}split()\par
+                {\cf8\b if} {\cf8 chr} {\cf4 !=} toks[{\cf4 0}]:\par
+                    {\cf8\b continue}\par
+                peaks{\cf4 .}append(toks)\par
+        {\cf8\b return} peaks\par
+\par
+    {\cf8\b def} {\cf19 numPeaks}({\cf8 self}, {\cf8 chr}):\par
+        {\cf8\b return} {\cf8 len}({\cf8 self}{\cf4 .}getPeaks({\cf8 chr}))\par
+\par
+    {\cf8\b def} {\cf19 computePercentageChromosomeCovered}({\cf8 self}, {\cf8 chr}, chromosomeLength):\par
+        peaks {\cf4 =} {\cf8 self}{\cf4 .}getPeaks({\cf8 chr})\par
+        numBases {\cf4 =} {\cf4 0}\par
+        {\cf8\b for} toks {\cf12\b in} peaks:\par
+            numBases {\cf4 +}{\cf4 =} {\cf8 int}(toks[{\cf4 2}]) {\cf4 -} {\cf8 int}(toks[{\cf4 1}])\par
+        {\cf8\b return} {\cf2 "}{\cf2 \{0:.2f\}}{\cf2 %}{\cf2 "}{\cf4 .}format({\cf8 float}(numBases) {\cf4 /} chromosomeLength {\cf4 *} {\cf4 100})\par
+                \par
+paths {\cf4 =} Paths({\cf4 1})\par
+chipData {\cf4 =} ChipseqData(paths, {\cf2 "}{\cf2 http://bib3.umassmed.edu/~purcarom/Python2/Lecture1/ENCFF002COQ.narrowPeak}{\cf2 "})\par
+\par
+{\cf8\b print} {\cf2 "}{\cf2 number of peaks on chromosome 7:}{\cf2 "}, chipData{\cf4 .}numPeaks({\cf2 "}{\cf2 chr7}{\cf2 "})\par
+{\cf8\b print} {\cf2 "}{\cf9\b % o}{\cf2 f chromosome 7 covered by peaks:}{\cf2 "}, chipData{\cf4 .}computePercentageChromosomeCovered({\cf2 "}{\cf2 chr7}{\cf2 "}, {\cf4 159138663})\par
+}
