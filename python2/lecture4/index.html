@@ -1,0 +1,486 @@
+<!--
+slidedeck: A modification of the Google IO 2012 HTML5 slide template
+URL: https://github.com/rmcgibbo/slidedeck
+
+Based on https://github.com/francescolaffi/elastic-google-io-slides, and
+ultimately:
+
+Google IO 2012 HTML5 Slide Template
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahe <lukem@google.com>
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Bootstrappers: <br/>Python 2, Session 4</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+   <link rel="shortcut icon" href=" "/> 
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/custom.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+
+  <!-- MathJax support  -->
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    showProcessingMessages: false,
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+<slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+
+    <h1> Bootstrappers: <br/>Python 2, Session 4</h1>
+    <h2> February 12, 2015</h2>
+    <p> Chris MacKay<br/> and Mike Purcaro & the GSBS Bootstrappers</p>
+  </hgroup>
+</slide>
+
+
+<slide  >
+  
+    <hgroup>
+      <h2>Outline</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>Rosalind Problems:<ul>
+<li>more on classes and methods</li>
+<li>more on using python from the terminal</li>
+<li>briefly go over module and package basics <a href="https://docs.python.org/2/tutorial/modules.html">Link</a></li>
+<li>using basic command line arguments <a href="http://www.tutorialspoint.com/python/python_command_line_arguments.htm">Link</a></li>
+</ul>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Rosalind Problems:</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre>
+- DNA Counting DNA Nucleotides
+- RNA Transcribing DNA into RNA
+- REVC Complementing a Strand of DNA
+- GC Computing GC Content
+- HAMM Counting Point Mutations
+- PROT Translating RNA into Protein
+- SPLC RNA Splicing
+- SUBS Finding a Motif in DNA
+- PRTM Calculating Protein Mass
+- REVP Locating Restriction Sites
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 1: <a href="http://rosalind.info/problems/dna/">DNA</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> A DNA string s of length at most 1000 nt.</p>
+</li>
+<li>
+<p><em>Return:</em> Four integers (separated by spaces) counting the respective 
+number of times that the symbols 'A', 'C', 'G', and 'T' occur in s.</p>
+</li>
+</ul>
+<p><strong>Try this:</strong></p>
+<ul>
+<li>solve the problem with a <code>DNASequence</code> class, with a method that returns a 
+count of all bases</li>
+<li>what if your DNA sequence has <code>"N"</code>s?</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 2: <a href="http://rosalind.info/problems/rna/">RNA</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> A DNA string <em>t</em> having length at most 1000 nt.</p>
+</li>
+<li>
+<p><em>Return:</em> The transcribed RNA string of <em>t</em>.</p>
+</li>
+</ul>
+<p><strong>Try this:</strong></p>
+<ul>
+<li>how about adding a new method to your <code>DNASequence</code> class that returns an RNA
+version of the DNA sequence?</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 3: <a href="http://rosalind.info/problems/revc/">REVC</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> A DNA string $s$ of length at most 1000 bp.</p>
+</li>
+<li>
+<p><em>Return:</em> The reverse complement $s^{c}$ of $s$.</p>
+</li>
+</ul>
+<p><strong>Try this:</strong></p>
+<ul>
+<li>how about adding a new method to your <code>DNASequence</code> class?</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Sorting a list (pg 1)...<a href="https://docs.python.org/2/library/functions.html#sorted">(sorted(list))</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><code>sorted(list)</code> creates a new list and leaves the old list intact
+<pre class="prettyprint" data-lang="python">
+my_list = [67, 81, 24, 100]
+test = sorted(my_list)
+print test  # [24, 67, 81, 100]
+test = sorted(my_list, reverse = True)
+print test # [100, 81, 67, 24] </p>
+<p>def getKey(item):    # to sort the list by last digit only
+    item = str(item)
+    return int(item[-1])
+test = sorted(my_list, key = getKey)
+print test # [100, 81, 24, 67]</p>
+<p>test = sorted(my_list, key = lambda x: int(str(x)[-1]))
+print test # [100, 81, 24, 67] </p>
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Sorting a list (pg 2)...(<a href="https://docs.python.org/2/howto/sorting.html">list.sort()</a>)</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><code>list.sort()</code> sorts the list in place (<em>NO NEW LIST MADE</em>)
+<pre class="prettyprint" data-lang="python">
+my_list = [67, 81, 24, 100]
+my_list.sort()
+print my_list # [24, 67, 81, 100]
+my_list.sort(reverse = True)
+print my_list # [100, 81, 67, 24]</p>
+<p>def getKey(item):
+    item = str(item)
+    return int(item[-1])
+my_list.sort(key = getKey)
+print my_list # [100, 81, 24, 67]</p>
+<p>my_list.sort(key = lambda x: int(str(x)[-1]))
+print my_list # [100, 81, 24, 67]</p>
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 4: <a href="http://rosalind.info/problems/gc/">GC</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> At most 10 DNA strings in FASTA format (of length at most 1 kbp 
+each).</p>
+</li>
+<li>
+<p><em>Return:</em> The ID of the string having the highest GC-content, 
+followed by the GC-content of that string on the next line.</p>
+</li>
+</ul>
+<p><strong>Try this:</strong></p>
+<ul>
+<li>try creating a <code>FASTAFile</code> class with a method that returns a <code>DNASequence</code> 
+object for each sequence in the file</li>
+<li>how about adding a new method to your <code>DNASequence</code> class that calculates
+the GC content?</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 5: <a href="http://rosalind.info/problems/hamm/">HAMM</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> Two DNA strings $s$ and $t$ of equal length (not exceeding 1 kbp).</p>
+</li>
+<li>
+<p><em>Return:</em> The Hamming distance $d_{H}(s,t)$.</p>
+</li>
+</ul>
+<p><strong>Try this:</strong></p>
+<ul>
+<li>add another method to your <code>DNASequence</code> class</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 6: <a href="http://rosalind.info/problems/prot/">PROT</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> An RNA string $s$ corresponding to a strand of mRNA 
+(of length at most 10 kbp).</p>
+</li>
+<li>
+<p><em>Return:</em> The protein string encoded by $s$. of that string on the next line.</p>
+</li>
+<li>
+<p><strong>HELP</strong>:
+    <a href="resources/codon_table.txt">codon table</a></p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 7: <a href="http://rosalind.info/problems/SPLC/">SPLC</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> A DNA string $s$ (of length at most 1 kbp) and a collection 
+of substrings of $s$ acting as introns. All strings are given in FASTA format.</p>
+</li>
+<li>
+<p><em>Return:</em> A protein string resulting from transcribing and 
+translating the exons of $s$. 
+(Note: Only one solution will exist for the dataset provided.)</p>
+</li>
+</ul>
+<p><strong>Try this:</strong></p>
+<ul>
+<li>use your <code>FASTAFile</code> class</li>
+<li>how about adding a new method to your <code>DNASequence</code> class that calculates
+the GC content?</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Adding default attributes to class and keyword arguments</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="python">
+
+class DNASequence(object):
+    def __init__(self, sequence, id, introns = None):
+        self.seq = sequence
+        self.id = id
+        self.introns = introns
+
+    def spliced(self):
+        ...
+        return spliced_sequence
+
+new_sequence = DNASequence('ATCGCTAGAGCT', 'seq_12345')
+
+next_sequence = DNASequence(id = 'seq_35452', 
+                            sequence = 'TGCTAGCTGAATCA', 
+                            introns = [seq_obj1, seq_ob2, seq_ob3])
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 8: <a href="http://rosalind.info/problems/SUBS/">SUBS</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> Two DNA strings $s$ and $t$ (each of length at most 1 kbp).</p>
+</li>
+<li>
+<p><em>Return:</em> All locations of $t$ as a substring of $s$.</p>
+</li>
+</ul>
+<p><strong>NOTE:</strong></p>
+<ul>
+<li>python uses 0-based counting, but is that what <em>Rosalind</em> is looking for?</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 9: <a href="http://rosalind.info/problems/PRTM/">PRTM</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> A protein string $P$ of length at most 1000 aa.</p>
+</li>
+<li>
+<p><em>Return:</em> The total weight of $P$. Consult the <a href="resources/monoisotopic.txt">monoisotopic mass table</a>.</p>
+</li>
+</ul>
+<p><strong>Try This:</strong></p>
+<ul>
+<li>try creating a protein class, and a calculate mass method.</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>tangent on Modules...</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>say you have a function called <code>reverseComplement</code> in a <code>myCode.py</code> file 
+which is in the same directory as this script:
+<pre class="prettyprint" data-lang="python">
+import myCode
+new_rev_comp = myCode.reverseComplement(sequence)
+</pre>
+<pre class="prettyprint" data-lang="python">
+import myCode as my
+new_rev_comp = my.reverseComplement(sequence)
+</pre>
+<pre class="prettyprint" data-lang="python">
+from myCode import reverseComplement
+new_rev_comp = reverseComplement(sequence)
+</pre>
+<pre class="prettyprint" data-lang="python">
+from myCode import reverseComplement as rc
+new_rev_comp = rc(sequence)
+</pre></p>
+<p>to read more on modules and packages go <a href="https://docs.python.org/2/tutorial/modules.html">here</a></p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Problem 10: <a href="http://rosalind.info/problems/REVP/">REVP</a></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>
+<p><em>Given:</em> Given: A DNA string of length at most 1 kbp in FASTA format.</p>
+</li>
+<li>
+<p><em>Return:</em> The position and length of every reverse palindrome in the 
+string having length between 4 and 12. You may return these pairs in 
+any order.</p>
+</li>
+</ul>
+<pre>
+4 6
+5 4
+6 6 ...
+</pre>
+
+<p><strong>Try this:</strong></p>
+<ul>
+<li>try to call in some of your previously written classes and functions 
+from another <code>.py</code> file...</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Intro slide</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Here is a list that should build:</p>
+<ul class="build">
+<li>I like formulas, like this one $e=mc^2$</li>
+<li>It's rendered using MathJax. You can change the settings by editing base.html if you like</li>
+<li>pressing 'f' toggle fullscreen</li>
+<li>pressing 'w' toggles widescreen</li>
+<li>'o' toggles overview mode</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article ></pre></article>
+ 
+</slide>
+
+
+<slide class="thank-you-slide segue nobackground">
+  <!-- <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside> -->
+  <article class="flexbox vleft auto-fadein">
+    <h2> Thanks everyone!</h2>
+    <p></p>
+  </article>
+  <p data-config-contact class="auto-fadein"> <span>website </span> <a href="http://bioinfo.umassmed.edu/bootstrappers/">http://bioinfo.umassmed.edu/bootstrappers/</a><br/> <span>github</span> <a href="http://github.com/crmackay">crmackay</a></p>
+  </p>
+</slide>
+
+<slide class="backdrop"></slide>
+
+</slides>
+
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
