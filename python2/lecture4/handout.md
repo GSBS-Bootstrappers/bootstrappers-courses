@@ -244,7 +244,7 @@ class DNASequence(object):
 		return rev_complement
         
     def GCContent(self):
-        counts = self.count()
+        counts = self.countBases()
         gc = counts['G']+counts['C']
         gc_percent = float(gc)/len(self.sequence)
         return gc_percent
