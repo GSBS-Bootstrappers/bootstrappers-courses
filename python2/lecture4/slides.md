@@ -181,10 +181,9 @@ title: Adding default attributes to class and keyword arguments
 
 <pre class="prettyprint" data-lang="python">
 
-class DNASequence(object):
-    def __init__(self, sequence, id, introns = None):
-        self.seq = sequence
-        self.id = id
+class Gene(DNASequence):
+    def __init__(self, sequence, id, introns = None)
+        DNASequence.__init__(self, sequence, id):
         self.introns = introns
         
     def spliced(self):
