@@ -70,7 +70,7 @@ my_count = my_DNASeq_object.countBases()
 
 ## to get the output Rosalind asks for:
 
-print ' '.join([my_count['A'], [my_count['C'], [my_count['G'], [my_count['T']
+print ' '.join([my_count['A'], [my_count['C'], [my_count['G'], [my_count['T'])
 
 ```
 
