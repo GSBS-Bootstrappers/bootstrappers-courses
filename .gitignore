@@ -20,4 +20,8 @@ rCourse/*/*.html
 
 .brackets.json
 
+#python 
+
+*.pyc
+
 *~
