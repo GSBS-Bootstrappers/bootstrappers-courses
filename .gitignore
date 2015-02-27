@@ -24,4 +24,7 @@ rCourse/*/*.html
 
 *.pyc
 
+#pelican
+**/cache
+
 *~

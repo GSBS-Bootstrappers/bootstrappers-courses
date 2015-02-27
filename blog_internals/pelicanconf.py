@@ -9,6 +9,8 @@ SITEURL = ''
 
 PATH = 'content'
 
+SITEURL = '.'
+
 TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
