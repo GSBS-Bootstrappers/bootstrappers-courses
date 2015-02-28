@@ -20,12 +20,14 @@ note: you can have multiple “tags” and categories per article
     - virtualenv
     - gzip’ed files
     - pandas!
+
 ## Biotools
 - bioinformatics in general
     - ??? people interested in diving into how these programs work…??
         - alignment algorithms, burrows wheeler transform, etc. 
 - running scripts on the cluster
     - apparently this works: https://gist.github.com/crmackay/6b21a03b299b8a111456
+
 ## best practices
 - source control (git and github)
 - electronic lab notebook
