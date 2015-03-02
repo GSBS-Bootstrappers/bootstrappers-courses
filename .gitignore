@@ -25,6 +25,9 @@ rCourse/*/*.html
 *.pyc
 
 #pelican
-**/cache/**
+blog_internals/cache/PagesGenerator-Readers
 
-*~
+
+blog_internals/cache/PagesGenerator-Readers
+
+blog_internals/cache/ArticlesGenerator-Readers
