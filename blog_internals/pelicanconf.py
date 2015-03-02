@@ -9,7 +9,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-SITEURL = '.'
+SITEURL = ''
 
 TIMEZONE = 'America/New_York'
 
@@ -39,9 +39,10 @@ DEFAULT_PAGINATION = False
 
 # Theme to use to produce the output. Can be a relative or absolute path to a 
 # theme folder
+
 this_directory = os.path.dirname(os.path.abspath(__file__))
 
-THEME = os.path.join(this_directory,  'theme', 'pelican-bootstrap3')
+THEME = os.path.join(this_directory, 'theme', 'pelican-bootstrap3')
 
 # Destination directory in the output path where Pelican will place the files
 # collected from THEME_STATIC_PATHS. Default is theme.
@@ -58,4 +59,11 @@ THEME_STATIC_PATHS = ['static']
 #Specify the CSS file you want to load.
 #CSS_FILE = 'main.css'
 
-PYGMENTS_STYLE = 'colorful'
+BOOTSTRAP_THEME = 'flatly'
+
+PYGMENTS_STYLE = 'default'
+
+SHOW_ARTICLE_AUTHOR = True
+
+ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%b}/{slug}/index.html'
+ARTICLE_URL = 'posts/{category}/{date:%Y}/{date:%b}/{slug}/'
