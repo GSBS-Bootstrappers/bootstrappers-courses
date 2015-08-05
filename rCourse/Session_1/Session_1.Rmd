@@ -3,8 +3,10 @@ title: "Session 1 Exercises"
 output:
   html_document:
     toc: yes
+    highlight: tango
   pdf_document:
     toc: yes
+    highlight: tango
 date: "September 10, 2014"
 ---
 ```{r setup, echo=FALSE, message=FALSE}
@@ -12,7 +14,7 @@ require(knitr)
 #turn off mesages and warnings and make it so output isn't prefixed by anything,
 #default is to put "##" in front of all output for some reason
 #also set tidy to true so code is wrapped properly 
-opts_chunk$set(message=FALSE, warning=FALSE, comment = "", tidy = T)
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
 options(width = 60)
 ```
 **Session Prep:** Download the dataset we will be working with for this session: [Session_1.txt](https://www.dropbox.com/s/yhz4f8j957n68yg/Session_1.txt?dl=0)

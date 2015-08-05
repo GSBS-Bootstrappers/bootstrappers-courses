@@ -3,8 +3,10 @@ title: 'Confience Builder #1'
 author: "Nick Hathaway"
 date: "September 4, 2014"
 output:
-  html_document: default
+  html_document:
+    highlight: tango
   pdf_document:
+    highlight: tango
     fig_caption: yes
 ---
 ```{r setup, echo=FALSE, message=FALSE}
@@ -67,7 +69,7 @@ pal<-function (n, h = c(-240, 60), c. = c(80, 100), l = c(40, 70),
 }
 ```
 
-```{r, tidy=TRUE, fig.height=10, fig.width=10, fig.cap='Random Shapes'}
+```{r, fig.height=10, fig.width=10, fig.cap='Random Shapes'}
 plot(runif(2000),runif(2000),col=pal(100, alpha=.4),cex=seq(1:10),pch=seq(1:25))
 ```
 

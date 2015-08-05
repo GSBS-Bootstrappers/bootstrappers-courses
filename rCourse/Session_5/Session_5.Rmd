@@ -5,14 +5,15 @@ date: "November 4, 2014"
 output:
   html_document:
     toc: yes
+    highlight: tango
   pdf_document:
     toc: yes
+    highlight: tango
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 require(knitr)
 #turn off mesages and warnings and make it so output isn't prefixed by anything,
 #default is to put "##" in front of all output for some reason
-#also set tidy to true so code is wrapped properly 
 opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
 options(width = 60)
 ```

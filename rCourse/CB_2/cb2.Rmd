@@ -3,9 +3,11 @@ title: 'Confidence Builder #2'
 author: "Nick Hathaway"
 date: "September 4, 2014"
 output:
+  html_document:
+    highlight: tango
   pdf_document:
     fig_caption: yes
-  html_document: default
+    highlight: tango
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 require(knitr)
@@ -42,7 +44,7 @@ install.packages(c("wordcloud", "RColorBrewer"))
 library(wordcloud)
 ```  
 6.  Create your first word cloud with the following command: Enter the bellow command or copy and paste it into the **console** window:  
-```{r, tidy=TRUE, fig.width=6, fig.height=6, fig.cap='Example Wordcloud'}
+```{r, fig.width=6, fig.height=6, fig.cap='Example Wordcloud'}
 wordcloud(c("This", "Is", "My", "First", "Word", "Cloud"), c(30,10,20,20,10,35), colors=brewer.pal(6, "Dark2"), ordered.colors=T, scale = c(5,0.5))
 ```
 
