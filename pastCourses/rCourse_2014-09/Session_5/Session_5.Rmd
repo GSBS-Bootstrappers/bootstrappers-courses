@@ -6,6 +6,7 @@ output:
   html_document:
     toc: yes
     highlight: tango
+    theme: readable
   pdf_document:
     toc: yes
     highlight: tango

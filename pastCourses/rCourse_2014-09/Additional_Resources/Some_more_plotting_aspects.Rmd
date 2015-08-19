@@ -3,6 +3,7 @@ title: "Additional Plotting Aspects"
 output: 
   html_document:
     highlight: tango
+    theme: readable
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 require(knitr)

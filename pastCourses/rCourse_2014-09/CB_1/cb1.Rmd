@@ -5,6 +5,7 @@ date: "September 4, 2014"
 output:
   html_document:
     highlight: tango
+    theme: readable
   pdf_document:
     highlight: tango
     fig_caption: yes

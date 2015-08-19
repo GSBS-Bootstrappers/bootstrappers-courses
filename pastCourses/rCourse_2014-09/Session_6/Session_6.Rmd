@@ -4,6 +4,7 @@ author: "Jill E. Moore"
 date: "November 12, 2014"
 output:
   html_document:
+    theme: readable
     toc: yes
     highlight: tango
   pdf_document:

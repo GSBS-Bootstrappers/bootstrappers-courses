@@ -21,3 +21,4 @@ rCourse/*/*.html
 .brackets.json
 
 *~
+pastCourses/rCourse_*/*/*.pdf

@@ -2,6 +2,7 @@
 title: 'Data Visualization in R: Session 2'
 output:
   html_document:
+    theme: readable
     highlight: tango
     toc: yes
   pdf_document:

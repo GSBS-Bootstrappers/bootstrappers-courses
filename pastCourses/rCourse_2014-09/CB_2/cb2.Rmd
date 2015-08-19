@@ -4,6 +4,7 @@ author: "Nick Hathaway"
 date: "September 4, 2014"
 output:
   html_document:
+    theme: readable
     highlight: tango
   pdf_document:
     fig_caption: yes

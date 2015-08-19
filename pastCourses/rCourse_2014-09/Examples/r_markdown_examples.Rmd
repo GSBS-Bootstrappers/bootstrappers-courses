@@ -1,5 +1,7 @@
 ---
-output: html_document
+output: 
+  html_document:
+    theme: readable
 ---
 This post examines the features of [R Markdown](http://www.rstudio.org/docs/authoring/using_markdown) 
 using [knitr](http://yihui.name/knitr/) in Rstudio 0.96.
