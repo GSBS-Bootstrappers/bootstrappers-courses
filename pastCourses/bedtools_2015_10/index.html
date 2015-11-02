@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/theme/# -->
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="http://bedtools.readthedocs.org/en/latest/_static/bedtools.swiss.png">
+
+		<title>Bedtools</title>
+    	<!-- Bootstrap core CSS -->
+    	<link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<!-- Bootstrap showcase theme -->
+    	<link href="../../resources/bootstrap/css/showcase/showcase-theme.css" rel="stylesheet">
+		<style>
+			.viewPage, .nutshell, .fileDownload {
+				margin : 2px;
+			}
+			.inactive {
+				pointer-events : none;
+			}
+		</style>
+	</head>
+
+	<body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../index.html">Bootstrappers Home</a></li>
+            <li class=""><a href="../../index.html">Courses Home</a></li>
+            <li class=""><a href="../../../cal.html">Calendar</a></li>
+            <li class="Courses">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Courses<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              	<li class = ""><a href="../../courses/python1/index.html">Python 1</a></li>
+              	<li class = ""><a href="../../courses/python2/index.html">Python 2</a></li>
+                <li class = ""><a href="../../courses/rCourse/index.html">R Course</a></li>
+                <li class = ""><a href="../../courses/unix/index.html">Unix</a></li>
+                <li class = "active"><a href="../../courses/bedtools/index.html">Bedtools</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+		<div class="container theme-showcase" role="main">
+
+			<!-- Main jumbotron for a primary marketing message or call to action -->
+			<div class="jumbotron">
+				<h1>Bedtools</h1>
+				<p>
+					Bootstrapper's Introductory Course on using the commandline tool bedtools
+				</p>
+			</div>
+			<div class="row">
+				<div class="panel panel-primary">
+      	<div class="panel-heading"><h1>Course Details</h1></div>
+      	<div class="panel-body">
+      		<table class="table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Topics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Session I</td>
+                <td>Monday October 26, 2015, 5:30pm-7pm</td>
+              	<td>Amp III S6-102</td>
+              	<td>File formats,Running bedtools,Bedtobam/Bamtobed</td>
+              </tr>
+              <tr>
+                <td>Session II</td>
+                <td>Wednesday October 28, 2015, 5:30pm-7pm</td>
+              	<td>Amp III S6-102</td>
+              	<td>Intersect, Jaccard & Merge,Complement & Subtract</td>
+              </tr>
+              <tr>
+                <td>Session III</td>
+                <td>Monday November 2, 2015, 5:30pm-7pm</td>
+              	<td>Amp III S6-102</td>
+              	<td>Coverage/multicov,Genomecvg,Shuffle</td>
+              </tr>
+              <tr>
+                <td>Session IV</td>
+                <td>Wednesday November 4, 2015, 5:30pm-7pm</td>
+              	<td>Amp III S6-102</td>
+              	<td>Map</td>
+              </tr>
+            </tbody>
+      		</table>
+      	</div>
+       </div>
+			</div> 
+			<div class="row">
+
+				<div class="col-md-8">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h1>Course Materials</h1>
+						</div>
+						<div class="panel-body">
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<h3>Pre-class Assignments:</h3>
+								</div>
+								<div class="panel-body">
+									<ul>
+										<li>
+											<a class = "inactive" href="resources/SetUp.pdf" download="SetUp.pdf">SetUp</a>
+										</li>
+										<li>
+											<a class = "inactive" href="resources/Intro.pdf" download="Intro.pdf">Intro</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="panel panel-success">
+								<div class="panel-heading">
+									<h3>Sessions:</h3>
+								</div>
+								<div class="panel-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Slides</th>
+                <th>In Class Exercies</th>
+                <th>Assignments</th>
+                <th>Files</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Session 1</td>
+                <td><a class= "session1" href="resources/Session_1.pdf" download="Session_1.pdf"><button type="button" class="btn btn-success fileDownload">Download</button></a>
+                    <a class= "inactive session1" href="resources/Session_1_Nutshell.pdf" download="Session_1_Nutshell.pdf"><button type="button" class="btn btn-default fileDownload">Nutshell</button></a></td>
+                <td><a class= "session1" href="resources/Session_1_Exercises.pdf" download="Session_1_Exercises.pdf"><button type="button" class="btn btn-success fileDownload">Download</button></a></td>
+                <td><a class= "inactive session1" href="" target="_blank" ><button type="button" class="btn btn-default viewPage">View</button></a> 
+                    <a class= "inactive session1" href="" target="_blank"><button type="button" class="btn btn-default viewPage">Submit Answers</button></a></td>
+             	<td><a class= "session1" href="resources/Session_1_Files.zip" download="Session_1_Files.zip"><button type="button" class="btn btn-success fileDownload">Download</button></a></td>
+              </tr>
+                <td>Session 2</td>
+                <td><a class= "session2" href="resources/Session_2.pdf" download="Session_2.pdf"><button type="button" class="btn btn-success fileDownload">Download</button></a>
+                    <a class= "inactive session2" href="resources/Session_2_Nutshell.pdf" download="Session_2_Nutshell.pdf"><button type="button" class="btn btn-default fileDownload">Nutshell</button></a></td>
+                <td><a class= "session2" href="resources/Session_2_Exercises.pdf" download="Session_2_Exercises.pdf"><button type="button" class="btn btn-success fileDownload">Download</button></a></td>
+                <td><a class= "inactive session2" href="" target="_blank" ><button type="button" class="btn btn-default viewPage">View</button></a> 
+                    <a class= "inactive session2" href="" target="_blank"><button type="button" class="btn btn-default viewPage">Submit Answers</button></a></td>
+             	<td><a class= "session2" href="resources/Session_2_Files.zip" download="Session_2_Files.zip"><button type="button" class="btn btn-success fileDownload">Download</button></a></td>
+              </tr>
+                <td>Session 3</td>
+                <td><a class= "session3" href="resources/Session_3.pdf" download="Session_3.pdf"><button type="button" class="btn btn-success fileDownload">Download</button></a>
+                    <a class= "inactive session3" href="resources/Session_3_Nutshell.pdf" download="Session_3_Nutshell.pdf"><button type="button" class="btn btn-default fileDownload">Nutshell</button></a></td>
+                <td><a class= "session3" href="resources/Session_3_Exercises.pdf" download="Session_3_Exercises.pdf"><button type="button" class="btn btn-success fileDownload">Download</button></a></td>
+                <td><a class= "inactive session3" href="" target="_blank" ><button type="button" class="btn btn-default viewPage">View</button></a> 
+                    <a class= "inactive session3" href="" target="_blank"><button type="button" class="btn btn-default viewPage">Submit Answers</button></a></td>
+             	<td><a class= "session3" href="resources/Session_3_Files.zip" download="Session_3_Files.zip"><button type="button" class="btn btn-success fileDownload">Download</button></a></td>
+              </tr>
+              </tr>
+                <td>Session 4</td>
+                <td><a class= "inactive session4" href="resources/Session_4.pdf" download="Session_4.pdf"><button type="button" class="btn btn-default fileDownload">Download</button></a>
+                    <a class= "inactive session4" href="resources/Session_4_Nutshell.pdf" download="Session_4_Nutshell.pdf"><button type="button" class="btn btn-default fileDownload">Nutshell</button></a></td>
+                <td><a class= "inactive session4" href="resources/Session_4_Exercises.pdf" download="Session_4_Exercises.pdf"><button type="button" class="btn btn-default fileDownload">Download</button></a></td>
+                <td><a class= "inactive session4" href="" target="_blank" ><button type="button" class="btn btn-default viewPage">View</button></a> 
+                    <a class= "inactive session4" href="" target="_blank"><button type="button" class="btn btn-default viewPage">Submit Answers</button></a></td>
+             	<td><a class= "inactive session4" href="resources/Session_4_Files.zip" download="Session_4_Files.zip"><button type="button" class="btn btn-default fileDownload">Download</button></a></td>
+              </tr>
+            </tbody>
+          </table>
+								</div>
+							</div> <!--panel panel-info -->
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<h3>Additional Resources:</h3>
+								</div>
+								<div class="panel-body">
+									<ul>
+										<li>
+											<a class = "inactive" href="resources/" download=""></a>
+										</li>
+									</ul>
+								</div>
+							</div> <!--panel panel-info  -->								
+						</div>
+					</div>
+				</div>
+			<div class="col-md-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h1>Contacts</h1>
+						</div>
+						<div class="panel-body">
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<h3>Course Instructors:</h3>
+								</div>
+								<div class="panel-body">
+									<ul>
+										<li>
+											Jill Moore <br/> Jill.Moore@umassmed.edu
+										</li>
+										<li>
+											Arjan van der Velde <br/> Arjan.VanDerVelde@umassmed.edu
+										</li>
+										<li>
+											Henry Pratt <br/> Henry.Pratt@umassmed.edu
+										</li>
+										<li>
+											Michael Purcaro <br/> Michael.Purcaro@umassmed.edu
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<h3>Teaching Assistant:</h3>
+								</div>
+								<div class="panel-body">
+									<ul>
+
+										<li>
+											Nick Hathaway <br/> Nicholas.Hathaway@umassmed.edu
+										</li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="../../resources/bootstrap/js/jquery.min.js"></script>
+		<script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+		</div>
+	</body>
+</html>
