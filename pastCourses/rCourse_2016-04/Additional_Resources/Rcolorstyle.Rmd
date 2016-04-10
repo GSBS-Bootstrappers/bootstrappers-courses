@@ -1,0 +1,281 @@
+---
+title: "R Color Styles"
+output: 
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: true
+---
+```{r setup, echo=FALSE, message=FALSE}
+require(knitr)
+#turn off mesages and warnings and make it so output isn't prefixed by anything,
+#default is to put "##" in front of all output for some reason
+#also set tidy to true so code is wrapped properly 
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "", cache=TRUE)
+options(width = 80)
+```
+
+#A guide to using colors in R
+There are three types of R colors:
+
+*  hexadecimal colors (#rrggbb) or (#rrggbbaa) aa being alpha (how opaque the color is)  
+*  named colors e.g. (red, blue, purple, etc.)  
+*  integers referring to positions in the current color palette  
+
+Colors are graphic parameters described in the `par()` documentation of the graphics library.
+
+#Hexadecimal colors
+R uses hexadecimal colors. These are represented as strings of six characters. Red, green, and blue components are speci ed as two hexadecimal digits (0–9, A–F), in the form #rrggbb.
+Specify a hexadecimal color as a parameter by placing the name within quotes, such as  
+
+```{r}
+barplot(1, axes=FALSE, col="#4682B4")
+```
+
+The alpha parameter can be used to de ne tranparency. Simply add two more digits, in the form `#rrggbbaa`.
+```{r}
+barplot(1, axes=FALSE, col="#4682B433")  
+```
+
+#Named colors
+R can interpret hundreds of named colors, such as `"plum"`, `"seagreen2"`, and `"peachpuff3"` as hexadecimal colors. To see a list of the named colors (just the names, not the colors themselves) use the command `colors()`.
+
+Use this code to view the rgb values for all named colors:
+```{r}
+crgb <- col2rgb(cc <- colors())
+colnames(crgb) <- cc
+head(t(crgb))
+```
+
+Specify a named color as a parameter by placing the name within quotes, such as:
+```{r}
+barplot(1, axes=FALSE, col="steelblue")
+```
+
+#The color palette
+The `palette()` function within the grDevices library allows a table of colors to be referenced by a numeric index. The default color palette is: 
+
+1  = "black"  
+2  = "red"  
+3  = "green3"   
+4 = "blue"  
+5  = "cyan"  
+6  = "magenta"   
+7 = "yellow"  
+8  = "gray"  
+
+To set these colors as parameters, simply use the index: 
+```{r}
+barplot(1, axes=FALSE, col=4)
+barplot(c(1, 1, 1), axes=FALSE, col=c(4,5,6))
+```  
+
+The color palette can be changed by providing a vector of colors:
+```{r}
+palette(c("red", "#4682B4", "#00008B", "darkgreen"))
+barplot(c(1,1,1,1), axes=FALSE, col=c(1,2,3,4))
+```  
+
+View the current palette with `palette()`.  
+Return to the default palette with `palette("default")`.
+
+#Converting rgb to hex color
+The `rgb()` function converts red, green, and blue intensities to a hexidecimal representation. The function has the form `rgb(red, green, blue, alpha, names = NULL, maxColorValue = 1)`
+
+alpha is an optional argument for transparency, and has the same intensity scale as the red, green, and blue values.
+names is an optional argument that will print a name with the hexadecimal value.
+maxColorValue must be specified if the maximum intensity is not 1 (for example, if intensity has a scale of 0–255). The minimum intensity must be zero.
+```{r}
+new_orange = rgb(255, 127, 0, maxColorValue=255)
+barplot(1, axes=FALSE, col=new_orange)
+```
+
+#Converting an R color to rgb
+The `col2rgb()` function converts R colors (a hexadecomal color, named color, or integer representing a palette position) to the rgb representations. The function takes either a single color or a vector of colors, and returns a matrix of three rows (red, green, blue), with one column for each color.
+The function has the form 
+`col2rgb(color, alpha=FALSE)`  
+alpha is an optional argument to indicate whether alpha transparency values should be returned.
+Converting a single color to rgb:
+```{r}
+col2rgb("steelblue")
+```
+
+Converting a vector of colors to rgb:
+```{r}
+col2rgb(c("#4682B433", "#104E8b", "mistyrose"))
+```
+
+Converting a vector of colors to rgb, with labels in matrix columns:
+```{r}
+col2rgb(c(orange="#4682B433", blue="#104E8b", pink="mistyrose"))
+```
+
+#Creating a vector of grays
+The `gray.colors()` function creates a vector of evenly-spaced gray colors. The function has the form  
+`gray.colors(num_colors, start=value, end=value, gamma=value)`  
+end and start are used to specify the endpoints of the range of grays, with 0 = black and 1 = white.
+(By default, start=0.3 and end=0.9.)  
+gamma is an optional argument for gamma correction.
+
+
+```{r}
+barplot(rep(1,100), col = gray.colors(100, start =1, end = 0))
+```
+```{r}
+barplot(rep(1,50), col = gray.colors(50, start =1, end = 0))
+```
+```{r}
+barplot(rep(1,25), col = gray.colors(25, start =1, end = 0))
+```
+```{r}
+barplot(rep(1,10), col = gray.colors(10, start =1, end = 0))
+```
+
+#Creating a vector of heat colors
+
+The `heat.colors()` function creates a vector of evenly-spaced red-to-yellow colors. The function has the form  
+`heat.colors(num_colors, alpha=value)`  
+alpha is an optional argument to specify alpha transparency of the colors.  
+```{r}
+barplot(rep(1,100), col = heat.colors(100))
+```
+```{r}
+barplot(rep(1,50), col = heat.colors(50))
+```
+```{r}
+barplot(rep(1,25), col = heat.colors(25))
+```
+```{r}
+barplot(rep(1,10), col = heat.colors(10))
+```
+
+Using Alpha
+```{r}
+plot(NA, xlim = c(0,100), ylim = c(0,1), bty = "none")
+abline(a = c(0.5,0),lwd = 20)
+barplot(rep(1,100), col = heat.colors(100, alpha = 1), add = T)
+```
+```{r}
+plot(NA, xlim = c(0,100), ylim = c(0,1), bty = "none")
+abline(a = c(0.5,0),lwd = 20)
+barplot(rep(1,100), col = heat.colors(100, alpha = 0.7), add = T)
+```
+```{r}
+plot(NA, xlim = c(0,100), ylim = c(0,1), bty = "none")
+abline(a = c(0.5,0),lwd = 20)
+barplot(rep(1,100), col = heat.colors(100, alpha = 0.5), add = T)
+```
+```{r}
+plot(NA, xlim = c(0,100), ylim = c(0,1), bty = "none")
+abline(a = c(0.5,0),lwd = 20)
+barplot(rep(1,100), col = heat.colors(100, alpha = 0.3), add = T)
+```
+```{r}
+plot(NA, xlim = c(0,100), ylim = c(0,1), bty = "none")
+abline(a = c(0.5,0),lwd = 20)
+barplot(rep(1,100), col = heat.colors(100, alpha = 0.2), add = T)
+```
+```{r}
+plot(NA, xlim = c(0,100), ylim = c(0,1), bty = "none")
+abline(a = c(0.5,0),lwd = 20)
+barplot(rep(1,100), col = heat.colors(100, alpha = 0), add = T)
+```
+
+
+
+#Creating vectors of contiguous colors
+##heat.colors
+```{r}
+barplot(rep(1,12), col = heat.colors(12))
+```
+
+##cm.colors
+```{r}
+barplot(rep(1,12), col = cm.colors(12))
+```
+
+##terrain.colors
+```{r}
+barplot(rep(1,12), col = terrain.colors(12))
+```
+
+##topo.colors
+```{r}
+barplot(rep(1,12), col = topo.colors(12))
+```
+
+##rainbow
+```{r}
+barplot(rep(1,12), col = rainbow(12))
+```
+
+##Experimenting with own color palette
+```{r}
+nickColors <- function(n, h = c(120,400), l = c(.40,.70), s = c(.8,1), alpha = 1){
+  require(colorspace)
+  require(scales)
+  return (alpha(hex(HLS(seq(h[1],h[2],length.out = n), seq(l[1],l[2],length.out = n), seq(s[1],s[2],length.out=n))), alpha))
+}
+barplot(rep(1,12), col = nickColors(12))
+```
+
+#Specifying colors with hsv()
+
+The `hsv()` function uses values of hue, saturation, and value (ranging from 0 to 1) to specify a color. The function accepts either a single values or vectors of values, and returns a vector of hexadecimal values.  
+The function has the form  
+hsv(h=value, s=value, v=value, gamma=value, alpha=value)  
+```{r}
+barplot(rep(1,12), col = hsv(seq(0,1 - 1/12,length.out = 12), 1 , 1))
+```
+```{r}
+barplot(rep(1,12), col = hsv(seq(0,1 - 1/12,length.out = 12), 0.5 , 1))
+```
+```{r}
+barplot(rep(1,12), col = hsv(seq(0,1 - 1/12,length.out = 12), 1 , 0.5))
+```
+```{r}
+barplot(rep(1,12), col = hsv(1, seq(0,1,length.out = 12) , 1))
+```
+```{r}
+barplot(rep(1,12), col = hsv(1, 1, seq(0,1,length.out = 12)))
+```
+
+
+
+#Specifying colors with hcl()
+
+The `hcl()` function uses values of hue, chroma, and luminance to specify a color. The function accepts either a single set of values or vectors of values, and returns a vector of hexadecimal values. Values for hue range from 0 to 360. The range for chroma depends upon the hue and luminance, and the range for luminance depends upon the hue and chroma. See the R documentation for details.  
+This function is useful for creating a series of colors that have approximately equal perceptual changes.  
+
+```{r}
+barplot(rep(1,12), col = hsv(seq(0,1 - 1/12,length.out = 12), .35, .85))
+```
+```{r}
+barplot(rep(1,12), col = hsv(seq(0,1 - 1/12,length.out = 12), .15, .85))
+```
+```{r}
+barplot(rep(1,12), col = hsv(seq(0,1 - 1/12,length.out = 12), .35, .50))
+```
+```{r}
+barplot(rep(1,12), col = hsv(0.5, seq(0,.50,length.out = 12), .85))
+```
+```{r}
+barplot(rep(1,12), col = hsv(0.5, .35, seq(.45,.90,length.out = 12)))
+```
+
+#Using RColorBrewer
+[ColorBrewer](http://colorbrewer2.org/) is a site that helps to choose different color palettes and there is a R package called RColorBrewer that helps to do this in R itself.  
+```{r}
+if (!require("RColorBrewer")) install.packages("RColorBrewer")
+library(RColorBrewer)
+brewer.pal.info
+```
+```{r, fig.height= 10}
+display.brewer.all()
+```
+
+```{r }
+barplot(rep(1,4), col = brewer.pal(4, "Dark2"))
+```
+
+
