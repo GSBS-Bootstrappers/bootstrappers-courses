@@ -31,6 +31,12 @@ Next you should complete this short introduction of the very basics of R.  It sh
 #Installing R Packages being used in Course
 Once you are comfortable with entering commands into R, enter the following commands into the console window to install the R packages that we will be going over in the course.  
 
+##For reading data in
+```{r, eval = F}
+#For reading data in
+install.packages(c("readr","readxl", "haven"))
+```
+
 ##For organizing Data
 ```{r, eval = F}
 #For organizing Data
@@ -52,7 +58,7 @@ install.packages(c("devtools"))
 ##Addition commands to ggplot2
 ```{r, eval = F}
 #Addition commands to ggplot2
-devtools::install_github("easyGgplot2")
+devtools::install_github("kassambara/easyGgplot2")
 ```
 
 ##Interactive Plots
