@@ -1,5 +1,6 @@
 ---
 title: "Session 1"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
 output:
   html_document:
     toc: yes
@@ -18,3 +19,297 @@ require(knitr)
 opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
 options(width = 60)
 ```
+
+#R Basics
+R is like most programming languages and operates by storing by data in `variabes/objects` and then operating on these objects with `functions`.  
+
+##Variables/objects
+Objects are able to store a very wide variety of data, some of the common types are explained [below](#data-types). To store data in R you can use two separate syntaxes, `<-` or `=`. The normal R convention is to use `<-` and there are some real subtle differences between using `<-` and `=` but for the majority of time you can get by by using either one.  
+```{r}
+x = 10
+print(x)
+
+#same as 
+y <- 10
+print(y)
+```
+##Functions
+Functions are used on objects that have stored data to either output new data or to simply print information about the data stored in that object (e.g. above the function `print()` will print to the screen the data stored in the object that is given to print). You can store the output of a function into a new variable.  
+```{r}
+x = 9
+sqrt(x)
+
+y = sqrt(x)
+print(y)
+```
+When people talk about functions, they will refer to the objects being given to the functions as the function's arguments. Depending on the function, it can take several different arguments. To find out more about a function and the functions it takes, you can use the `help()` function and give it the name of function or you can use `?` and then name of the function. If you don't know the name of the function exactly or want to do a keyword search you can `??` and then a keyword. You can also just go to the bottom right window in RStudio and go to the help tab.  
+```{r}
+help(print)
+```
+or
+```{r}
+?print
+```
+or to search for any topic with the word `print`
+```{r}
+??print
+```
+There are a large number of different functions in R that you will become accustomed to as you use R more. Also each library you load will have more functions as well. Also the arguments to functions have names and rather than giving arguments simply in the order in which they are listed in the function's definition you can give an argument by using `arg=value` syntax.  For example take the `seq()` function, which is a function for creating different ranges. First call `help(seq)` to see the definition of `seq()`, whose definition looks like below. 
+```{r, echo = F, engine='bash'}
+echo "seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)),
+    length.out = NULL, along.with = NULL, ...)"
+```
+So using the seq function you can create a range from `2` to `4` by typing
+```{r}
+print(seq(2,4))
+```
+or you can give the arguments by naming them
+```{r}
+print(seq(from = 2, to = 4))
+```
+When naming the function arguments, order no longer matters
+```{r}
+print(seq(to = 4, from = 2))
+```
+When naming the arguments you don't have to name all of them
+```{r}
+print(seq(2,4, length.out = 6))
+```
+
+
+##Data Types
+Every object in R will have a different data type. To determine the type of any object just use the `class()` function. 
+```{r}
+x <- 10
+print(class(x))
+
+y <- "Example"
+print(class(y))
+
+```
+Depending on the type of data, functions will have different behaviors 
+
+###character
+character type data is anything that can be represented by a string of letters/characters like a name or categorical data.  
+```{r}
+name = "Nick"
+
+loc = "Amp II"
+
+condition = "Control"
+
+```
+###numeric
+numeric type data is anything that be represented by, well, numbers like measurements or data values
+```{r}
+speed = 10
+
+time = 60
+
+fraction = 0.5
+
+```
+###factor
+factor type data is basically character data that has been encoded into numeric values underneath but is represented by characters, this mostly used on categorical data that needs to be converted into numbers in order for certain modeling/statistics functions to work. More on factors latter.    
+
+###logic/Boolean
+Boolean refers to a type of data is simply either TRUE or FALSE and is normally used in conjunction with logic.  
+```{r}
+x = 10 > 11
+print(x)
+
+y = 12 > 11
+print(y)
+```
+
+###Logic Tests
+
+operator| meaning
+-----|-----
+<|less than
+<=|less than or equal to
+>|greater than
+>=|greater than or equal to
+==|exactly equal to
+!=|not equal to
+
+##More Complex Data containers
+The majority of the time you need to store more than just one value and therefore you will need containers that can hold multiple values at once, R comes equiped with several containers already
+
+###vectors
+Vectors are just several of the same data type hold together in one container, the most common way to create a vector is to use the concatenate function, which in R is just called `c()` for short.  
+```{r}
+#numeric values
+speeds = c(10.5, 11, 13, 14, 10)
+print(speeds)
+print(class(speeds))
+
+times = c(20,30,20,30,40,50)
+print(times)
+print(class(times))
+
+#charater values
+
+names = c("Nick", "Michael", "Arjan", "Henry")
+print(names)
+print(class(names))
+
+#Boolean/logical values
+
+logics = c(10 < 11, 12 < 11, 10 > 9)
+print(logics)
+print(class(logics))
+```
+Note: R will force everything in a container to be the same type if it can so be careful to not to actually mix types if you don't mean to. 
+```{r}
+#Accidental converion to character rather than numberic vector
+numbers = c(1,2,3,4,5,"6")
+print(numbers)
+print(class(numbers))
+
+#actual numeric vector
+actualNumbers = c(1,2,3,4,5,6)
+print(actualNumbers)
+print(class(actualNumbers))
+```
+
+###matrix
+R's matrix is very similar to the vector where all things have to be the same type but contains values in rows and columns.
+```{r}
+mat = matrix(c(1,2,3,4,5,6,7,8,9,10,11,12))
+
+print(mat)
+
+mat2 = matrix(c(1,2,3,4,5,6,7,8,9,10,11,12), ncol = 2)
+
+print(mat2)
+
+mat3 = matrix(c(1,2,3,4,5,6,7,8,9,10,11,12), ncol = 2, byrow = TRUE)
+
+print(mat3)
+print(class(mat3))
+```
+See `help(matrix)` for more info on how to use matrix.
+
+###data.frame
+The data.frame is the main object in R and is the data container you most likely be dealing with the most.  It is similar to an spreadsheet/table data structure you in somethig like Excel with rows and columns, both of which can have names. The data.frame is different from the matrix because each column can have different types, though all the elements in a column have to be the same type. You will rarely have to create a data.frame by hand and the majority of the time you   
+```{r}
+dat = data.frame(names = c("Nick", "Mike", "Arjan", "Henry", "Jill"), duration = c(5, 5, 4, 1, 4), program = c("MD/PhD", "MD/PhD", "PhD", "MD/PhD", "PhD"))
+print(dat)
+```
+A useful function for looking at a data.frame is the `str()` function. It will tell you information about each column.
+```{r}
+dat = data.frame(names = c("Nick", "Mike", "Arjan", "Henry", "Jill"), duration = c(5, 5, 4, 1, 4), program = c("MD/PhD", "MD/PhD", "PhD", "MD/PhD", "PhD"))
+str(dat)
+```
+With the `str()` function you can see that the we have three columns with the 1st and 3rd column being factors and the 2nd column being a numeric column. You can also see that for the variables that are factors you can see that they also have thier coded numerical values next to them.  This is important to note when you are dealing with typos, for instance if we had typed this instead.   
+```{r}
+dat = data.frame(names = c("Nick", "Mike", "Arjan", "Henry", "Jill"), duration = c(5, 5, 4, 1, 4), program = c("Md/PhD", "MD/PhD", "PhD", "MD/PhD", "PhD"))
+str(dat)
+```
+You can see that we now have three levels for program rather than the two since we typed in one of the MD/PhD levels incorrectly.  
+
+
+
+##Installing/Loading Libraries
+To install new libraries you can use the `install.packages()` function and give it the name of a library that [The Comprehensive R Archive Network](https://cran.r-project.org/)(CRAN) has stored in their reposotories. Below is the command from the prep work to install all the libraries we will be going in the course.  
+```{r, eval=FALSE}
+#For reading data in
+install.packages(c("readr","readxl", "haven"))
+
+#For organizing Data
+install.packages(c("dplyr", "tidyr", "reshape2"))
+
+#For plotting
+install.packages(c("ggplot2", "RColorBrewer"))
+
+#For Downloading more packages not managed by R in install.packages()
+install.packages(c("devtools"))
+
+#Addition commands to ggplot2
+devtools::install_github("kassambara/easyGgplot2")
+
+#Interactive Plots
+install.packages(c("networkD3", "metricsgraphics", "shiny"))
+devtools::install_github("rstudio/d3heatmap")
+```
+
+Once you have installed a library, you can load it's functions by using the `library()` function
+```{r, eval=FALSE}
+library(ggplot2)
+help(ggplot)
+```
+
+
+#Reading in Data
+Data files can come in multiple formats but some of the most common types are plaint text files that have each column delimited by either tabs `"\t"` or commas `","`. R can also read in files that saved in excel format.  
+
+##File Formats
+
+###Plain Text Files
+For reading in plain text files we will being using the package `readr`
+```{r}
+library(readr)
+```
+
+For reading in tab delimited files we have `read_tsv()` and for comma delimited files we have `read_csv()`
+Here is a [link](../datasets/WorEpi.tab.txt) to a tab delmited file
+Also a helpful function might be to use `file.choose()` 
+```{r}
+library(readr)
+worEpi = read_tsv("WorEpi.tab.txt")
+str(worEpi)
+```
+or 
+```{r, eval=FALSE}
+library(readr)
+worEpi = read_tsv(file.choose())
+str(worEpi)
+head(worEpi)
+```
+Here is a [link](../datasets/Mel.csv) to a comma separated file 
+```{r}
+library(readr)
+melanoma = read_csv("Mel.csv")
+str(melanoma)
+head(melanoma)
+```
+or 
+```{r, eval=FALSE}
+library(readr)
+melanoma = read_csv(file.choose())
+str(melanoma)
+
+```
+###Excel Sheets
+For excel sheets we have the library `readxl`
+```{r, eval=T}
+library(readxl)
+```
+
+Here is a [link](../datasets/Both.xlsx) to an excel sheet of both previous files as separate sheets
+```{r}
+library(readxl)
+melanoma = read_excel("Both.xlsx")
+str(melanoma)
+head(melanoma)
+```
+By default it just reads the first sheet, you can tell it which sheet to read
+```{r}
+library(readxl)
+worEpi = read_excel("Both.xlsx", sheet = 2)
+str(worEpi)
+head(worEpi)
+```
+
+###SAS and SPSS
+For reading we have the library `haven`.  I don't have any example datasets but the functions are below
+
+```{r, eval=FALSE}
+library(haven)
+read_sas()
+read_spss()
+read_stata()
+```
+
+

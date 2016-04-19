@@ -13,6 +13,7 @@ output:
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 require(knitr)
+library(d3heatmap)
 #turn off mesages and warnings and make it so output isn't prefixed by anything,
 #default is to put "##" in front of all output for some reason
 opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
@@ -71,6 +72,7 @@ TempMatrix=data.matrix(Temperatures)
 We are now ready to make our heatmap:
 ```{r,}
 heatmap.2(TempMatrix)
+d3heatmap(TempMatrix)
 ```
 
 *  *  *  *
@@ -99,16 +101,19 @@ By default the `heatmap.2()` function will cluster both the rows and columns.  T
 To remove column clustering:
 ```{r,warning=FALSE}
 heatmap.2(TempMatrix, Colv=NA)
+d3heatmap(TempMatrix, Colv=NA)
 ```
 
 To remove row clustering:
 ```{r,warning=FALSE}
 heatmap.2(TempMatrix, Rowv=NA)
+d3heatmap(TempMatrix, Rowv=NA)
 ```
 
 To remove all clustering:
 ```{r,warning=FALSE}
 heatmap.2(TempMatrix, Colv=NA, Rowv=NA)
+d3heatmap(TempMatrix, Colv=NA, Rowv=NA)
 ```
 
 **Dendrograms**
@@ -118,16 +123,20 @@ By default the `heatmap.2()` function will add dendograms to your rows and colum
 To only have row dendrograms:
 ```{r,}
 heatmap.2(TempMatrix, dendrogram="row")
+d3heatmap(TempMatrix, dendrogram="row")
 ```
+
 
 To only have the column dendrograms:
 ```{r,}
 heatmap.2(TempMatrix, dendrogram="column")
+d3heatmap(TempMatrix, dendrogram="column")
 ```
 
 To have NO dendrograms
 ```{r,}
 heatmap.2(TempMatrix, dendrogram="none")
+d3heatmap(TempMatrix, dendrogram="none")
 ```
 
 **Trace**
@@ -137,11 +146,13 @@ By default the `heatmap.2()` function will a trace to all of your columns which 
 To change this to a row trace:
 ```{r,}
 heatmap.2(TempMatrix, trace="row")
+d3heatmap(TempMatrix, trace="row")
 ```
 
 To remove the trace altogether (which will be most of the time!):
 ```{r,}
 heatmap.2(TempMatrix, trace="none")
+d3heatmap(TempMatrix, trace="none")
 ```
 
 **Denisty Info**
@@ -184,6 +195,7 @@ You can create a color vector with any colors that you want and use them in your
 ```{r,warning=FALSE}
 Colors=c("blue","yellow","red")
 heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
+d3heatmap(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
 ```
 
 Doesn't that heatmap look WONDERFUL :)
@@ -194,6 +206,7 @@ In most cases you will want to smooth our your colors and you can do this with c
 Colors=c("blue","yellow","red")
 Colors=colorRampPalette(Colors)(100)
 heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
+d3heatmap(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
 ```
 
 In many cases I like to use pre-made palette from RColorBrewer.  These are athestically pleasing and make your heatmaps/graphs look professional.
@@ -202,6 +215,7 @@ In many cases I like to use pre-made palette from RColorBrewer.  These are athes
 library(RColorBrewer)
 Colors=brewer.pal(11,"Spectral")
 heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
+d3heatmap(TempMatrix, col="Spectral", Colv=NA, Rowv=NA)
 ```
 
 The Spectral palette is in reverse of what we want (red = hot, blue= cold).  We can fix this using the rev() function:
@@ -218,6 +232,7 @@ Colors=colorRampPalette(Colors)(100)
 Now our heatmap is looking good...
 ```{r,warning=FALSE}
 heatmap.2(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
+d3heatmap(TempMatrix, col=Colors, density.info="none", Colv=NA, Rowv=NA, trace="none")
 ```
 
 **Breaks**
