@@ -1,0 +1,70 @@
+---
+title: "Updating R and RStudio"
+author: "Nicholas Hathaway"
+output:
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: true
+  pdf_document:
+    fig_caption: yes
+    highlight: tango
+    toc: true
+---
+
+```{r setup, echo=FALSE, message=FALSE}
+require(knitr)
+#turn off mesages and warnings and make it so output isn't prefixed by anything, default is to put "##" in front of all output for some reason
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
+```
+
+#Updating R
+
+##Updating on Windows
+Updating on Windows is apparently tricky, a package called `installr`, which is only for Windows can be used to ease the process.  
+The following commands were taken from [here](http://www.r-statistics.com/2013/03/updating-r-from-r-on-windows-using-the-installr-package/), which goes into more details.  
+First Install the `installr` package if you don't have it
+```{r, eval = F}
+# installing/loading the package:
+if(!require(installr)) {
+  install.packages("installr"); 
+  require(installr)
+} #load / install+load installr
+```
+Now call `updateR()` function to call update  
+This will start the updating process of your R installation.  It will check for newer versions, and if one is available, will guide you through the decisions you'd need to make.
+```{r, eval = F}
+# using the package:
+updateR()
+```
+##Updating On Mac and Ubuntu
+One Mac and Ubuntu you need to go to the [CRAN](https://www.r-project.org/) website, https://www.r-project.org/ to install the newer package intaller.
+
+#Updating RStudio
+Updating RStudio is easy, just go to `Help` > `Check for Updates` to install newer version.  
+
+#Updating R Packages
+
+##Updating Out of date Packages
+Updating out of date package that were installed with `install.packages()` is easy with the `update.packages()` function.
+```{r, eval = F}
+update.packages()
+```
+Which will ask you for every package if you want to update, to just say yes to everything use `ask = FAlSE`. 
+```{r, eval = F}
+update.packages(ask = FALSE)
+```
+Unfortunately this won't update packages installed by `devtools::install_github()`
+
+##Updating all Packages after R update
+On Windows this is hanlded by the package `installr`. But for other operating systems, after updating R, a lot of packages might have been build under the old R version and it would be safer to re-install all the packages already installed. This can be done with the following commands. Again this won't update packages installed with `devtools::install_github()`  
+```{r, eval = F}
+## get packages installed
+packs = as.data.frame(installed.packages(.libPaths()[1]), stringsAsFactors = F)
+
+## and now re-install install packages using install.packages()
+install.packages(packs$Package)
+
+```
+
+
