@@ -16,7 +16,7 @@ require(knitr)
 #default is to put "##" in front of all output for some reason
 #also set tidy to true so code is wrapped properly 
 opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
-options(width = 60)
+options(width = 120)
 ```
 
 #Scripting
@@ -145,6 +145,8 @@ print(rNums > 0.5)
 
 ```
 
+
+
 ##If/else statements
 Sometimes you will encounter a situation where you have piece of data and you want to run certain code if it falls into one category or different code if it falls into a another category. You can accomplish if you use an `if` statement combined with a logic comparison. 
 
@@ -189,6 +191,22 @@ if(name == "Nick"){
 }else{
   print("Name is not Nick or Mike")
 }
+```
+
+
+### %in% operator 
+
+The %in% operator looks a little funny but can be very useful for finding subsets of data that only contain certain values
+
+```{r}
+names = c("Nick", "Henry", "Jack", "Mike", "Arjan", "Jill", "Jack", "Susan")
+programs = c("MD/PhD", "MD/PhD", "MD", "MD/PhD", "PhD", "PhD", "Nursing", "MD/PhD")
+
+print(programs %in% c("MD/PhD"))
+
+print(programs %in% c("MD", "MD/PhD"))
+
+print(programs %in% c("PhD", "MD/PhD"))
 ```
 
 ##Looping
@@ -376,19 +394,235 @@ sheet1[1:3]
 ```
 
 #Accesing elementins specific to data.frame
+The above examples work for both matrix class and data.frame object but the next couple of examples only work for data.frames
+
+##Accesing by column names using []
+With data.frame objects you can give the column name in `[]` to get those columns, you can give one or several
+```{r}
+sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+
+sheet1["Patient"]
+
+sheet1["Group1-Group1"]
+
+sheet1[c("Patient", "Group1-Group1")]
+```
+##Accesing by column names using $
+You can also access just one column by using the `$` symbol. 
+
+```{r}
+sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+
+sheet1$Patient
+
+sheet1$'Group1-Group1'
+```
+The difference here is that the `$` is going to give just a vector where as `[]` will actually give you back a data.frame
+
+```{r}
+sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+
+patientMoney = sheet1$Patient
+print(class(patientMoney))
+patientBracket = sheet1["Patient"]
+print(class(patientBracket))
+
+```
 
 #Adding columns to data.frame
+You can also add a column with either the `[]` or the `$`. You can either give a single value that will be repeated for all the values of the column or you can give a vector of the same size. 
+
+```{r}
+sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+
+sheet1$Experiment = "Experiment_1"
+print(sheet1)
+
+sheet2 = read_excel("ExamampleData.xlsx", "Experiment_2")
+print(rep("Experiment_2", nrow(sheet2)))
+
+sheet2["Experiment"] = rep("Experiment_2", nrow(sheet2))
+print(sheet2)
+```
+
+### %in% operator 
+
+The %in% operator looks a little funny but can be very useful for finding subsets of data that only contain certain values
+
+```{r}
+names = c("Nick", "Henry", "Jack", "Mike", "Arjan", "Jill", "Jack", "Susan")
+programs = c("MD/PhD", "MD/PhD", "MD", "MD/PhD", "PhD", "PhD", "Nursing", "MD/PhD")
+
+print(programs %in% c("MD/PhD"))
+
+print(programs %in% c("MD", "MD/PhD"))
+
+print(programs %in% c("PhD", "MD/PhD"))
+print(names[programs %in% c("PhD", "MD/PhD")])
+
+```
+
 
 #Tidyr
+The `tidyr` package is about making your data.frames "tidy". Now what is meant by "tidy"? There are considered two ways to organize data tables. One is refered as "wide" format where each cell is a different observation and you have row and column names to explain what those observations are. The other foramt is called "long" format and this format is that every column is a different variable and each row is a different observation and this "long" format is the format that R is the best at for organizing. `tidyr` is all about switching between the two formats. 
 
 ##gather
+`gather()` will take a table in "wide"" format and change it into "long" format. It takes four imporant arguments, 1) the data.frame to work on, 2) the name of a new column that contain the old column names, 3) the name of new column to contain the observation that were spread out in the column table, 4) the column indexs to "gather" together.
+
+```{r}
+require(tidyr)
+require(dplyr)
+
+sheet1Wide = read_excel("ExamampleData.xlsx", "Experiment_1")
+print(sheet1Wide)
+
+sheet1Long = gather(sheet1Wide, "Conditions", "values", 2:ncol(sheet1Wide))
+print(sheet1Long)
+
+```
 
 ##spread
-
-##unite
-
+`spread()` will take a table in "long" format and change it into "wide" format, it basically just does the opposite of what `gather()`. It takes three arguments, 1) the data.frame to operate on, 2) the column to now use for column names, 3) the column that contains all the observation values.   
+```{r}
+print(sheet1Long)
+sheet1WideAgain = spread(sheet1Long, "Conditions", "values")
+print(sheet1WideAgain)
+```
+So you can see we now have the original data.frame 
 ##separate
+Sometimes you have multiple variables in one columns, especially if you used `gather()` and you need to split this column into two separate columns, for this you can use `separate`. In order for this to work you need to have separated out your variables by somesort of separator. 
+```{r}
+print(sheet1Long)
+#give 1) the data.frame, 2) the column to  
+sheet1Long = separate(sheet1Long, Conditions, c("Condition1", "Condition2"), sep = "-")
+print(sheet1Long)
+```
+##unite
+`unite()` is the opposite of `separate()` function.    
+```{r}
+sheet1Long = gather(sheet1Wide, "Conditions", "values", 2:ncol(sheet1Wide))
+sheet1Long = separate(sheet1Long, Conditions, c("Condition1", "Condition2"), sep = "-")
+print(sheet1Long)
 
+sheet1Long = unite(sheet1Long, "Conditions", Condition1, Condition2, sep = "-")
+print(sheet1Long)
+```
+#Part2 Excercises 
+
+1.  Read in the BosEpi(tab delimited) dataset and unite the Year, Month, Day columns into one column called Date, that has the format of %Y-%M-%D  
+1.  Read in the WorEpi(tab delimited) dataset and unite the Year, Month, Day columns into one column called Date, that has the format of %Y-%M-%D  
+1.  Read in both the Experiment_1 and Experiment_2 sheets of the ExamampleData.xlsx file and convert to long format. For Experiment_1 and Experiment_2 long format tables add a column to both named "Experiment" that contains the proper experiment name for which experiment they came.   
+
+1.  Take what you did for Experiment_1 above and then separate the column "Conditions" column into two separate columns  
 
 #Dplyr
+dplyr is all about manipulating datasets and getting stats on the them.  
+
+
+##select
+This is similar to above when we were selecting columns but dplyr can add some functionality to what we were doing above. 
+```{r}
+require(tidyr)
+require(dplyr)
+require(readr)
+
+bosEpi = read_tsv("BosEpi.tab.txt")
+
+# select column names
+select(bosEpi, disease, event, number)
+```
+But rather than using specific function, dplyr supplies several useful functions that you take advantage of, like `ends_with()`
+```{r}
+require(tidyr)
+require(dplyr)
+require(readr)
+
+bosEpi = read_tsv("BosEpi.tab.txt")
+
+# select column names
+select(bosEpi, ends_with("e"))
+```
+
+function| meaning  
+-----|-----  
+contains()|Select columns whose name contains a character string  
+ends_with()|Select columns whose name ends with a string  
+everything()|Select every column  
+matches()|Select columns whose name matches a regular expression  
+num_range()|Select columns named x1, x2, x3, x4, x5  
+one_of()|Select columns whose names are in a group of names   
+starts_with()|Select columns whose name starts with a character string  
+
+##filter
+You can also use dplyr `filter()` to select only certain rows of under specific conditions
+```{r}
+require(tidyr)
+require(dplyr)
+require(readr)
+
+bosEpi = read_tsv("BosEpi.tab.txt")
+
+#get data from only specific years, like the 1950-1999
+
+filter(bosEpi,  Year >= 1950 & Year < 2000)
+
+#get only certain diseases
+filter(bosEpi,  disease == "DIPHTHERIA")
+
+#get only certain diseases
+filter(bosEpi,  disease %in% c("DIPHTHERIA", "WHOOPING COUGH [PERTUSSIS]"))
+```
+
+##summarize and group_by
+```{r}
+require(tidyr)
+require(dplyr)
+require(readr)
+
+bosEpi = read_tsv("BosEpi.tab.txt")
+bosEpi = select(bosEpi, disease, event, number, Year)
+bosEpi = group_by(bosEpi,event, disease, Year )
+
+print(summarise(bosEpi,number = sum(number)))
+
+print(summarise(bosEpi,number = median(number)))
+
+bosEpi = group_by(bosEpi, event, disease)
+print(summarise(bosEpi,number = median(number)))
+```
+
+Useful function for the summarize function
+
+function| meaning  
+-----|-----   
+min(), max()| Minimum and maximum values  
+mean()|Mean value  
+median()|Median value  
+sum()|Sum of values  
+var, sd()|Variance and standard deviation of a vector  
+
+##bind_rows
+Combine two data.frames into one data.frame 
+
+```{r}
+require(tidyr)
+require(dplyr)
+require(readr)
+
+bosEpi = read_tsv("BosEpi.tab.txt")
+worEpi = read_tsv("WorEpi.tab.txt")
+
+allEpi = bind_rows(bosEpi, worEpi)
+
+```
+
+
+#Part3 Excercises 
+
+1.  Read in both the Experiment_1 and Experiment_2 sheets of the ExamampleData.xlsx file and convert to long format. For Experiment_1 and Experiment_2 long format tables add a column to both named "Experiment" that contains the proper experiment name for which experiment they came.     
+1.  Take what you did for Experiment_1 above and then separate the column "Conditions" column into two separate columns  
+1.  Combine the two data.frames into one data.frame  
+1.  group by condition 1 and by Experiment and get the mean, median, and sd
+
+
 
