@@ -18,3 +18,66 @@ require(knitr)
 opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
 options(width = 60)
 ```
+
+#Scripting
+Like most scientific fields we are always concerned with reproducibility and to that in a programing language like R you accomplish reproducibility by putting all your code into what is called scripts. To create a new R script in RStudio you simply click the `+` sign in the upper left hand corner and click `R Script` or you can use the hotkey shortcut of `Cmd + shift + n`.  
+
+#Generic Layout of a script 
+To make your life easier and the life of anyone looking at your scripts easier you normally want to keep them fairly organized. A normal layout is to have all packages or other files you will be using. Next comes any code that deals with reading and tidying up data tables. Then comes the code that does actually 
+
+##Commenting
+
+#Path
+
+#Setting/Getting Working Directory
+When working within R you have a working directory, which is where things will be output and this affects how you specify a location's path because it will be relative to this working directory. To get the working directory you use the function `getwd()`.   
+```{r}
+getwd()
+```
+You can also set your working directory by using the function `setwd()` and giving it the path to a new directory. It might be useful to save your old working directory
+
+#Reading in Data recap
+
+read_table
+read_tsv
+read_csv
+read_delim
+
+For reading in tab delimited files we have `read_tsv()` and for comma delimited files we have `read_csv()`
+Here is a [link](../datasets/WorEpi.tab.txt) to a tab delmited file
+Also a helpful function might be to use `file.choose()` 
+```{r}
+library(readr)
+library(dplyr)
+
+worEpi = read_tsv("WorEpi.tab.txt")
+str(worEpi)
+head(worEpi)
+
+bosEpi = read_tsv("BosEpi.tab.txt")
+str(bosEpi)
+head(bosEpi)
+```
+
+
+
+#Logic operators and the %in% operator
+
+#Accessing elements in a matrix/data.frame
+
+#Accesing elementins specific to data.frame
+
+#Adding columns to data.frame
+
+#Tidyr
+
+##gather
+
+##spread
+
+##separate
+
+##unite
+
+#Dplyr
+
