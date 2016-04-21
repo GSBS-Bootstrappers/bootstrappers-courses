@@ -317,9 +317,64 @@ print(sheets)
 
 ```
 
+#Accesing elements in a vector
+To access only certain elements in a vector you use the `[]` operator. You either give index/position of the elements you want or a logical vector of the same length where all the `TRUE` will be extracted. For the positions R used 1-based positions vs the more command [0-based](https://en.wikipedia.org/wiki/Zero-based_numbering) positions in various programming languages.   
+```{r}
+rNums = runif(20)
+print(rNums)
+
+#get the first element
+print(rNums[1])
+
+#get the first five elements
+print(rNums[1:5])
+```
+You can get various different positions by giving a vector of positions
+```{r}
+#get the first 1st, 3rd, and 7th elements
+print(rNums[c(1,3,7)])
+```
+You can also get multiple of the same position
+```{r}
+#get the first 1st element three times
+print(rNums[c(1,1,1)])
+```
+
+You can get the elements using logic TRUE and FALSE
+```{r}
+#get the first 1st element three times
+print(rNums> 0.5)
+print(rNums[rNums > 0.5])
+```
 
 #Accessing elements in a matrix/data.frame
-For matrixes and data.frames there are mutliple ways to access certain subsets of the data. 
+For matrixes and data.frames there are mutliple ways to access certain subsets of the data, specifically rows and columns. To select rows and columns you use the `[]` operator again. You give rows and column number separated by a comma, leaving one blank means all of them  
+```{r}
+sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+#get the first row, all columns
+sheet1[1,]
+
+#get the 1st and 3rd rows, all columns
+sheet1[c(1,3),]
+
+#get the first column, all rows
+sheet1[,1]
+
+#get the 1-3 columns, all rows
+sheet1[,1:3]
+
+#get the 1-3 columns, 1-3 rows
+sheet1[1:3,1:3]
+```
+Also the default is to assume you mean columns, so if you leave out the comma you will get those columns.  
+```{r}
+#get the 1-3 columns, all rows
+sheet1[,1:3]
+
+#same as above
+sheet1[1:3]
+```
+
 #Accesing elementins specific to data.frame
 
 #Adding columns to data.frame
