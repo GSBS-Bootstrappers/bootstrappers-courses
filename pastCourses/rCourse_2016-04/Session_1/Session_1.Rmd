@@ -134,7 +134,7 @@ operator| meaning
 !=|not equal to
 
 ##More Complex Data containers
-The majority of the time you need to store more than just one value and therefore you will need containers that can hold multiple values at once, R comes equiped with several containers already
+The majority of the time you need to store more than just one value and therefore you will need containers that can hold multiple values at once, R comes equipped with several containers already
 
 ###vectors
 Vectors are just several of the same data type hold together in one container, the most common way to create a vector is to use the concatenate function, which in R is just called `c()` for short.  
@@ -192,7 +192,7 @@ print(class(mat3))
 See `help(matrix)` for more info on how to use matrix.
 
 ###data.frame
-The data.frame is the main object in R and is the data container you most likely be dealing with the most.  It is similar to an spreadsheet/table data structure you in somethig like Excel with rows and columns, both of which can have names. The data.frame is different from the matrix because each column can have different types, though all the elements in a column have to be the same type. You will rarely have to create a data.frame by hand and the majority of the time you   
+The data.frame is the main object in R and is the data container you most likely be dealing with the most.  It is similar to an spreadsheet/table data structure you in something like Excel with rows and columns, both of which can have names. The data.frame is different from the matrix because each column can have different types, though all the elements in a column have to be the same type. You will rarely have to create a data.frame by hand and the majority of the time you   
 ```{r}
 dat = data.frame(names = c("Nick", "Mike", "Arjan", "Henry", "Jill"), duration = c(5, 5, 4, 1, 4), program = c("MD/PhD", "MD/PhD", "PhD", "MD/PhD", "PhD"))
 print(dat)
@@ -202,7 +202,7 @@ A useful function for looking at a data.frame is the `str()` function. It will t
 dat = data.frame(names = c("Nick", "Mike", "Arjan", "Henry", "Jill"), duration = c(5, 5, 4, 1, 4), program = c("MD/PhD", "MD/PhD", "PhD", "MD/PhD", "PhD"))
 str(dat)
 ```
-With the `str()` function you can see that the we have three columns with the 1st and 3rd column being factors and the 2nd column being a numeric column. You can also see that for the variables that are factors you can see that they also have thier coded numerical values next to them.  This is important to note when you are dealing with typos, for instance if we had typed this instead.   
+With the `str()` function you can see that the we have three columns with the 1st and 3rd column being factors and the 2nd column being a numeric column. You can also see that for the variables that are factors you can see that they also have their coded numerical values next to them.  This is important to note when you are dealing with typos, for instance if we had typed this instead.   
 ```{r}
 dat = data.frame(names = c("Nick", "Mike", "Arjan", "Henry", "Jill"), duration = c(5, 5, 4, 1, 4), program = c("Md/PhD", "MD/PhD", "PhD", "MD/PhD", "PhD"))
 str(dat)
@@ -212,7 +212,7 @@ You can see that we now have three levels for program rather than the two since 
 
 
 ##Installing/Loading Libraries
-To install new libraries you can use the `install.packages()` function and give it the name of a library that [The Comprehensive R Archive Network](https://cran.r-project.org/)(CRAN) has stored in their reposotories. Below is the command from the prep work to install all the libraries we will be going in the course.  
+To install new libraries you can use the `install.packages()` function and give it the name of a library that [The Comprehensive R Archive Network](https://cran.r-project.org/)(CRAN) has stored in their repositories. Below is the command from the prep work to install all the libraries we will be going in the course.  
 ```{r, eval=FALSE}
 #For reading data in
 install.packages(c("readr","readxl", "haven"))
@@ -253,7 +253,7 @@ library(readr)
 ```
 
 For reading in tab delimited files we have `read_tsv()` and for comma delimited files we have `read_csv()`
-Here is a [link](../datasets/WorEpi.tab.txt) to a tab delmited file
+Here is a [link](../datasets/WorEpi.tab.txt) to a tab delimited file
 Also a helpful function might be to use `file.choose()` 
 ```{r}
 library(readr)

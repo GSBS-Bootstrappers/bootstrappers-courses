@@ -2,12 +2,12 @@
 title: "Session 2"
 output:
   html_document:
-    toc: yes
     highlight: tango
     theme: readable
-  pdf_document:
     toc: yes
+  pdf_document:
     highlight: tango
+    toc: yes
 ---
 
 ```{r setup, echo=FALSE, message=FALSE}
@@ -20,14 +20,42 @@ options(width = 60)
 ```
 
 #Scripting
-Like most scientific fields we are always concerned with reproducibility and to that in a programing language like R you accomplish reproducibility by putting all your code into what is called scripts. To create a new R script in RStudio you simply click the `+` sign in the upper left hand corner and click `R Script` or you can use the hotkey shortcut of `Cmd + shift + n`.  
+Like most scientific fields we are always concerned with reproducibility and to that in a programming language like R you accomplish reproducibility by putting all your code into what is called scripts. To create a new R script in RStudio you simply click the `+` sign in the upper left hand corner and click `R Script` or you can use the hotkey shortcut of `Cmd + shift + n`.  
 
 #Generic Layout of a script 
-To make your life easier and the life of anyone looking at your scripts easier you normally want to keep them fairly organized. A normal layout is to have all packages or other files you will be using. Next comes any code that deals with reading and tidying up data tables. Then comes the code that does actually 
+To make your life easier and the life of anyone looking at your scripts easier you normally want to keep them fairly organized. A normal layout is to have all packages or other files you will be using. Next comes any code that deals with reading and tidying up data tables. Then comes the code that does actually analysis followed by any code that writes tables or creates figures.  
 
 ##Commenting
+To make your code more readable by other people it's good practice to do what is called commenting of your code. To do this you use the `#` symbol, whenever R sees the symbol '#' it completely ignores everything that comes after it until the next line
+
+```{r}
+#this will be ignored
+print("hello") # this will also be ignored
+```
 
 #Path
+When someone refers to a `path` they are normally talking about the location of a file or folder on a filesystem. Depending on the operating system (Windows vs Unix based(Mac, Ubuntu, etc.)) this will be represented slightly differently, specific the use of `"/"`(Unix) vs `"\" (Windows).  Lucklily R takes care of this subtlety for you and you can also use '"/"'. Another piece of terminology that is important is folders are also refered to as directories. The path is represented by naming the parent directories to a file and the path to file/folder can be relative to your current working directory (more on this below). Also giving only `"/"` is considered the very top of your fileystem or the "root" position. An easy way to show this is to use the function `list.files()` 
+```{r}
+print(list.files("/"))
+```
+Two other important pieces of information is the special way to refer to the current directory (`"."`) and the directory above the current directory (`".."`). Again lets use the list.files. 
+
+```{r}
+print(list.files(".",full.names = T))
+```
+
+```{r}
+print(list.files("..",full.names = T))
+print(getwd())
+```
+Another way to explore this idea is to use the `file.choose()` method, which actually just returns the path to whatever file you choose.
+
+```{r, eval = FALSE}
+print(file.choose())
+```
+```{r,engine='bash',echo=FALSE}
+echo "[1] \"/Users/nick/bootstrappers/bootstrappers-courses/pastCourses/rCourse_2016-04/datasets/BosEpi.tab.txt\""
+```
 
 #Setting/Getting Working Directory
 When working within R you have a working directory, which is where things will be output and this affects how you specify a location's path because it will be relative to this working directory. To get the working directory you use the function `getwd()`.   
@@ -35,36 +63,263 @@ When working within R you have a working directory, which is where things will b
 getwd()
 ```
 You can also set your working directory by using the function `setwd()` and giving it the path to a new directory. It might be useful to save your old working directory
+```{r}
+outWd = getwd()
+
+setwd("/")
+list.files(".")
+print(getwd())
+
+setwd(outWd)
+list.files(".")
+print(getwd())
+
+```
+
+#More R Basics
+
+##Logic operators and the %in% operator
+In session 1 we touched a little upon using logic comparators. They are displayed below again for reference. 
+
+operator| meaning
+-----|-----
+<|less than
+<=|less than or equal to
+>|greater than
+>=|greater than or equal to
+==|exactly equal to
+!=|not equal to
+
+When using these comparers you should only compare data of the same type/class (number to numbers, characters to characters). Also some of the comparisons only make sense for certain types of data. For example `"A" > "a"` still returns something but it might not actually be what you want. 
+
+###Comparing Numbers 
+```{r}
+10 > 12
+
+12 < 14
+
+10 > 8
+
+0.43 > 0.1 
+
+0.5 > 0.9
+
+10 <= 10
+
+12 >= 10
+
+10 != 9
+
+10 != 10
+
+10 == 10
+```
+###Comparing Letters/characters
+Most of the time for character comparisons you will be using `==` and `!=`
+```{r}
+"a" == "a"
+
+"This" != "That"
+
+"This" == "That"
+```
+###Combining multiple statements
+You can also combine logic comparisons by using the `&` and `|` symbols, `&` means both statements need to be true to evaluate to true and `|` means either statement needs to be true to be true
+
+```{r}
+10 > 10 & 10 > 9
+
+10 >= 10 & 10 > 9
+
+10 > 10 | 10 > 9
+
+```
+
+###Comparing vectors of numbers 
+You can apply logic to multiple numbers at once if they are in a vector
+```{r}
+#10 random numbers between 0 and 1
+rNums = runif(10)
+print(rNums)
+print(rNums > 0.5)
+
+```
+
+##If/else statements
+Sometimes you will encounter a situation where you have piece of data and you want to run certain code if it falls into one category or different code if it falls into a another category. You can accomplish if you use an `if` statement combined with a logic comparison. 
+
+```{r}
+x = 10
+print("Comparing x to 4")
+if(x > 4){
+  print("x is greater than 4")
+}
+print("Comparing x to 12")
+if(x > 12){
+  print("x is greater than 12")
+}
+```
+If the statement in the `if` statement evaluates to true the following code in the brackets that follow the statement will be run and will not be run if the if statements evaluates to false. To run code for when the if statement evaluates to false use the keyword `else`
+```{r}
+x = 10
+print("Comparing x to 12")
+if(x > 12){
+  print("x is greater than 12")
+}else{
+  print ("x is not greater than 12")
+}
+```
+Again you can combine multiple statements in one `if` statement
+```{r}
+x = 10
+if(x > 8 & x < 12){
+  print("x is greater than 8 and is less than 12")
+}else{
+  print ("x is either less than 8 or greater than 12")
+}
+```
+
+You can also do multiple if statements but using 'else if`
+```{r}
+name = "Arjan"
+if(name == "Nick"){
+  print("Name is Nick")
+}else if (name == "Mike"){
+  print("Name is Mike")
+}else{
+  print("Name is not Nick or Mike")
+}
+```
+
+##Looping
+Sometimes you want to run the same block of code for a list of objects. This is done by using `for` loops. The general syntax for a `for` loop is `for(var in objects){}`. For example instead of writing the following. 
+```{r}
+print(1 ^ 2)
+print(2 ^ 2)
+print(3 ^ 2)
+print(4 ^ 2)
+```
+You could write
+```{r}
+for (num in seq(1,4)){
+  print(paste("num is now",num))
+  print(num ^ 2)
+}
+```
+Num will become each object from the output of `seq(1,4)` (which is 1,2,3,4) and then the code in the brackets after the `for` statement will be run, num will be set to the next object and the code will be written again. 
+
+You could also use for loops to get all the files that end with a certain extension in the current directory
+```{r}
+allFiles = list.files(".")
+print(allFiles)
+
+#this next syntax is how you create your own function
+endsWith <- function(var, match) {
+  substr(var, pmax(1, nchar(var) - nchar(match) + 1), nchar(var)) == match
+}
+
+#get all files that end with tab.txt
+tabTxtFiles = c()
+for(file in allFiles){
+  if(endsWith(file, "tab.txt")){
+    tabTxtFiles = c(tabTxtFiles, file)
+  }
+}
+print(tabTxtFiles)
+
+```
+
+#Part 1 Exercises
+
+1.  Create a directory for today's session and download the following datasets into it, [WorEpi](WorEpi.tab.txt), [BosEpi](BosEpi.tab.txt), [Temperatures](Temperatures.txt), and [ExamampleData](ExamampleData.xlsx).    
+1.  Set your working directory to this new directory and list the file in this directory  
+1.  Using `runif()`, generate 20 random numbers and then iterate over them with a for loop and print the numbers that are greater than 0.4 and less than 0.6  
+1.  Using the above example, gather all the files that end with ".csv"
+1.  Modify the above question to gather all files that end with ".txt"
+1.  Modify the above to gather all files that end with ".csv" **or** ".txt"
+1.  If you're feeling adventurous, try creating your very own function that takes the name of a directory and returns all the files that have a certain extension, the function should take two arguments, the name of the directory to search and the extension to look for 
 
 #Reading in Data recap
+##readr
+There are several useful functions in the library `readr`, chief among them are `read_tsv`, `read_csv`, `read_table` and `read_delim`. All of these functions are used for reading in data in tables from [delimited files](https://en.wikipedia.org/wiki/Delimiter-separated_values) that are just plain text.  
 
-read_table
-read_tsv
-read_csv
-read_delim
+*  **`read_tsv`** - Read in a table that the columns are delimited by tab, "`\t`"  
+*  **`read_csv`** -  Read in a table that the columns are delimited by commas, "`,`"  
+*  **`read_table`** - Read in a table that the columns are delimited by variable amount of [whitespace](https://en.wikipedia.org/wiki/Whitespace_(programming_language)), which basically tabs and spaces, this can happen if you have output from program that uses a variable number of spaces to make your columns align    
+*  **`read_delim`** - The above three commands assume a delimiter but this function allows you to supply one if you have a case that isn't any of the above delimitations.   
 
-For reading in tab delimited files we have `read_tsv()` and for comma delimited files we have `read_csv()`
-Here is a [link](../datasets/WorEpi.tab.txt) to a tab delmited file
-Also a helpful function might be to use `file.choose()` 
+##readxl
+readxl has two functions, one to list the names of the sheets in an excel document (`excel_sheets()`) and the other to read specific sheets `read_excel()`. 
+
+List sheets
 ```{r}
-library(readr)
-library(dplyr)
+#List excel sheets
+require(readxl)
 
-worEpi = read_tsv("WorEpi.tab.txt")
-str(worEpi)
-head(worEpi)
+print(excel_sheets("ExamampleData.xlsx"))
+```
+Read in sheets, when just give the filename, it assumes you mean the first sheet 
+```{r}
+#List excel sheets
+require(readxl)
+require(dplyr)
 
-bosEpi = read_tsv("BosEpi.tab.txt")
-str(bosEpi)
-head(bosEpi)
+example = read_excel("ExamampleData.xlsx")
+print(example)
+```
+You can name by sheet number 
+```{r}
+#List excel sheets
+require(readxl)
+require(dplyr)
+
+#by number, 1
+sheet1 = read_excel("ExamampleData.xlsx", 1)
+print(sheet1)
+#by number, 2
+sheet2 = read_excel("ExamampleData.xlsx", 2)
+print(sheet2)
+```
+or by name
+```{r}
+#List excel sheets
+require(readxl)
+require(dplyr)
+
+print(excel_sheets("ExamampleData.xlsx"))
+
+#by name, "Experiment_1"
+sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+print(sheet1)
+#by name, "Experiment_2"
+sheet2 = read_excel("ExamampleData.xlsx", "Experiment_2")
+print(sheet2)
+```
+
+##Combining looping and a new container called list, read in and store all excel sheets
+A `list()` in R is able to store a different datatypes and save them under a key, for those of you who are familiar with other languages the list is similar to dictionaries or maps.  
+```{r}
+#List excel sheets
+require(readxl)
+require(dplyr)
+
+#get names
+sheetNames = excel_sheets("ExamampleData.xlsx")
+print(sheetNames)
+
+sheets = list()
+for(sheetName in sheetNames){
+  #here the bracket [] operator takes a name key (sheetName) accepts another object in a list
+  sheets[sheetName] = list(read_excel("ExamampleData.xlsx", sheetName))
+}
+
+print(sheets)
+
 ```
 
 
-
-#Logic operators and the %in% operator
-
 #Accessing elements in a matrix/data.frame
-
+For matrixes and data.frames there are mutliple ways to access certain subsets of the data. 
 #Accesing elementins specific to data.frame
 
 #Adding columns to data.frame
@@ -75,9 +330,10 @@ head(bosEpi)
 
 ##spread
 
+##unite
+
 ##separate
 
-##unite
 
 #Dplyr
 
