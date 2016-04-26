@@ -16,8 +16,311 @@ require(knitr)
 #default is to put "##" in front of all output for some reason
 #also set tidy to true so code is wrapped properly 
 opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
-options(width = 60)
+options(width = 100)
+```
+
+#Set up
+Create a directory for today's session and change your workding to this directory. Next download these three datasets and put them into this directory, [World Temp Max](tmax_worldTemp.tar.gz), [World Temp Min](tmin_worldTemp.tar.gz), [World Temp Avg](tavg_worldTemp.tar.gz). Once you have downloadt the datasets, they are compressed files they need to be opened, the decompression, downloading, and creating of the directory don't need to be done in R. 
+
+Once you have downloaded the files, take a glance at data.txt and site_detail.txt and notice how there are a lot of lines of information and not data at the top of the files that all start with `%`. Some data files may come like this where you need to ignore certain lines that contain comments, luckily our friend `readr` package allows to say that we have comment lines. You can also see that we don't have colnames    
+
+#Reading In Data and manipulating 
+```{r}
+require(readr)
+require(dplyr)
+require(tidyr)
+#read in average temperature for the world in the 90's
+tavg = read_tsv("tavg_worldTemp/data.txt", col_names = F, comment = "%")
+#read in meta data
+tavg_meta = read_tsv("tavg_worldTemp/site_detail.txt", col_names = F, comment = "%")
+```
+`col_names = F` will make it so read_tsv will not assume the first one is a column name line.`comment = "%"` will make read_tsv ignore all lines that start with `%`.   
+
+```{r, echo = F}
+tmax = read_tsv("tmax_worldTemp/data.txt", col_names = F, comment = "%")
+tmin = read_tsv("tmin_worldTemp/data.txt", col_names = F, comment = "%")
+tavg = read_tsv("tavg_worldTemp/data.txt", col_names = F, comment = "%")
+
+
+tmax_meta = read_tsv("tmax_worldTemp/site_detail.txt", col_names = F, comment = "%")
+tmin_meta = read_tsv("tmin_worldTemp/site_detail.txt", col_names = F, comment = "%")
+tavg_meta = read_tsv("tavg_worldTemp/site_detail.txt", col_names = F, comment = "%")
+```
+
+Now that we have read in the data we will need to set the column names of the data.frame so that we can make sense of the data. Looking at the comment lines we can see that the columns are `"Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation"` .
+
+```{r, echo = T}
+print(tavg)
+colnames(tavg) = c("Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation")
+print(tavg)
+```
+`colnames()` can both be used to simply see the what the colnames of data.frame are but can also be used to set the column names. Now R doesn't like it when there are spaces in the column names, so we will use gsub to replace all spaces with _ and use colnames again to set the colnames.   
+```{r, echo = T}
+colnames(tavg) = gsub(" ", "_", colnames(tavg))
+print(tavg)
+```
+gsub takes three arguments, 1) the pattern to replace, 2) the replacement, 3) the vector to perform the replacement on
+```{r, echo = F}
+colnames(tmax) = c("Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation")
+colnames(tmin) = c("Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation")
+
+colnames(tmax) = gsub(" ", "_", colnames(tmax))
+colnames(tmin) = gsub(" ", "_", colnames(tmin))
+```
+
+Now we don't need all the columns and it looks like some are place holders and don't contain real data. To make sure this is true, i like to use the `table` function.  It take a vector and counts up all the elements in it and is very useful to get a quick count of elements. 
+```{r, echo = T}
+print(table(tavg$Series_Number))
+print(table(tavg$Observations))
+```
+We can see that these columns don't contain anything useful so lets select only the colunms we want
+
+```{r, echo = T}
+tavg_sel = select(tavg, one_of("Station_ID", "Date", "Temperature_(C)"))
+
+print(tavg_sel)
+```
+Here we take advantage one of dplyr special functions `one_of` which take the columns that one of the ones given here. 
+```{r, echo = F}
+tmin_sel = select(tmin, one_of("Station_ID", "Date", "Temperature_(C)"))
+tmax_sel = select(tmax, one_of("Station_ID", "Date", "Temperature_(C)"))
+```
+
+Now we also want to rename the meta data columns names as well.  
+```{r, echo = T}
+metaCols = "Station ID, Station Name, Latitude, Longitude, Elevation (m), Lat. Uncertainty, Long. Uncertainty, Elev. Uncertainty (m), Country, State / Province Code, County, Time Zone, WMO ID, Coop ID, WBAN ID, ICAO ID, # of Relocations, # Suggested Relocations, # of Sources, Hash"
+
+colnames(tavg_meta) = gsub(" ", "_",unlist(strsplit(metaCols, ", ")))
+```
+Here I simply copied the line that contained the columns names from the site_detail.txt file. I then take advantage of the R function `strsplit()` which allows you to split a chracter string on a certain delimiter and return a list with the first item being a vector of the words split which is why we have tu unlist() the result.  We then use the same gsub command above to replace all spaces with _.  
+
+Also we are only interested in certain meta data so lets select for those columns, like above.
+
+```{r, }
+tmax_meta = select(tmax_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
+```
+```{r, echo = F}
+colnames(tmin_meta) = gsub(" ", "_",unlist(strsplit(metaCols, ", ")))
+colnames(tmax_meta) = gsub(" ", "_",unlist(strsplit(metaCols, ", ")))
+
+
+tmin_meta = select(tmin_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
+
+tavg_meta = select(tavg_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
+
+```
+
+Next, since we are going to be working the average, min, and max temperature we are going to want to edit the column names of the data. We can do this again with colnames() function but instead of changing all the columns names we can actually now just change just the one we want. 
+
+```{r}
+print(tavg_sel)
+colnames(tavg_sel)[3] = "Temp_Avg"
+print(tavg_sel)
+```
+Here we change the third column name to Temp_Avg
+
+```{r, echo = F}
+colnames(tmin_sel)[3] = "Temp_Min"
+colnames(tmax_sel)[3] = "Temp_Max"
 ```
 
 
+#Part 1 Exercises
+
+1.  Read in the data and meta data of the minimum and maximum temperatures as well and modify/select the columns like we did for the average temperature. 
+
+
+#Combining Datasets
+
+Now that we have read in the average, min, and max temperatures we want to combine the datasets into one data.frame to make furth work with the data easier.  We can accomplish this with `dplyr`'s left_join. Which can join data based on matching values in one or more columns
+
+Since all three datasets share the columns  `"Station_ID", "Date"` we'll combine the data using those. 
+```{r}
+#first join two of the datasets
+temps = left_join(tmax_sel, tmin_sel, by = c("Station_ID", "Date"))
+#then join in the last one
+temps = left_join(temps, tavg_sel, by = c("Station_ID", "Date"))
+print(temps)
+```
+
+We now have one dataset for the three and since we change the temperature column names we have three distinct columns, but now we want to have more information than just "Station_ID" which doesn't really tell us too much, so we'll now join in the data from one of the meta datasets that we read in.  
+
+```{r}
+temps = left_join(temps, tmax_meta, by = "Station_ID")
+print(temps)
+```
+Now we have all the meta data that corresponds to "Station_ID" from the meta data file in our datafile.  
+
+However our data has a date column that we want to query so we can get the actual month names rather than a fraction. To does we can use the function seperate but first we need to change the type of data of date to character so we can do certain operations on it which we use the `as.character` function.  
+
+```{r}
+temps$Date = as.character(temps$Date)
+print(temps)
+```
+Now we can seperate out by the "." to get year the month data and then convert the numbers back to actual numbers.  
+
+```{r}
+
+temps = separate(temps, Date, c("Year", "Month"), sep = c("\\."))
+
+temps$Year = as.numeric(temps$Year)
+temps$Month = as.numeric(temps$Month)
+
+print(temps)
+```
+
+But now our month column is messed up so now we have to change it so we can actually make sense of the numbers. We will use dplyr's function `mutate` which allows us to create a new column by doing calculations based on the other columns. Here we used the fact that in the data file data.txt we now that they encoded the month data as the following.   
+```{r, echo = F, engine='bash'}
+echo "% For example, in monthly data: 
+% 
+% 	January 2005 = 2005 + (1 - 0.5) / 12 = 2005.042
+% 	June 2008 = 2008 + (6 - 0.5) / 12 = 2008.458
+"
+```
+
+```{r}
+temps = mutate(temps, Month = round((Month/1000) * 12 + 0.5 ))
+```
+And then we can take advantage of the fact that R has a vector already of the months called `month.name` and that we can index into to get the month names
+
+
+```{r}
+print(month.name)
+temps = mutate(temps, MonthName = month.name[Month])
+print(temps["MonthName"])
+```
+
+We have now manipulated our original data into something usage that we now get the data we want out of it. For example if we want to get all the temperatures for the united states we can do 
+
+```{r}
+temps_usa = filter(temps, Country == "United States")
+
+print(temps_usa)
+```
+Or if we want get the temps from a certain year and from only some cities. Like below we get only the data from the Year 2000 and from the cites "SAN FRANCISCO/INTERNATIO", "BOSTON/LOGAN INT'L ARPT".   
+```{r}
+
+temps_usa_filtered = filter(temps_usa, Year ==2000, Station_Name %in% c("SAN FRANCISCO/INTERNATIO", "BOSTON/LOGAN INT'L ARPT"))
+print(temps_usa_filtered)
+```
+
+#Part 2 Exercises
+
+1.  Combine the datasets like we did above and convert the month vector over to the correct set up
+1.  Filter down the data to your favorite country or several of your favorite cities.  
+1.  If you are feeling adventurous, try convert temperature from C to F.  
+
+#Plotting
+For plotting we will be using `ggplot2` which has extensive plotting features. The interface of it takes a little bit of time to get use to but once you do it's pretty easy to manipulate. To see all the things that ggplot2 can do you can visit their site which has  lots of examples, http://docs.ggplot2.org/current/
+
+I will be showing just a few examples. First lets try a simple line plot of two cities of temperatures over a single year
+
+```{r}
+temps_usa_filtered = filter(temps_usa, Year ==2000, Station_Name %in% c("SAN FRANCISCO/INTERNATIO", "BOSTON/LOGAN INT'L ARPT"))
+```
+The way ggplot2 works is by creating objects that contain all the information that it needs to plot and will only plot once you call `print()` on this plot object. 
+
+```{r, fig.width= 20}
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+
+#lets look at what the class is for plotObj 
+print(class(plotObj))
+
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+Now this call might look intimidating and weird. So lets break it down a little bit. The first call `ggplot` will generate our base object. We need to give this our data.frame to work from, which is our first argument to ggplot. Next we want to describe to ggplot how we want the plot to look so we want to describe it's aesthetics, which you do by using the function `aes()`. In this function you tell it what will be on the x axis by giving the column name (here MonthName) and what will be on the y axis. Next we want to have separate plotting for our Stations and we want to color them by the station names as well.  Next we need to add to our plot object what type of plot we want, which for ggplot that is done with functions that all start with geom_. There are many options but most will have the same base `ggplot()` call. You can visit the site to see all the exaples and we will look at one more today. 
+
+But first can any one see that there is something wrong with out plot? 
+
+The x axis was ordered by alphabetical order but unfortunately that means that our months come in the wrong order. We could solve this by using the column that had the month numbers instead.  
+
+```{r, fig.width= 20}
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = Month, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+Oh but now the x axis labeling is kind of funny, so it would be best to keep using the month dates. Here we can take advantage of converting the months into Factors rather than the characters they are now. We can then tell R what order they should be ordered in, like below. (here we take advantage that `month.name` orders the months correctly ) 
+
+```{r, fig.width= 20}
+temps_usa_filtered$MonthName = factor(temps_usa_filtered$MonthName, levels = month.name)
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+Ah there we go, now it would be interesting to see the the mins and max as well so lets add another layer to our plot object
+
+
+```{r, fig.width= 20}
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+plotObj = plotObj + geom_errorbar(aes(ymin = Temp_Min, ymax = Temp_Max))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+Now say we wanted to view the data not as a line plot but as a bar plot instead.  
+```{r, fig.width= 20}
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity")
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+Here we had to tell geom_bar that we are supplying y values, by default it will do a histogram of counts in what we gave for `x`.  
+
+Also want to fill our bar rather than just color.  
+```{r, fig.width= 20}
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = MonthName, y = Temp_Avg, group = Station_Name, fill = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity")
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+But having our bar stacked isn't very helpful so lets tell geom_bar to put them next to each other, which this isn't done very straight forwardly but adding position = "dodge" will do it. 
+
+```{r, fig.width= 20}
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = MonthName, y = Temp_Avg, group = Station_Name, fill = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge")
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+And lets add back in the error bars which is only done properly if we dodge those as well. 
+```{r, fig.width= 20}
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = MonthName, y = Temp_Avg, group = Station_Name, fill = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge")
+plotObj = plotObj + geom_errorbar(aes(ymin = Temp_Min, ymax = Temp_Max), position = "dodge")
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+Lets change their colors to black though
+
+```{r, fig.width= 20}
+library(ggplot2)
+plotObj = ggplot(temps_usa_filtered, aes(x = MonthName, y = Temp_Avg, group = Station_Name, fill = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge")
+plotObj = plotObj + geom_errorbar(aes(ymin = Temp_Min, ymax = Temp_Max), position = "dodge", color = "black")
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+
+# Part 3 Exercises
+
+1.  Try creating some lines and bar plots comparing some cities or countries of your choosing.  
 
