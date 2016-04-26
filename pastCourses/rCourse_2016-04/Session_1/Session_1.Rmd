@@ -43,11 +43,11 @@ y = sqrt(x)
 print(y)
 ```
 When people talk about functions, they will refer to the objects being given to the functions as the function's arguments. Depending on the function, it can take several different arguments. To find out more about a function and the functions it takes, you can use the `help()` function and give it the name of function or you can use `?` and then name of the function. If you don't know the name of the function exactly or want to do a keyword search you can `??` and then a keyword. You can also just go to the bottom right window in RStudio and go to the help tab.  
-```{r}
+```{r, eval = FALSE}
 help(print)
 ```
 or
-```{r}
+```{r, eval = FALSE}
 ?print
 ```
 or to search for any topic with the word `print`

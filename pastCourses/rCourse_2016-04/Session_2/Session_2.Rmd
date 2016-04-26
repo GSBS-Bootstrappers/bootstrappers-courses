@@ -249,7 +249,7 @@ print(tabTxtFiles)
 
 #Part 1 Exercises
 
-1.  Create a directory for today's session and download the following datasets into it, [WorEpi](WorEpi.tab.txt), [BosEpi](BosEpi.tab.txt), [Temperatures](Temperatures.txt), and [ExamampleData](ExamampleData.xlsx).    
+1.  Create a directory for today's session and download the following datasets into it, [WorEpi](WorEpi.tab.txt), [BosEpi](BosEpi.tab.txt), [Temperatures](Temperatures.txt), and [ExampleData](ExampleData.xlsx).    
 1.  Set your working directory to this new directory and list the file in this directory  
 1.  Using `runif()`, generate 20 random numbers and then iterate over them with a for loop and print the numbers that are greater than 0.4 and less than 0.6  
 1.  Using the above example, gather all the files that end with ".csv"
@@ -274,7 +274,7 @@ List sheets
 #List excel sheets
 require(readxl)
 
-print(excel_sheets("ExamampleData.xlsx"))
+print(excel_sheets("ExampleData.xlsx"))
 ```
 Read in sheets, when just give the filename, it assumes you mean the first sheet 
 ```{r}
@@ -282,7 +282,7 @@ Read in sheets, when just give the filename, it assumes you mean the first sheet
 require(readxl)
 require(dplyr)
 
-example = read_excel("ExamampleData.xlsx")
+example = read_excel("ExampleData.xlsx")
 print(example)
 ```
 You can name by sheet number 
@@ -292,10 +292,10 @@ require(readxl)
 require(dplyr)
 
 #by number, 1
-sheet1 = read_excel("ExamampleData.xlsx", 1)
+sheet1 = read_excel("ExampleData.xlsx", 1)
 print(sheet1)
 #by number, 2
-sheet2 = read_excel("ExamampleData.xlsx", 2)
+sheet2 = read_excel("ExampleData.xlsx", 2)
 print(sheet2)
 ```
 or by name
@@ -304,13 +304,13 @@ or by name
 require(readxl)
 require(dplyr)
 
-print(excel_sheets("ExamampleData.xlsx"))
+print(excel_sheets("ExampleData.xlsx"))
 
 #by name, "Experiment_1"
-sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
 print(sheet1)
 #by name, "Experiment_2"
-sheet2 = read_excel("ExamampleData.xlsx", "Experiment_2")
+sheet2 = read_excel("ExampleData.xlsx", "Experiment_2")
 print(sheet2)
 ```
 
@@ -322,13 +322,13 @@ require(readxl)
 require(dplyr)
 
 #get names
-sheetNames = excel_sheets("ExamampleData.xlsx")
+sheetNames = excel_sheets("ExampleData.xlsx")
 print(sheetNames)
 
 sheets = list()
 for(sheetName in sheetNames){
   #here the bracket [] operator takes a name key (sheetName) accepts another object in a list
-  sheets[sheetName] = list(read_excel("ExamampleData.xlsx", sheetName))
+  sheets[sheetName] = list(read_excel("ExampleData.xlsx", sheetName))
 }
 
 print(sheets)
@@ -368,7 +368,7 @@ print(rNums[rNums > 0.5])
 #Accessing elements in a matrix/data.frame
 For matrixes and data.frames there are mutliple ways to access certain subsets of the data, specifically rows and columns. To select rows and columns you use the `[]` operator again. You give rows and column number separated by a comma, leaving one blank means all of them  
 ```{r}
-sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
 #get the first row, all columns
 sheet1[1,]
 
@@ -399,7 +399,7 @@ The above examples work for both matrix class and data.frame object but the next
 ##Accesing by column names using []
 With data.frame objects you can give the column name in `[]` to get those columns, you can give one or several
 ```{r}
-sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
 
 sheet1["Patient"]
 
@@ -411,7 +411,7 @@ sheet1[c("Patient", "Group1-Group1")]
 You can also access just one column by using the `$` symbol. 
 
 ```{r}
-sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
 
 sheet1$Patient
 
@@ -420,7 +420,7 @@ sheet1$'Group1-Group1'
 The difference here is that the `$` is going to give just a vector where as `[]` will actually give you back a data.frame
 
 ```{r}
-sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
 
 patientMoney = sheet1$Patient
 print(class(patientMoney))
@@ -433,12 +433,12 @@ print(class(patientBracket))
 You can also add a column with either the `[]` or the `$`. You can either give a single value that will be repeated for all the values of the column or you can give a vector of the same size. 
 
 ```{r}
-sheet1 = read_excel("ExamampleData.xlsx", "Experiment_1")
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
 
 sheet1$Experiment = "Experiment_1"
 print(sheet1)
 
-sheet2 = read_excel("ExamampleData.xlsx", "Experiment_2")
+sheet2 = read_excel("ExampleData.xlsx", "Experiment_2")
 print(rep("Experiment_2", nrow(sheet2)))
 
 sheet2["Experiment"] = rep("Experiment_2", nrow(sheet2))
@@ -473,7 +473,7 @@ The `tidyr` package is about making your data.frames "tidy". Now what is meant b
 require(tidyr)
 require(dplyr)
 
-sheet1Wide = read_excel("ExamampleData.xlsx", "Experiment_1")
+sheet1Wide = read_excel("ExampleData.xlsx", "Experiment_1")
 print(sheet1Wide)
 
 sheet1Long = gather(sheet1Wide, "Conditions", "values", 2:ncol(sheet1Wide))
@@ -511,7 +511,7 @@ print(sheet1Long)
 
 1.  Read in the BosEpi(tab delimited) dataset and unite the Year, Month, Day columns into one column called Date, that has the format of %Y-%M-%D  
 1.  Read in the WorEpi(tab delimited) dataset and unite the Year, Month, Day columns into one column called Date, that has the format of %Y-%M-%D  
-1.  Read in both the Experiment_1 and Experiment_2 sheets of the ExamampleData.xlsx file and convert to long format. For Experiment_1 and Experiment_2 long format tables add a column to both named "Experiment" that contains the proper experiment name for which experiment they came.   
+1.  Read in both the Experiment_1 and Experiment_2 sheets of the ExampleData.xlsx file and convert to long format. For Experiment_1 and Experiment_2 long format tables add a column to both named "Experiment" that contains the proper experiment name for which experiment they came.   
 
 1.  Take what you did for Experiment_1 above and then separate the column "Conditions" column into two separate columns  
 
@@ -619,7 +619,7 @@ allEpi = bind_rows(bosEpi, worEpi)
 
 #Part3 Excercises 
 
-1.  Read in both the Experiment_1 and Experiment_2 sheets of the ExamampleData.xlsx file and convert to long format. For Experiment_1 and Experiment_2 long format tables add a column to both named "Experiment" that contains the proper experiment name for which experiment they came.     
+1.  Read in both the Experiment_1 and Experiment_2 sheets of the ExampleData.xlsx file and convert to long format. For Experiment_1 and Experiment_2 long format tables add a column to both named "Experiment" that contains the proper experiment name for which experiment they came.     
 1.  Take what you did for Experiment_1 above and then separate the column "Conditions" column into two separate columns  
 1.  Combine the two data.frames into one data.frame  
 1.  group by condition 1 and by Experiment and get the mean, median, and sd
