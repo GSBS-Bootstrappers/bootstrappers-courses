@@ -97,7 +97,8 @@ Here I simply copied the line that contained the columns names from the site_det
 Also we are only interested in certain meta data so lets select for those columns, like above.
 
 ```{r, }
-tmax_meta = select(tmax_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
+tavg_meta = select(tavg_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
+
 ```
 ```{r, echo = F}
 colnames(tmin_meta) = gsub(" ", "_",unlist(strsplit(metaCols, ", ")))
@@ -106,7 +107,7 @@ colnames(tmax_meta) = gsub(" ", "_",unlist(strsplit(metaCols, ", ")))
 
 tmin_meta = select(tmin_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
 
-tavg_meta = select(tavg_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
+tmax_meta = select(tmax_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
 
 ```
 
