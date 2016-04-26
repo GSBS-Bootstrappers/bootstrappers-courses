@@ -1,13 +1,14 @@
 ---
-title: "Session 3"
+title: "Combing Excel Sheets into One data.frame"
+author: "Nicholas Hathaway"
 output:
   html_document:
-    toc: yes
     highlight: tango
     theme: readable
-  pdf_document:
     toc: yes
+  pdf_document:
     highlight: tango
+    toc: yes
 ---
 
 ```{r setup, echo=FALSE, message=FALSE}
