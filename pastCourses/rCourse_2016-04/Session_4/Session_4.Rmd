@@ -28,14 +28,14 @@ require(dplyr)
 require(ggplot2)
 require(easyGgplot2)
 
-tmax = read_tsv("~/ownCloud/documents/r_course/tmax_worldTemp/data.txt", col_names = F, comment = "%")
-tmin = read_tsv("~/ownCloud/documents/r_course/tmin_worldTemp/data.txt", col_names = F, comment = "%")
-tavg = read_tsv("~/ownCloud/documents/r_course/tavg_worldTemp/data.txt", col_names = F, comment = "%")
+tmax = read_tsv("= tmax_worldTemp/data.txt", col_names = F, comment = "%")
+tmin = read_tsv("= tmin_worldTemp/data.txt", col_names = F, comment = "%")
+tavg = read_tsv("= tavg_worldTemp/data.txt", col_names = F, comment = "%")
 
 
-tmax_meta = read_tsv("~/ownCloud/documents/r_course/tmax_worldTemp/site_detail.txt", col_names = F, comment = "%")
-tmin_meta = read_tsv("~/ownCloud/documents/r_course/tmin_worldTemp/site_detail.txt", col_names = F, comment = "%")
-tavg_meta = read_tsv("~/ownCloud/documents/r_course/tavg_worldTemp/site_detail.txt", col_names = F, comment = "%")
+tmax_meta = read_tsv("= tmax_worldTemp/site_detail.txt", col_names = F, comment = "%")
+tmin_meta = read_tsv("= tmin_worldTemp/site_detail.txt", col_names = F, comment = "%")
+tavg_meta = read_tsv("= tavg_worldTemp/site_detail.txt", col_names = F, comment = "%")
 
 colnames(tmax) = c("Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation")
 colnames(tmin) = c("Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation")
