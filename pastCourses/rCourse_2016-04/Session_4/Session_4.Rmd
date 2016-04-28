@@ -15,6 +15,509 @@ require(knitr)
 #turn off mesages and warnings and make it so output isn't prefixed by anything,
 #default is to put "##" in front of all output for some reason
 #also set tidy to true so code is wrapped properly 
-opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
-options(width = 60)
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "", cache =TRUE)
+options(width = 100)
 ```
+
+#Setup
+From [Session 3](../Session_3/Session_3.html), reading in and manipulating data from the temperature data set. 
+```{r}
+require(readr)
+require(tidyr)
+require(dplyr)
+require(ggplot2)
+require(easyGgplot2)
+
+tmax = read_tsv("~/ownCloud/documents/r_course/tmax_worldTemp/data.txt", col_names = F, comment = "%")
+tmin = read_tsv("~/ownCloud/documents/r_course/tmin_worldTemp/data.txt", col_names = F, comment = "%")
+tavg = read_tsv("~/ownCloud/documents/r_course/tavg_worldTemp/data.txt", col_names = F, comment = "%")
+
+
+tmax_meta = read_tsv("~/ownCloud/documents/r_course/tmax_worldTemp/site_detail.txt", col_names = F, comment = "%")
+tmin_meta = read_tsv("~/ownCloud/documents/r_course/tmin_worldTemp/site_detail.txt", col_names = F, comment = "%")
+tavg_meta = read_tsv("~/ownCloud/documents/r_course/tavg_worldTemp/site_detail.txt", col_names = F, comment = "%")
+
+colnames(tmax) = c("Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation")
+colnames(tmin) = c("Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation")
+colnames(tavg) = c("Station ID", "Series Number", "Date", "Temperature (C)", "Uncertainty (C)","Observations","Time of Observation")
+
+colnames(tmax) = gsub(" ", "_", colnames(tmax))
+colnames(tmin) = gsub(" ", "_", colnames(tmin))
+colnames(tavg) = gsub(" ", "_", colnames(tavg))
+
+metaCols = "Station ID, Station Name, Latitude, Longitude, Elevation (m), Lat. Uncertainty, Long. Uncertainty, Elev. Uncertainty (m), Country, State / Province Code, County, Time Zone, WMO ID, Coop ID, WBAN ID, ICAO ID, # of Relocations, # Suggested Relocations, # of Sources, Hash"
+
+colnames(tmax_meta) = gsub(" ", "_",unlist(strsplit(metaCols, ", ")))
+colnames(tmin_meta) = gsub(" ", "_",unlist(strsplit(metaCols, ", ")))
+colnames(tavg_meta) = gsub(" ", "_",unlist(strsplit(metaCols, ", ")))
+
+tmax_meta = select(tmax_meta, one_of("Station_ID", "Station_Name", "Latitude", "Longitude", "Country", "State_/_Province_Code"))
+
+tmax_sel = select(tmax, one_of("Station_ID", "Date", "Temperature_(C)"))
+tmin_sel = select(tmin, one_of("Station_ID", "Date", "Temperature_(C)"))
+tavg_sel = select(tavg, one_of("Station_ID", "Date", "Temperature_(C)"))
+
+colnames(tmax_sel)[3] = "Temp_Max"
+colnames(tmin_sel)[3] = "Temp_Min"
+colnames(tavg_sel)[3] = "Temp_Avg"
+
+temps = left_join(tmax_sel, tmin_sel, by = c("Station_ID", "Date"))
+temps = left_join(temps, tavg_sel, by = c("Station_ID", "Date"))
+
+temps$Date = as.character(temps$Date)
+temps = separate(temps, Date, c("Year", "Month"), sep = c("\\."))
+
+temps$Year = as.numeric(temps$Year)
+temps$Month = as.numeric(temps$Month)
+
+temps = mutate(temps, Month = round((Month/1000) * 12 + 0.5 ))
+temps = mutate(temps, MonthName = month.name[Month])
+
+temps = left_join(temps, tmax_meta, by = "Station_ID")
+
+temps_usa = filter(temps, Country == "United States")
+temps_usa$MonthName = factor(temps_usa$MonthName, levels = month.name)
+
+temps_usa_sanBos = filter(temps_usa, Station_Name %in% c("SAN FRANCISCO/INTERNATIO", "BOSTON/LOGAN INT'L ARPT"))
+
+```
+
+#Tweaking Graphs
+When it comes to plotting in R you will be doing a lot of tweaking of graphing parameters just like you would in a graphical editor but the tweaking is done by writing more code which will probably take some taking use to. Below I have some common examples of tweaking graphs using examples from Session 3. 
+##Line Plot
+Below will graph the San Francisco and Boston dataset and we will give it a filtered dataset so that we are only graphing the year 2000. Again in ggplot call the first argument is the data we will be graphing, next comes some descriptions for the graph that comes in the ggplot2 supplied function aes (again stands for aesthetics), here we give it column names of what we want to graph, so we want the months to be the x axis and y axis to be the average temperature, and we want to group and color by Station_Name  
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+##Chaning the colors
+By default ggplot2 will choose some colors for you, but these aren't always the best colors to use. They have a wide variety of functions that can be used to change the colors being used. One among is the the scale\_color\_brewer function which is used to modify anything being colored by the color setting in aes() and the brewer stands for [ColorBrewer colors](http://colorbrewer2.org/), which is a great site for choosing color paletes.  
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_color_brewer(type = "qual")
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+##Supplying own colors
+You can use `scale_color_manual` function to give your own colors by setting `values` in `scale_color_manual` to a vector of colors. R has a bunch of named colors and you can give one of these names to change the colors. 
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_color_manual(values = c("purple", "green"))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+You can also give the hex number of a color if you know it. 
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_color_manual(values = c("#FF00FF", "#FFFF00"))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+There is also a packaged called RColorBrewer that implements ColorBrewer color paletes for you, you can see all available paletes with `RColorBrewer::display.brewer.all()` and then choose a palete and the number of colors needed by using `RColorBrewer::brewer.pal()`, my favorite is `"Dark2"`. 
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+##Adding x and y labels and a title
+You can add a x axis label and a y axis label by using xlab() and ylab() respectively. You can also insert special symbols like the degree symbols by using the function `expression` or you can just simply give a character name to use. To add a title use `ggtitle()`.  
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+##Changing the background and fonts
+Some people don't like the background that ggplot2 uses by default, you can choose different background by modifying it by using theme() or choose a preset theme, like `theme_bw()`. 
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+You can use the ggplot2 function `theme()` to modifying many aspects of the plot, use `help(theme)` to see the wide range of things to change. In fact `theme_bw()` uses most of these, just theme `theme_bw` without the parenthesis to see what it does (you can in fact do this for any R function)
+
+```{r}
+theme_bw
+```
+The options supplied to theme below will change the font to bold, color black ("#000000") etc. and make the labels vertical for the text on the x axis.
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+plotObj = plotObj + theme_bw()
+plotObj = plotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+##Ribbon Plot
+In Session 3 we included the min and max temperatures by using `geom_errorbar` but another option is to use `geom_ribbon` which in my opinion looks a little bit better than the error bars. Similar to the `geom_erorbar` we need to give the ymin and the ymax in `aes()` in the `geom_ribbon` layer and the coloring of the ribbon is controled by `fill` while line was controled by `color`. Since ggplot2 will do things in the order in which they were added you should add the ribbon layer first so that the line layer will be plotted over it 
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_ribbon(aes(ymin = Temp_Min, ymax = Temp_Max, fill = Station_Name))
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+plotObj = plotObj + theme_bw()
+plotObj = plotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+###Controlling fill colors
+Similarly to control the color we can control the fill's color by the similar funtion `scale_fill_manual` etc.  
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_ribbon(aes(ymin = Temp_Min, ymax = Temp_Max, fill = Station_Name))
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + theme_bw()
+plotObj = plotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+###Making colors transparent
+We have lost contrast between the color of our line and the color of the ribbon so we want the ribbon color to be look similar to the color of the line but not quite also it would be nice to make it transparant so things behind it can be somewhat seen. To do this we can use the `scales::alpha` function. This takes a vector of colors and adds an alpha value to them, the alpha value controls how transparant a color is, it ranges from 0 (completely transparnt) to 1 (solid).  
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_ribbon(aes(ymin = Temp_Min, ymax = Temp_Max, fill = Station_Name))
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_fill_manual(values = scales::alpha(RColorBrewer::brewer.pal(3, "Dark2"), 0.5))
+plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+plotObj = plotObj + theme_bw()
+plotObj = plotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+Since `geom_ribbon` is also control by the `color` setting in the base ggplot2 call there is a solid color line around our ribbon. We can get rid of this by setting `color` in the ribbon layer to a color with an alpha value of 00 (in a color hex string the 6th and 7th characters supply the alpha value to color). Very imporant here is that we are setting color outside of the `aes()`, when this is done you can setting a global color for all data points, where as when you are setting `color` in `aes()` you can setting color parameter that is determinant on a piece of data. 
+```{r, fig.width= 10, fig.height=4}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+plotObj = plotObj + geom_ribbon(aes(ymin = Temp_Min, ymax = Temp_Max, fill = Station_Name), color = "#FFFFFF00")
+plotObj = plotObj + geom_line()
+plotObj = plotObj + scale_fill_manual(values = scales::alpha(RColorBrewer::brewer.pal(3, "Dark2"), 0.5))
+plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + theme_bw()
+plotObj = plotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+```
+
+##Bar Plot
+For our bar plot lets first use the `mutate` function to convert our temperatures values
+```{r, fig.width= 10, fig.height=4}
+temps_usa_sanBos = mutate(temps_usa_sanBos, Temp_Avg_F = Temp_Avg * 1.8 + 32)
+```
+Here is a barplot similar to our plot in session 3.
+```{r, fig.width= 20, fig.height=8}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+###Adding Text 
+For our barplot it would be helpful to add text to the top of the plots to be able to see what values they are better. This can be done by adding the `geom_text` layer which takes a column for the text by setting `label` and the height to place it at by setting `y`.  
+```{r, fig.width= 20, fig.height=8}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+plotObj = plotObj + geom_text(aes(y = Temp_Avg_F, label = Temp_Avg_F))
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+Hmm, unfortunately our text doesn't quite line up with out bars because we had the bars no stack, but we can tell the text to also dodge their positions as well. 
+```{r, fig.width= 20, fig.height=8}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+plotObj = plotObj + geom_text(aes(y = Temp_Avg_F, label = Temp_Avg_F), position = position_dodge(width = .5))
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+The text is sitting right at the top but they are hard to see so lets adjust it's `y` positioning a little by adding `2`
+```{r, fig.width= 20, fig.height=8}
+plotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+plotObj = plotObj + geom_text(aes(y = Temp_Avg_F + 2, label = Temp_Avg_F), position = position_dodge(width = .5))
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + ggtitle("Year 2000")
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+
+#Part1 Exercises
+
+1.  Pick any two Stations and create a ribbon plot and a bargraph from their data from the year 1995. 
+1.  Try adding more stations to add to both plots 
+
+#faceting
+So far we have been plotting just one year but it would be interesting to see all the years we have available but they don't fit very well on one plot so we can use the ggplot2 function `facet_wrap` to our advantage. Now we can give all the years by no longer calling filter on the input. We also add the facet which it's arguments look a little funny but it first starts with a `~` knwon as the tilde and then what you want to facet on. 
+```{r, fig.width= 20, fig.height=8}
+plotObj = ggplot(temps_usa_sanBos, aes(x = MonthName, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+plotObj = plotObj + geom_text(aes(y = Temp_Avg_F + 2, label = Temp_Avg_F), position = position_dodge(width = .5))
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + facet_wrap(~Year)
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+
+You can tell facet how many columns to use  
+```{r, fig.width= 20, fig.height=16}
+plotObj = ggplot(temps_usa_sanBos, aes(x = MonthName, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+plotObj = plotObj + geom_text(aes(y = Temp_Avg_F + 2, label = Temp_Avg_F), position = position_dodge(width = .5))
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + facet_wrap(~Year, ncol = 2)
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+Now we can use faceting to our advantage and create several different plots, so now it's plot year on the x axis and then facet by month so we can see the difference for a specific month over the years.  
+```{r, fig.width= 20, fig.height=16}
+plotObj = ggplot(temps_usa_sanBos, aes(x = Year, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+plotObj = plotObj + geom_text(aes(y = Temp_Avg_F + 2, label = Temp_Avg_F), position = position_dodge(width = .5))
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + facet_wrap(~MonthName, ncol = 2)
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+You can also add more to facet by using the `*` symbol and add more column names. 
+```{r, fig.width= 20, fig.height=16}
+plotObj = ggplot(temps_usa_sanBos, aes(x = Year, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+plotObj = plotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+plotObj = plotObj + geom_text(aes(y = Temp_Avg_F + 2, label = Temp_Avg_F), position = position_dodge(width = .5))
+plotObj = plotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+plotObj = plotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+plotObj = plotObj + facet_wrap(~MonthName*Station_Name, ncol = 2)
+plotObj = plotObj + scale_x_continuous(breaks = seq(1990, 2000))
+plotObj = plotObj + theme_bw()
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+
+#multiplot
+While faceting is useful for plotting very similar data, you might sometimes run into a situtation where you want to put two different kinds of plots on one page. You can use the function `ggplot2.multiplot` from easyGgplot2 library. You have to give this function several ggplot2 objects and it will plot them on one page.  
+```{r, fig.width= 20, fig.height=16}
+barPlotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+barPlotObj = barPlotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+barPlotObj = barPlotObj + geom_text(aes(y = Temp_Avg_F + 2, label = Temp_Avg_F), position = position_dodge(width = .5))
+barPlotObj = barPlotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+barPlotObj = barPlotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+barPlotObj = barPlotObj + ggtitle("Year 2000")
+barPlotObj = barPlotObj + theme_bw()
+barPlotObj = barPlotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+
+ribbonPlotObj = ggplot(filter(temps_usa_sanBos, Year == 2000), aes(x = MonthName, y = Temp_Avg, group = Station_Name, color = Station_Name) ) 
+ribbonPlotObj = ribbonPlotObj + geom_ribbon(aes(ymin = Temp_Min, ymax = Temp_Max, fill = Station_Name), color = "#FFFFFF00")
+ribbonPlotObj = ribbonPlotObj + geom_line()
+ribbonPlotObj = ribbonPlotObj + scale_fill_manual(values = scales::alpha(RColorBrewer::brewer.pal(3, "Dark2"), 0.5))
+ribbonPlotObj = ribbonPlotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+ribbonPlotObj = ribbonPlotObj + theme_bw()
+ribbonPlotObj = ribbonPlotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+ribbonPlotObj = ribbonPlotObj + ggtitle("Year 2000")
+ribbonPlotObj = ribbonPlotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+
+easyGgplot2::ggplot2.multiplot(barPlotObj, ribbonPlotObj)
+
+```
+Like the facet function you can tell it how many columns to use
+```{r, fig.width= 20, fig.height=16}
+easyGgplot2::ggplot2.multiplot(barPlotObj, ribbonPlotObj, cols = 1)
+```
+
+#saving plots
+Now we have been just plotting to the plotting window in RStudio but R actually offers the ability to plot directly to images files (like png, jpeg etc) or to vector graphic files like pdfs and svgs. To do this you need to start a plotting device before calling your plot commands. You can start the pdf plot command by just calling `pdf()` and supplying a filename. 
+```{r}
+pdf("outplot.pdf")
+print(ribbonPlotObj)
+dev.off()
+```
+[Results here](outplot.pdf)
+
+Once you have finished calling your plot commands you need to turn off the device by calling `dev.off()`. 
+
+By default the pdf device will create a plot of `letter` potrait size. You can change this by giing width and height values. 
+```{r}
+pdf("outplot_landscape.pdf", width = 11, height = 8)
+print(ribbonPlotObj)
+dev.off()
+```
+[Results here](outplot_landscape.pdf)
+
+Each plot command you call before you turn off the device will add another page to the pdf with the new plot. 
+```{r}
+pdf("outplot_multiplot.pdf", width = 11, height = 8)
+print(ribbonPlotObj)
+print(barPlotObj)
+easyGgplot2::ggplot2.multiplot(barPlotObj, ribbonPlotObj, cols = 1)
+dev.off()
+```
+[Results here](outplot_multiplot.pdf)
+
+Also if you are planning on editing your pdfs in inkscape or illustrator you need to use the parameter `useDingbats = F`, don't ask me why, no idea.  
+```{r}
+pdf("outplot_multiplot.pdf", width = 11, height = 8, useDingbats = F)
+print(ribbonPlotObj)
+print(barPlotObj)
+easyGgplot2::ggplot2.multiplot(barPlotObj, ribbonPlotObj, cols = 1)
+dev.off()
+```
+
+[Results here](outplot_multiplot.pdf)
+
+Plotting multiple pages is a good opurtunity to use a for loop to plot several different plots in one file. 
+```{r}
+pdf("outplot_allYears.pdf", width = 11, height = 8, useDingbats = F)
+for(year in seq(1991, 2000)){
+  barPlotObj = ggplot(filter(temps_usa_sanBos, Year == year), aes(x = MonthName, y = Temp_Avg_F, group = Station_Name, fill = Station_Name) ) 
+  barPlotObj = barPlotObj + geom_bar(stat = "identity",  position = "dodge", width = .5)
+  barPlotObj = barPlotObj + geom_text(aes(y = Temp_Avg_F + 2, label = Temp_Avg_F), position = position_dodge(width = .5))
+  barPlotObj = barPlotObj + scale_fill_manual(values = RColorBrewer::brewer.pal(3, "Dark2"))
+  barPlotObj = barPlotObj + ylab(expression(paste("Temperature ( ", degree ~ F, " )"))) + xlab("Month")
+  barPlotObj = barPlotObj + ggtitle(paste("Year", as.character(year)))
+  barPlotObj = barPlotObj + theme_bw()
+  barPlotObj = barPlotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+  print(barPlotObj)
+}
+dev.off()
+```
+[Results here](outplot_allYears.pdf)
+
+
+#Using the pipe operator 
+```{r}
+fullDataCounnts = group_by(temps_usa, Station_Name, Year)
+fullDataCounnts = summarise(fullDataCounnts, n = n()) 
+fullDataCounnts
+fullDataCounnts = filter(fullDataCounnts, n == 12)
+fullDataCounnts
+fullDataCounnts = group_by(fullDataCounnts, Station_Name)
+fullDataCounnts = summarise(fullDataCounnts, n = n())
+fullDataCounnts
+fullDataCounnts = filter(fullDataCounnts, n == 10)
+fullDataCounnts
+```
+```{r, eval = F}
+fullDataCounnts = group_by(temps_usa, Station_Name, Year)
+fullDataCounnts = temps_usa %>% group_by(Station_Name, Year)
+
+fullDataCounnts = summarise(fullDataCounnts, n = n()) 
+fullDataCounnts = fullDataCounnts %>%  summarise(n = n()) 
+
+fullDataCounnts = temps_usa %>% group_by(Station_Name, Year) %>% summarise(n = n()) 
+
+```
+```{r}
+fullDataCounnts = group_by(temps_usa, Station_Name, Year)
+fullDataCounnts = summarise(fullDataCounnts, n = n()) 
+fullDataCounnts = filter(fullDataCounnts, n == 12)
+fullDataCounnts = group_by(fullDataCounnts, Station_Name)
+fullDataCounnts = summarise(fullDataCounnts, n = n())
+fullDataCounnts = filter(fullDataCounnts, n == 10)
+```
+```{r}
+fullDataCounnts = temps_usa  %>% 
+  group_by(Station_Name, Year)  %>% 
+  summarise(n = n())  %>% 
+  filter(n == 12) %>%
+  group_by(Station_Name)  %>%  
+  summarise(n = n())  %>% 
+  filter(n == 10)
+```
+
+```{r}
+fullData = filter(temps_usa, Station_Name %in% fullDataCounnts$Station_Name)
+```
+
+```{r}
+fullData = unite(fullData, Station_Name, Station_Name, `State_/_Province_Code`, sep = "/")
+fullData = mutate(fullData, Date = Year + (Month - 0.5)/12)
+fullData_Sel = select(fullData, Station_Name, Date, Temp_Avg)
+fullData_Sel_wide = spread(fullData_Sel, Date, Temp_Avg)
+print(fullData_Sel_wide)
+```
+
+```{r}
+stationNames = fullData_Sel_wide$Station_Name
+fullData_Sel_wide = fullData_Sel_wide[,-1]
+fullData_Sel_wide_mat = as.matrix(fullData_Sel_wide)
+rownames(fullData_Sel_wide_mat) = stationNames
+```
+
+#heatmaps
+
+```{r, fig.width= 10, fig.height=8}
+plotObj = ggplot(fullData, aes(x = Date, y = Station_Name, fill = Temp_Avg) ) 
+plotObj = plotObj + geom_tile() 
+plotObj = plotObj + theme(axis.text.x = element_text(family = "Helvetica", face="bold", colour="#000000", size=10, angle = 90, hjust = 1))
+#now lets call print(plotObj) to generate the plot
+print(plotObj)
+
+```
+
+```{r, fig.width= 10, fig.height=8}
+library(gplots)
+
+heatmap.2(fullData_Sel_wide_mat, Colv=NA, col = rev(RColorBrewer::brewer.pal(11,"RdBu")), trace="none")
+```
+
+#interactive heatmaps
+```{r, fig.width= 10, fig.height=8, cache=FALSE}
+library(d3heatmap)
+
+d3heatmap(fullData_Sel_wide_mat)
+
+d3heatmap(fullData_Sel_wide_mat, colors = rev(RColorBrewer::brewer.pal(11,"RdBu")))
+
+d3heatmap(fullData_Sel_wide_mat, Colv=NA, colors = rev(RColorBrewer::brewer.pal(11,"RdBu")))
+```
+
