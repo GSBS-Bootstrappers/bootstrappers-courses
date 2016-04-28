@@ -102,6 +102,7 @@ plotObj = plotObj + scale_color_brewer(type = "qual")
 #now lets call print(plotObj) to generate the plot
 print(plotObj)
 ```
+
 ##Supplying own colors
 You can use `scale_color_manual` function to give your own colors by setting `values` in `scale_color_manual` to a vector of colors. R has a bunch of named colors and you can give one of these names to change the colors. 
 ```{r, fig.width= 10, fig.height=4}
@@ -127,6 +128,7 @@ plotObj = plotObj + scale_color_manual(values = RColorBrewer::brewer.pal(3, "Dar
 #now lets call print(plotObj) to generate the plot
 print(plotObj)
 ```
+
 ##Adding x and y labels and a title
 You can add a x axis label and a y axis label by using xlab() and ylab() respectively. You can also insert special symbols like the degree symbols by using the function `expression` or you can just simply give a character name to use. To add a title use `ggtitle()`.  
 ```{r, fig.width= 10, fig.height=4}
@@ -138,6 +140,7 @@ plotObj = plotObj + ggtitle("Year 2000")
 #now lets call print(plotObj) to generate the plot
 print(plotObj)
 ```
+
 ##Changing the background and fonts
 Some people don't like the background that ggplot2 uses by default, you can choose different background by modifying it by using theme() or choose a preset theme, like `theme_bw()`. 
 ```{r, fig.width= 10, fig.height=4}
@@ -183,6 +186,7 @@ plotObj = plotObj + theme(axis.text.x = element_text(family = "Helvetica", face=
 print(plotObj)
 
 ```
+
 ###Controlling fill colors
 Similarly to control the color we can control the fill's color by the similar funtion `scale_fill_manual` etc.  
 ```{r, fig.width= 10, fig.height=4}
@@ -196,6 +200,7 @@ plotObj = plotObj + theme(axis.text.x = element_text(family = "Helvetica", face=
 #now lets call print(plotObj) to generate the plot
 print(plotObj)
 ```
+
 ###Making colors transparent
 We have lost contrast between the color of our line and the color of the ribbon so we want the ribbon color to be look similar to the color of the line but not quite also it would be nice to make it transparant so things behind it can be somewhat seen. To do this we can use the `scales::alpha` function. This takes a vector of colors and adds an alpha value to them, the alpha value controls how transparant a color is, it ranges from 0 (completely transparnt) to 1 (solid).  
 ```{r, fig.width= 10, fig.height=4}
@@ -242,6 +247,7 @@ plotObj = plotObj + theme_bw()
 print(plotObj)
 
 ```
+
 ###Adding Text 
 For our barplot it would be helpful to add text to the top of the plots to be able to see what values they are better. This can be done by adding the `geom_text` layer which takes a column for the text by setting `label` and the height to place it at by setting `y`.  
 ```{r, fig.width= 20, fig.height=8}
@@ -433,7 +439,15 @@ dev.off()
 [Results here](outplot_allYears.pdf)
 
 
+# Part 2 Exercises
+
+1.  Try out creating png images from your prevoius plots
+1.  Try making multi paged pdfs with some faceted plots and some multiplots
+
 #Using the pipe operator 
+
+So we now want to plot some heatmaps for our temperatures, to do that we need to rearrange our data into the wide format and convert it into a matrix.  
+
 ```{r}
 fullDataCounnts = group_by(temps_usa, Station_Name, Year)
 fullDataCounnts = summarise(fullDataCounnts, n = n()) 
@@ -456,6 +470,8 @@ fullDataCounnts = fullDataCounnts %>%  summarise(n = n())
 fullDataCounnts = temps_usa %>% group_by(Station_Name, Year) %>% summarise(n = n()) 
 
 ```
+
+So instead of doing this, we could do whats below this
 ```{r}
 fullDataCounnts = group_by(temps_usa, Station_Name, Year)
 fullDataCounnts = summarise(fullDataCounnts, n = n()) 
@@ -473,6 +489,8 @@ fullDataCounnts = temps_usa  %>%
   summarise(n = n())  %>% 
   filter(n == 10)
 ```
+
+Now that we have a data.frame with only stations that have full data sets for all years and all months 
 
 ```{r}
 fullData = filter(temps_usa, Station_Name %in% fullDataCounnts$Station_Name)
@@ -520,4 +538,12 @@ d3heatmap(fullData_Sel_wide_mat, colors = rev(RColorBrewer::brewer.pal(11,"RdBu"
 
 d3heatmap(fullData_Sel_wide_mat, Colv=NA, colors = rev(RColorBrewer::brewer.pal(11,"RdBu")))
 ```
+
+
+# Part 3 Excersises 
+
+1.  Choose a country and plot an interactive heatmap of this country 
+
+
+
 
