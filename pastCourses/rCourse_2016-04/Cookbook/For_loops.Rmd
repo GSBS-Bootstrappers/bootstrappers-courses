@@ -1,6 +1,6 @@
 ---
 title: "For Loops"
-author: "Nicholas Hathaway"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
 output:
   html_document:
     highlight: tango

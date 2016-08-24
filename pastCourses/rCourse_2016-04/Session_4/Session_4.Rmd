@@ -1,5 +1,6 @@
 ---
 title: "Session 4"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
 output:
   html_document:
     toc: yes

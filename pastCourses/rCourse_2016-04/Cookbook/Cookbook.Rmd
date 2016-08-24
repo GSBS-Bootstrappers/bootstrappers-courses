@@ -1,6 +1,6 @@
 ---
 title: "R Cookbook"
-author: "Nicholas Hathaway"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
 output:
   html_document:
     toc: yes

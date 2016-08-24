@@ -1,5 +1,6 @@
 ---
 title: "Additional Plotting Aspects"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
 output: 
   html_document:
     highlight: tango

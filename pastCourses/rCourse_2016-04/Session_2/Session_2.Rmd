@@ -1,5 +1,6 @@
 ---
 title: "Session 2"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
 output:
   html_document:
     highlight: tango
@@ -34,10 +35,12 @@ print("hello") # this will also be ignored
 ```
 
 #Path
-When someone refers to a `path` they are normally talking about the location of a file or folder on a filesystem. Depending on the operating system (Windows vs Unix based(Mac, Ubuntu, etc.)) this will be represented slightly differently, specific the use of `"/"`(Unix) vs `"\" (Windows).  Lucklily R takes care of this subtlety for you and you can also use '"/"'. Another piece of terminology that is important is folders are also refered to as directories. The path is represented by naming the parent directories to a file and the path to file/folder can be relative to your current working directory (more on this below). Also giving only `"/"` is considered the very top of your fileystem or the "root" position. An easy way to show this is to use the function `list.files()` 
+When someone refers to a `path` they are normally talking about the location of a file or folder on a filesystem. Depending on the operating system (Windows vs Unix based(Mac, Ubuntu, etc.)) this will be represented slightly differently, specifically the use of `"/"`(Unix) vs `"\"` (Windows).  Lucklily R takes care of this subtlety for you and you can also use `"/"`. Another piece of terminology that is important is folders are also refered to as directories. The path is represented by naming the parent directories to a file and the path to file/folder can be relative to your current working directory (more on this below). Also giving only `"/"` is considered the very top of your fileystem or the "root" position. An easy way to show this is to use the function `list.files()` 
+
 ```{r}
 print(list.files("/"))
 ```
+
 Two other important pieces of information is the special way to refer to the current directory (`"."`) and the directory above the current directory (`".."`). Again lets use the list.files. 
 
 ```{r}
@@ -124,7 +127,7 @@ Most of the time for character comparisons you will be using `==` and `!=`
 "This" == "That"
 ```
 ###Combining multiple statements
-You can also combine logic comparisons by using the `&` and `|` symbols, `&` means both statements need to be true to evaluate to true and `|` means either statement needs to be true to be true
+You can also combine logic comparisons by using the `&` and `|` symbols, `&` means both statements need to be true to evaluate to true and `|` means either statement needs to be true to have the full statement true
 
 ```{r}
 10 > 10 & 10 > 9
@@ -196,7 +199,7 @@ if(name == "Nick"){
 
 ### %in% operator 
 
-The %in% operator looks a little funny but can be very useful for finding subsets of data that only contain certain values
+The `%in%` operator looks a little funny but can be very useful for finding subsets of data that only contain certain values
 
 ```{r}
 names = c("Nick", "Henry", "Jack", "Mike", "Arjan", "Jill", "Jack", "Susan")
@@ -444,24 +447,6 @@ print(rep("Experiment_2", nrow(sheet2)))
 sheet2["Experiment"] = rep("Experiment_2", nrow(sheet2))
 print(sheet2)
 ```
-
-### %in% operator 
-
-The %in% operator looks a little funny but can be very useful for finding subsets of data that only contain certain values
-
-```{r}
-names = c("Nick", "Henry", "Jack", "Mike", "Arjan", "Jill", "Jack", "Susan")
-programs = c("MD/PhD", "MD/PhD", "MD", "MD/PhD", "PhD", "PhD", "Nursing", "MD/PhD")
-
-print(programs %in% c("MD/PhD"))
-
-print(programs %in% c("MD", "MD/PhD"))
-
-print(programs %in% c("PhD", "MD/PhD"))
-print(names[programs %in% c("PhD", "MD/PhD")])
-
-```
-
 
 #Tidyr
 The `tidyr` package is about making your data.frames "tidy". Now what is meant by "tidy"? There are considered two ways to organize data tables. One is refered as "wide" format where each cell is a different observation and you have row and column names to explain what those observations are. The other foramt is called "long" format and this format is that every column is a different variable and each row is a different observation and this "long" format is the format that R is the best at for organizing. `tidyr` is all about switching between the two formats. 

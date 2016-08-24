@@ -1,6 +1,6 @@
 ---
 title: "Ensuring A Library/Package Is Installed"
-author: "Nicholas Hathaway"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
 output:
   html_document:
     toc: yes

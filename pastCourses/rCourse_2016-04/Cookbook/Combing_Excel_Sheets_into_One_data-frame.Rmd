@@ -1,6 +1,6 @@
 ---
 title: "Combing Excel Sheets into One data.frame"
-author: "Nicholas Hathaway"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
 output:
   html_document:
     highlight: tango
@@ -19,6 +19,65 @@ require(knitr)
 opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
 options(width = 60)
 ```
+
+
+#Combining one Excel Document info one data.frame
+
+
+#Combining multiple Excel Documents into one data.frame
+
+
+#Combining multiple Excel Documents in a directory into one data.frame
+```{r, eval = F}
+directory = "dataSheetsDir"
+allFiles = list.files(directory)
+print(allFiles)
+
+#create function to check file extentions 
+endsWith <- function(var, match) {
+  return (substr(var, pmax(1, nchar(var) - nchar(match) + 1), nchar(var)) == match)
+}
+
+possibleExcelSheetFile<-function(fileName){
+  return (endsWith(fileName, ".xls") | endsWith(fileName, ".xlsx"))
+}
+
+#get all files that end with tab.txt
+data = data.frame()
+for(file in allFiles){
+  if(possibleExcelSheetFile(file)){
+    #create empty data.frame that will hold data for this excel file
+    fileData = data.frame()
+    #get the sheet names for this file
+    sheetNames = readxl::excel_sheets(file)
+    #iterate over the sheet names, adding to the fileData frame as each sheet is read in
+    for(sheet in sheetNames){
+      sheetData = readxl::read_excel()
+      #add the sheet name as a column to the data.frame
+      sheetData["sheet"] = sheet
+      #if this is the first sheet, and therefore fileData is empty just replace the empty data.frame with the sheet data.frame
+      #otherwise add the rows of this sheet data.frame to file data.frame
+      if(0 == nrow(fileData)){
+        fileData = sheetData
+      }else{
+        dplyr::bind_rows(fileData, sheetData)
+      }
+    }
+    #add a column to hold the filename from which the data came from
+    fileData["filename"] = file
+    #if the master data data.frame for all files is empty, just replace with the current file data.frame
+    #otherwise just add the current file's data to the already growing data.frame
+    if(0 == nrow(data)){
+      data = fileData
+    }else{
+      dplyr::bind_rows(fileData, sheetData)
+    }
+  }
+}
+
+```
+
+#Combining multiple Excel Documents in a directory and sub-directories into one data.frame 
 
 
 
