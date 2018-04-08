@@ -1,0 +1,60 @@
+---
+title: "Ensuring A Library/Package Is Installed"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
+output:
+  html_document:
+    toc: yes
+    highlight: tango
+    theme: readable
+  pdf_document:
+    toc: yes
+    highlight: tango
+---
+
+```{r setup, echo=FALSE, message=FALSE}
+require(knitr)
+#turn off mesages and warnings and make it so output isn't prefixed by anything,
+#default is to put "##" in front of all output for some reason
+#also set tidy to true so code is wrapped properly 
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
+options(width = 60)
+```
+
+There are several ways of loading a package, two of these ways are `library()` and `require()` functions. Both of these function load the functions that are in the requested library but they return two separate things. 
+
+## library()
+The `library()` function actually returns all the libraries currently loaded when you call it
+```{r, eval=T}
+libs = library(dplyr)
+print(libs)
+```
+
+## require()
+The `require()` function returns whether or not the library was able to be loaded, which if it fails is normally due to the fact that it doesn't exist
+```{r, eval=T}
+libLoaded = require(dplyr)
+print(libLoaded)
+```
+
+That means you can take advantage of the return of `require()` to ensure a packaged is installed without having to call `install.packages()` every time you want a package. 
+```{r, eval=T}
+if(!require(dplyr)){
+  install.packages("dplyr")
+  #call require again because install.packages simply installs the package, it doesn't load it
+  require(dplyr)
+}
+```
+If you put the above code at the top of your script it will only call `install.package` if it has to. You can also turn the above into a function to be reused. 
+```{r, eval=T}
+ensureLib <-function(libName){
+  if(!require(libName, character.only = T)){
+    install.packages(libName)
+    #call require again because install.packages simply installs the package, it doesn't load it
+    require(libName, character.only = T)
+  }
+}
+
+ensureLib("dplyr")
+```
+
+

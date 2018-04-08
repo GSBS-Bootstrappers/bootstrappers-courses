@@ -1,0 +1,808 @@
+---
+title: "Session 1"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
+output:
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    highlight: tango
+    toc: yes
+---
+
+<!--Include script for hiding output chunks-->
+<script>
+$(document).ready(function() {
+	console.log("hello")
+  // Select all <pre> tags that do not have class 'r'
+  $output = $(".toggleOutput");
+  console.log($output)
+  // Add the show/hide-button to each output chunk
+  $output.prepend("<button style=\"float:right\" class=\"btn btn-primary showopt\">Show Output</button><br/>");
+  // Select the <pre> tags, then choose their <code> child tags and toggle visibility 
+  $output.children("code").css({display: "none"});
+  
+  // When the show/hide-button is clicked, toggle the current state and
+  // change the button text
+  $(".showopt").click(function() {
+    $btn = $(this);
+    $chunk = $(this).parent().children("code");
+    if($btn.html() === "Show Output") {
+      $btn.html("Hide Output");
+    } else {
+      $btn.html("Show Output");
+    }
+    $btn.toggleClass("btn-info btn-primary");
+    $chunk.slideToggle("fast", "swing");
+  });
+});
+
+</script>
+
+
+
+
+
+```{r setup, echo=FALSE, message=FALSE}
+require(knitr)
+#turn off mesages and warnings and make it so output isn't prefixed by anything,
+#default is to put "##" in front of all output for some reason
+#also set tidy to true so code is wrapped properly 
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
+options(width = 60)
+
+knitr::knit_hooks$set(output = function(x, options) {
+  return(paste0(
+    "```{",
+    ifelse(is.null(options$class),
+      "", 
+      paste0(" .", gsub(" ", " .", options$class))
+    ),
+    "}\n",
+    x,
+    "\n```"
+  ))
+})
+```
+
+# R Basics
+R is like most programming languages and operates by storing by data in `variabes/objects` and then operating on these objects with `functions`.  
+
+## Variables/objects
+Objects are able to store a very wide variety of data, some of the common types are explained [below](#data-types). To store data in R you can use two separate syntaxes, `<-` or `=`. The normal R convention is to use `<-` and there are some real subtle differences between using `<-` and `=` but for the majority of time you can get by by using either one.  
+```{r}
+x = 10
+print(x)
+
+#same as 
+y <- 10
+print(y)
+```
+## Functions
+Functions are used on objects that have stored data to either output new data or to simply print information about the data stored in that object (e.g. above the function `print()` will print to the screen the data stored in the object that is given to print). You can store the output of a function into a new variable.  
+```{r}
+x = 9
+sqrt(x)
+
+y = sqrt(x)
+print(y)
+```
+When people talk about functions, they will refer to the objects being given to the functions as the function's arguments. Depending on the function, it can take several different arguments. To find out more about a function and the functions it takes, you can use the `help()` function and give it the name of function or you can use `?` and then name of the function. If you don't know the name of the function exactly or want to do a keyword search you can `??` and then a keyword. You can also just go to the bottom right window in RStudio and go to the help tab.  
+```{r, eval = FALSE}
+help(print)
+```
+or
+```{r, eval = FALSE}
+?print
+```
+or to search for any topic with the word `print`
+```{r}
+??print
+```
+
+Also Google is your best friend as well. 
+
+There are a large number of different functions in R that you will become accustomed to as you use R more. Also each library you load will have more functions as well. Also the arguments to functions have names and rather than giving arguments simply in the order in which they are listed in the function's definition you can give an argument by using `arg=value` syntax.  For example take the `seq()` function, which is a function for creating different ranges. First call `help(seq)` to see the definition of `seq()`, whose definition looks like below. 
+```{r, echo = F, engine='bash'}
+echo "seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)),
+    length.out = NULL, along.with = NULL, ...)"
+```
+So using the seq function you can create a range from `2` to `4` by typing
+```{r}
+print(seq(2,4))
+```
+or you can give the arguments by naming them
+```{r}
+print(seq(from = 2, to = 4))
+```
+When naming the function arguments, order no longer matters
+```{r}
+print(seq(to = 4, from = 2))
+```
+When naming the arguments you don't have to name all of them
+```{r}
+print(seq(2,4, length.out = 6))
+```
+
+## Other Resources  
+The markers of RStudio have a series of free webinars you can watch here, https://www.rstudio.com/resources/webinars/. RStudio also has several links to cheatsheets if you go to Help -> Cheatsheets.    
+
+
+## Data Types
+Every object in R will have a different data type. To determine the type of any object just use the `class()` function. 
+```{r}
+x <- 10
+print(class(x))
+
+y <- "Example"
+print(class(y))
+
+```
+Depending on the type of data, functions will have different behaviors 
+
+### character
+character type data is anything that can be represented by a string of letters/characters like a name or categorical data.  
+```{r}
+name = "Nick"
+
+loc = "Goff Auditorium"
+
+condition = "Control"
+
+```
+### numeric
+numeric type data is anything that be represented by, well, numbers like measurements or data values
+```{r}
+speed = 10
+
+time = 60
+
+fraction = 0.5
+
+```
+### factor
+factor type data is basically character data that has been encoded into numeric values underneath but is represented by characters, this mostly used on categorical data that needs to be converted into numbers in order for certain modeling/statistics functions to work. More on factors latter.    
+
+### logic/Boolean
+Boolean refers to a type of data is simply either TRUE or FALSE and is normally used in conjunction with logic.  
+```{r}
+x = 10 > 11
+print(x)
+
+y = 12 > 11
+print(y)
+```
+
+The Boolean values can use be set directly using `TRUE` and `FALSE` and `T` and `F` are also short hand for these
+
+```{r}
+
+aTrueValue = TRUE
+print(aTrueValue)
+
+alsoTrueValue = T
+print(aTrueValue)
+
+aFalseValue = FALSE
+print(aFalseValue)
+
+alsoFalseValue = F
+print(alsoFalseValue)
+```
+
+### Logic Tests
+The majority of the available logical tests are below.
+
+operator| meaning
+-----|-----
+<|less than
+<=|less than or equal to
+>|greater than
+>=|greater than or equal to
+==|exactly equal to
+!=|not equal to
+
+### vectors
+Vectors are just several of the same data type hold together in one container, the most common way to create a vector is to use the concatenate function, which in R is just called `c()` for short.  
+```{r}
+#numeric values
+speeds = c(10.5, 11, 13, 14, 10)
+print(speeds)
+print(class(speeds))
+
+times = c(20,30,20,30,40,50)
+print(times)
+print(class(times))
+
+#charater values
+
+names = c("Nick", "Jake", "Michael", "Elisa")
+print(names)
+print(class(names))
+
+#Boolean/logical values
+
+logics = c(10 < 11, 12 < 11, 10 > 9)
+print(logics)
+print(class(logics))
+```
+
+You can also create integer ranges using the colon `:` symbol
+```{r}
+
+range1 = 1:5
+print(range1)
+
+range2 = 10:20
+print(range2)
+
+#you can also reverse the direction
+rev_range2 = 20:10
+print(rev_range2)
+
+
+
+```
+
+
+Note: R will force everything in a container to be the same type if it can so be careful to not to actually mix types if you don't mean to. 
+```{r}
+#Accidental converion to character rather than numberic vector
+numbers = c(1,2,3,4,5,"6")
+print(numbers)
+print(class(numbers))
+
+#actual numeric vector
+actualNumbers = c(1,2,3,4,5,6)
+print(actualNumbers)
+print(class(actualNumbers))
+```
+
+
+## Math operators
+Several of the math operators available in R are as follows, `+`, `-`, `*`, `/`, and `^`.  
+```{r}
+3 + 4
+4 - 2
+2*120
+1e3/2
+3^2
+```
+
+These can also be applied to vectors of numbers all at once as well
+
+```{r}
+c(1,2,3,4) * 2
+
+c(1,2,3,4) / 4
+
+c(1,2,3,4) + 1
+
+c(1,2,4,5) ^ 2
+```
+
+And of course these can also be applied to the stored numbers in variables
+
+```{r}
+x = 2
+
+x * 2
+
+y = c(2,4,6,8)
+
+# divide all the numbers in the vector y by 2
+y/2
+
+#multiple all the values in the vector y by the value stored in x
+y * x
+
+```
+
+## Common Basic Stat Functions
+There are also a multitude of statistical functions available in R including some of the basics functions like `max`,`min`,`mean`, and `sum`. These are mostly performed on vectors.  
+
+```{r}
+y = c(2,4,6,8)
+
+mean(y)
+min(y)
+mean(y)
+sum(y)
+
+```
+
+## Converting between data types  
+There are sometimes a need to convert between data types, the most common being converting character to numeric types and factor to character types. There are several functions available for this which all start with `as.`
+
+Characters to numeric
+```{r}
+x = c("1", "2", "3", "4")
+print(x)
+print(class(x))
+
+x = as.numeric(x)
+print(x)
+print(class(x))
+
+```
+
+### Characters to factors
+
+```{r}
+y = c("group1", "group2", "group3", "group1", "group2", "group3")
+print(y)
+print(class(y))
+
+y = as.factor(y)
+print(y)
+print(class(y))
+#levels is function specifically for factors that prints out the different levels stored for the factor 
+print(levels(y))
+
+```
+
+### Factors to characters
+```{r}
+z = factor(c("1", "2", "4", "5"))
+print(z)
+print(class(z))
+
+z = as.character(z)
+print(z)
+print(class(z))
+```
+
+### Factors to numeric
+Now it is very important when converting from factors to numeric to first convert to character type, this is because factors are special data type that underneath are actually numbers that have names associated with these numbers and so the `as.numeric` function actually converts factors to these underlying numbers and not to the numeric equivalent of the character
+
+```{r}
+z = factor(c("1", "2", "4", "5"))
+print(z)
+print(class(z))
+
+#not quite what you would expect!
+z = as.numeric(z)
+print(z)
+print(class(z))
+
+z = factor(c("1", "2", "4", "5"))
+print(z)
+print(class(z))
+
+z = as.numeric(as.character(z))
+print(z)
+print(class(z))
+```
+
+
+# Part 1 Excercises 
+
+1. Like in algebra, parentheses can be used to specify the order of operations. What then would you expect to be the result of the following expressions, knowing the order of operations from exercise 1? (Try to predict the answer before typing the code into R.)
+
+```{r,class = "toggleOutput"}
+1 + 3*3
+(1 + 3)*3
+2^4/2 + 2
+2^4/(2 + 2)
+(5 + 2*10/(1 + 4))/3
+```
+
+2. Predict the vector and its class resulting from the following expressions:
+
+```{r, class = "toggleOutput"}
+c(1, 3, 5)
+c("a", "b")
+c(TRUE, TRUE, TRUE, FALSE)
+c(1, TRUE, 10)
+c("a", FALSE, 100, "dog")
+c(as.numeric(TRUE), "fish", 2, "fish")
+c(6, 7, as.numeric(FALSE), as.numeric("hello"))
+as.logical(c(1, 0, 10, -100))
+as.logical(c("TRUE", "false", "T", "F", "True", "red"))
+as.numeric(as.logical(c(10, 5, 0, 1, 0, 100)))
+```
+
+3. Predict the result of the following expressions:
+
+```{r, class = "toggleOutput"}
+1 > 3
+14 >= 2*7
+"1" > "3"
+as.logical(10) > 2
+0 == FALSE
+0 == as.character(FALSE)
+0 == as.character(as.numeric(FALSE))
+as.character(0) == 0
+TRUE == 1^0
+as.numeric(TRUE) == as.character(1^0)
+as.numeric("one") == 1
+
+# These are some "bonus" concepts. How does R compare character values? 
+# Make some predictions, then run the code and see if you can figure out 
+# the rules for yourself. Then write your own expressions to test the rules!
+"a" < "b"
+"a" < "1"
+"a2" > "a1"
+"aaa" > "aa"
+"a" > "A"
+as.character(as.numeric(TRUE)) > FALSE
+```
+
+
+# More Complex Data containers
+The majority of the time you need to store more than just one value and therefore you will need containers that can hold multiple values at once, R comes equipped with several containers already
+
+## matrix
+R's matrix is very similar to the vector where all things have to be the same type but contains values in rows and columns.
+```{r}
+mat = matrix(c(1,2,3,4,5,6,7,8,9,10,11,12))
+
+print(mat)
+
+mat2 = matrix(c(1,2,3,4,5,6,7,8,9,10,11,12), ncol = 2)
+
+print(mat2)
+
+mat3 = matrix(c(1,2,3,4,5,6,7,8,9,10,11,12), ncol = 2, byrow = TRUE)
+
+print(mat3)
+print(class(mat3))
+```
+See `help(matrix)` for more info on how to use matrix.
+
+## data.frame
+The data.frame is a very commonly used object in R. It is similar to an spreadsheet/table data structure you in something like Excel with rows and columns, both of which can have names. The data.frame is different from the matrix because each column can have a different type, though all the elements in a column have to be the same type. You will rarely have to create a data.frame by hand and the majority of the time you read in a data.frame by using functions that read them in, but below are some examples of how you can create a data.frame by hand.    
+```{r}
+dat = data.frame(names = c("Nick", "Jake", "Mercedeh", "Jack", "Michael"), duration = c(7, 3, 3, 2, 7), program = c("MD/PhD", "PhD", "PhD", "PhD", "MD/PhD"))
+print(dat)
+```
+A useful function for looking at a data.frame is the `str()` function. It will tell you information about each column.
+```{r}
+dat = data.frame(names = c("Nick", "Jake", "Mercedeh", "Jack", "Michael"), duration = c(7, 3, 3, 2, 7), program = c("MD/PhD", "PhD", "PhD", "PhD", "MD/PhD"))
+str(dat)
+```
+With the `str()` function you can see that the we have three columns with the 1st and 3rd column being factors and the 2nd column being a numeric column. You can also see that for the variables that are factors you can see that they also have their coded numerical values next to them.  This is important to note when you are dealing with typos, for instance if we had typed this instead.   
+```{r}
+dat = data.frame(names = c("Nick", "Jake", "Mercedeh", "Jack", "Michael"), duration = c(7, 3, 3, 2, 7), program = c("MD/PhD", "PhD", "PhD", "PhD", "MD/PHD"))
+str(dat)
+```
+You can see that we now have three levels for program rather than the two since we typed in one of the MD/PhD levels incorrectly.  
+
+You can also use the function called `View()` to see the data in a spreadsheet like Viewer within RStudio.  
+```{r, eval=F}
+dat = data.frame(names = c("Nick", "Jake", "Mercedeh", "Jack", "Michael"), duration = c(7, 3, 3, 2, 7), program = c("MD/PhD", "PhD", "PhD", "PhD", "MD/PhD"))
+View(dat)
+```
+
+
+# Scripting
+Like most scientific fields we are always concerned with reproducibility and to that in a programming language like R you accomplish reproducibility by putting all your code into what is called scripts. To create a new R script in RStudio you simply click the `+` sign in the upper left hand corner and click `R Script` or you can use the hotkey shortcut of `Cmd + shift + n`.  
+
+# Generic Layout of a script 
+To make your life easier and the life of anyone looking at your scripts easier you normally want to keep them fairly organized. A normal layout is to have all packages or other files you will be using. Next comes any code that deals with reading and tidying up data tables. Then comes the code that does actually analysis followed by any code that writes tables or creates figures.  
+
+## Commenting
+To make your code more readable by other people it's good practice to do what is called commenting of your code. To do this you use the `#` symbol, whenever R sees the symbol '#' it completely ignores everything that comes after it until the next line
+
+```{r}
+#this will be ignored
+print("hello") # this will also be ignored
+```
+
+# Path
+When someone refers to a `path` they are normally talking about the location of a file or folder on a filesystem. Depending on the operating system (Windows vs Unix based(Mac, Ubuntu, etc.)) this will be represented slightly differently, specifically the use of `"/"`(Unix) vs `"\"` (Windows).  Luckily R takes care of this subtlety for you and you can also use `"/"`. Another piece of terminology that is important is folders are also referred to as directories. The path is represented by naming the parent directories to a file and the path to file/folder can be relative to your current working directory (more on this below). Also giving only `"/"` is considered the very top of your filesystem or the "root" position. An easy way to show this is to use the function `list.files()` 
+
+```{r}
+print(list.files("/"))
+```
+
+Two other important pieces of information is the special way to refer to the current directory (`"."`) and the directory above the current directory (`".."`). Again lets use the list.files. 
+
+```{r}
+print(list.files(".",full.names = T))
+```
+
+```{r}
+print(list.files("..",full.names = T))
+print(getwd())
+```
+Another way to explore this idea is to use the `file.choose()` method, which actually just returns the path to whatever file you choose.
+
+```{r, eval = FALSE}
+print(file.choose())
+```
+```{r,engine='bash',echo=FALSE}
+echo "[1] \"/Users/nick/ownCloud/documents/exp_design_and_data_analysis_bootcamp_2016/introToR/time.series.data.txt\""
+```
+
+# Setting/Getting Working Directory
+When working within R you have a working directory, which is where things will be output and this affects how you specify a location's path because it will be relative to this working directory. To get the working directory you use the function `getwd()`.   
+```{r}
+getwd()
+```
+You can also set your working directory by using the function `setwd()` and giving it the path to a new directory. It might be useful to save your old working directory
+```{r}
+outWd = getwd()
+
+setwd("/")
+list.files(".")
+print(getwd())
+
+setwd(outWd)
+list.files(".")
+print(getwd())
+
+```
+
+## Installing/Loading Libraries
+To install new libraries you can use the `install.packages()` function and give it the name of a library that [The Comprehensive R Archive Network](https://cran.r-project.org/)(CRAN) has stored in their repositories. Below are some of the libraries that I use the most in R. The [tidyverse](https://www.tidyverse.org/packages/) library is a collection of libraries that help to read in data, manipulate data, and plot data. 
+
+```{r, eval=FALSE}
+#For reading in data, organizing data, and plotting
+install.packages(c("tidyverse"))
+```
+
+Once you have installed a library, you can load it's functions by using the `library()` function
+```{r, eval=FALSE}
+library(tidyverse)
+```
+
+
+
+# Part 2 Excercises 
+Here are the links for the data files mentioned below.
+
+<a href = "ExampleData.xlsx">ExampleData.xlsx</a>  
+<a href = "Both.xlsx">Both.xlsx</a>  
+<a download = "Temperatures.txt" href = "Temperatures.txt">Temperatures.txt</a>  
+<a download = "Mel.csv" href = "Mel.csv">Mel.csv</a>  
+<a download = "WorEpi.tab.txt" href = "WorEpi.tab.txt">WorEpi.tab.txt</a>  
+
+1.  Create a folder on your computer to store some files we will be reading into R (do this without using R or if you want to challenge yourself, Google how to create a folder with R and try it out!).  
+
+2.  Now download the following files, ExampleData.xlsx, Both.xlsx, Temperatures.txt, Mel.csv, WorEpi.tab.txt and put them in this folder (again do this without R or again challenge yourself and Google or use the `help` function to how to use the R function `download.file` to do this)
+
+3.  Set your working directory to this folder and list the files in the folder
+
+4.  Install the package `tidyverse` and load it in R.  
+
+# Reading in Data
+Data files can come in multiple formats but some of the most common types are plain text files that have each column delimited by either tabs `"\t"` or commas `","`. R can also read in files that are saved in the excel format by using the package `readxl` from `tidyverse`.  
+
+## File Formats
+
+### Plain Text Files
+For reading in plain text files there is a great package called `readr` which is much better than the default read functions, however for this course we will be using just the basic R functions but I want you to be aware of this library which is part of `tidyverse`.    
+```{r}
+library(readr)
+```
+
+For reading in tab delimited files we have `read.delim` and for comma delimited files we have `read.csv`.  
+Also a helpful function might be to use `file.choose()` 
+```{r}
+worEpi = read.delim("WorEpi.tab.txt", header = T)
+str(worEpi)
+```
+or 
+```{r, eval=FALSE}
+worEpi = read.delim(file.choose(), header = T)
+str(worEpi)
+head(worEpi)
+```
+Here is a [link](Mel.csv) to a comma separated file 
+```{r}
+melanoma = read.csv("Mel.csv", header = T)
+str(melanoma)
+head(melanoma)
+
+```
+or 
+```{r, eval=FALSE}
+melanoma = read.csv(file.choose(), header = T)
+str(melanoma)
+```
+
+Sometimes your data will have row names as well which you can tell R by using `row.names = 1` arguments.  
+
+```{r}
+temps = read.delim("Temperatures.txt", header = T, row.names = 1)
+str(temps)
+print(temps)
+
+print(rownames(temps))
+
+```
+
+### Excel Sheets
+For excel sheets we have the library `readxl`
+```{r, eval=T}
+library(readxl)
+```
+
+Here is a [link](Both.xlsx) to an excel sheet of both previous files as separate sheets
+```{r}
+library(readxl)
+melanoma = read_excel("Both.xlsx")
+str(melanoma)
+head(melanoma)
+```
+By default it just reads the first sheet, you can tell it which sheet to read
+```{r}
+library(readxl)
+worEpi = read_excel("Both.xlsx", sheet = 2)
+str(worEpi)
+head(worEpi)
+```
+
+You can also read in by giving the sheet's name, to get what the sheets names are you can use 
+```{r}
+library(readxl)
+print(excel_sheets("Both.xlsx"))
+
+worEpi = read_excel("Both.xlsx", sheet = "Sheet2")
+head(worEpi)
+
+melanoma = read_excel("Both.xlsx", sheet = "Mel")
+head(melanoma)
+
+```
+
+### SAS and SPSS
+For reading SAS and SPSS files we have the library `haven`.  I don't have any example datasets but the functions are below
+
+```{r, eval=FALSE}
+library(haven)
+read_sas()
+read_spss()
+read_stata()
+```
+
+
+# Accesing elements in a vector
+To access only certain elements in a vector you use the `[]` operator. You either give index/position of the elements you want or a logical vector of the same length where all the `TRUE` will be extracted. For the positions R used 1-based positions vs the more command [0-based](https://en.wikipedia.org/wiki/Zero-based_numbering) positions in various programming languages.   
+```{r}
+rNums = runif(20)
+print(rNums)
+
+#get the first element
+print(rNums[1])
+
+#get the first five elements
+print(rNums[1:5])
+```
+
+You can get various different positions by giving a vector of positions
+```{r}
+#get the first 1st, 3rd, and 7th elements
+print(rNums[c(1,3,7)])
+```
+You can also get multiple of the same position
+```{r}
+#get the first 1st element three times
+print(rNums[c(1,1,1)])
+```
+
+You can get the elements using logic TRUE and FALSE
+```{r}
+#get the first 1st element three times
+print(rNums> 0.5)
+print(rNums[rNums > 0.5])
+```
+
+# Accessing elements in a matrix/data.frame
+For matrixes and data.frames there are multiple ways to access certain subsets of the data, specifically rows and columns. To select rows and columns you use the `[]` operator again. You give rows and column number separated by a comma, leaving one blank means all of them  
+```{r}
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
+#get the first row, all columns
+sheet1[1,]
+
+#get the 1st and 3rd rows, all columns
+sheet1[c(1,3),]
+
+#get the first column, all rows
+sheet1[,1]
+
+#get the 1-3 columns, all rows
+sheet1[,1:3]
+
+#get the 1-3 columns, 1-3 rows
+sheet1[1:3,1:3]
+```
+Also the default is to assume you mean columns, so if you leave out the comma you will get those columns.  
+```{r}
+#get the 1-3 columns, all rows
+sheet1[,1:3]
+
+#same as above
+sheet1[1:3]
+```
+
+Also helpful functions here are `ncol()` and `nrow()` which gives you the number of columns and rows for a data.frame/matrix. This can be used if you want certain columns starting at a position and then until the end of the dataframe. 
+
+```{r}
+#get the 2nd column to the end of the columns, all rows
+sheet1[,2:ncol(sheet1)]
+
+```
+
+
+# Accesing elementins specific to data.frame
+The above examples work for both matrix class and data.frame object but the next couple of examples only work for data.frames
+
+## Accesing by column names using []
+With data.frame objects you can give the column name in `[]` to get those columns, you can give one or several
+```{r}
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
+
+sheet1["Patient"]
+
+sheet1["Group1-Group1"]
+
+sheet1[c("Patient", "Group1-Group1")]
+```
+##Accesing by column names using $
+You can also access just one column by using the `$` symbol. 
+
+```{r}
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
+
+sheet1$Patient
+
+sheet1$'Group1-Group1'
+```
+The difference here is that the `$` is going to give just a vector where as `[]` will actually give you back a data.frame
+
+```{r}
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
+
+patientMoney = sheet1$Patient
+print(class(patientMoney))
+patientBracket = sheet1["Patient"]
+print(class(patientBracket))
+
+```
+
+# Adding columns to data.frame
+You can also add a column with either the `[]` or the `$`. You can either give a single value that will be repeated for all the values of the column or you can give a vector of the same size. 
+
+```{r}
+sheet1 = read_excel("ExampleData.xlsx", "Experiment_1")
+
+sheet1$Experiment = "Experiment_1"
+print(sheet1)
+
+sheet2 = read_excel("ExampleData.xlsx", "Experiment_2")
+print(rep("Experiment_2", nrow(sheet2)))
+
+sheet2["Experiment"] = rep("Experiment_2", nrow(sheet2))
+print(sheet2)
+```
+
+# Part 3 Excercises 
+
+<a download = "time.series.data.txt" href = "time.series.data.txt">time.series.data.txt</a>  
+
+
+1.  Read in the [temperature dataset](Temperatures.txt) from above and find the max, min and mean temperature of your favorite month (columns) and favorite city (rows).  
+
+2.  Create a folder and download the following file, time.series.data.txt, link above, which is a dataset of expression of genes in different cells in several exposure conditions. The rownames are the gene names, the file is tab (`\t`) separated file.     
+
+3.  Read in time.series.data.txt
+
+4.  Find the `max`, `min`, and `max` of the control column and one of the LPS exposure columns (the columns that start with LPS).  
+
+5.  Find the `max`, `min`, and `max` of the several of your favorite genes (or just pick one)
+
+```{r, echo= F, eval = T}
+
+ts = read.delim("time.series.data.txt", header = T, row.names=1)
+
+#head(ts)
+
+```
+
+
+
+

@@ -1,0 +1,241 @@
+---
+title: "Additional Plotting Aspects"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
+output: 
+  html_document:
+    highlight: tango
+    theme: readable
+---
+```{r setup, echo=FALSE, message=FALSE}
+require(knitr)
+#turn off mesages and warnings and make it so output isn't prefixed by anything,
+#default is to put "##" in front of all output for some reason
+#also set tidy to true so code is wrapped properly 
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
+options(width = 80)
+```
+# Changing dot type, dot size, and line type
+Several customizable plotting options include 
+
+*  Changing the point shape using `pch=` (options are 0 through 25)  
+*  Changing the point size using `cex=`  
+*  Changing the line type for lines using `lty=` (options are 0 through 6)  
+
+Example for changing shape    
+There are 26 available shapes which can be specified (default is 1 a hollow dot)    
+```{r}
+plot(0:25, pch = 0:25)
+```
+
+Also for the shapes 21-25 the `col=` parameter changes the border color and the `bg=` changes the inner color  
+
+```{r}
+plot(0:25, pch = 0:25, col = "red", bg = "darkblue")
+```
+
+You can also change the size of dots by using `cex=`.  You give it a relative value, something that has a `cex` value of 4 will be twice as big as something that has a `cex`  value of 2, but the number itself doesn't mean a size
+
+```{r}
+plot(1:10, cex = 1:10)
+```
+
+When doing line plots, you can change the type of line being drawn by using `lty=`  There are seven options given by giving lty 0 through 6 
+
+number | type of line  
+-------|--------  
+0|blank  
+1|solid  
+2|dashed  
+3|dotted  
+4|dotdash
+5|longdash
+6|twodash
+
+```{r, eval=FALSE}
+# blank you can't see it
+plot(c(0,1), c(0,0), ylim = c(0,6), type="l", lty=0)
+# solid (the default)
+lines(c(0,1), c(1,1), type="l", lty=1)
+# dashed
+lines(c(0,1), c(2,2), type="l", lty=2)
+# dotted
+lines(c(0,1), c(3,3), type="l", lty=3)
+# dotdash
+lines(c(0,1), c(4,4), type="l", lty=4)
+# longdash
+lines(c(0,1), c(5,5), type="l", lty=5)
+# twodash
+lines(c(0,1), c(6,6), type="l", lty=6)
+```
+
+```{r, echo=FALSE}
+# blank you can't see it
+plot(c(0,1), c(0,0), ylim = c(0,6),xlim = c(0,2), type="l", xlab = NA, ylab = NA, bty = "none", lty=0, xaxt = "none")
+# solid (the default)
+lines(c(0,1), c(1,1), type="l", lty=1)
+# dashed
+lines(c(0,1), c(2,2), type="l", lty=2)
+# dotted
+lines(c(0,1), c(3,3), type="l", lty=3)
+# dotdash
+lines(c(0,1), c(4,4), type="l", lty=4)
+# longdash
+lines(c(0,1), c(5,5), type="l", lty=5)
+# twodash
+lines(c(0,1), c(6,6), type="l", lty=6)
+# blank you can't see it
+text(1.25,0, "blank    (lty = 0)")
+text(1.25,1, "solid    (lty = 1)")
+text(1.25,2, "dashed   (lty = 2)")
+text(1.25,3, "dotted   (lty = 3)")
+text(1.25,4, "dotdash  (lty = 4)")
+text(1.25,5, "longdash (lty = 5)")
+text(1.25,6, "twodash  (lty = 6)")
+```
+
+# Using logic to help with plotting  
+
+A helpful to add to a plot is the `ifelse()` function.  You give it three things
+
+1.  A vector of TRUEs and FALSEs  
+2.  A value for TRUE  
+3.  A value for FALSE  
+
+What this function does is return a new vector by replacing wherever there are TRUEs in the input with the value for TRUE and wherever there are FALSEs with the value for FALSE 
+
+For example  
+```{r}
+ifelse(c(TRUE,FALSE,TRUE, FALSE), "Replace_TRUE", "Replace_FALSE")
+```
+
+This can also work by giving it a logic test on a vector (which will be converted into a vector of TRUEs and FALSEs anyways)
+```{r}
+
+testNumbers = c(1,2,3,4)
+
+testNumbers > 2
+
+ifelse(testNumbers >2, "Greater_than_two", "Less_than_two")
+
+```
+
+And you can of course combine logic tests  
+```{r}
+ifelse(testNumbers >2 & testNumbers < 4, "Greater_than_two_less_than_four", "Less_than_two_or_greater_than_four")
+```
+ 
+This function can be helpful for change colors or shapes of scatter plots to demonstrate thresholds 
+
+For example lets look at a scatter plot of 100 randomly generated points with x ranging from -1 to 1 and y ranging from -1 to 1 
+
+```{r}
+testNumberData = data.frame(x = runif(100,-1,1), y = runif(100,-1,1))
+
+plot(testNumberData$x, testNumberData$y)
+
+# add a line for x = 0 and y = 0
+
+abline(v = 0)
+
+abline(h = 0)
+```
+
+If you were interested in marking points that have a positive x value you could use `ifelse()` with `col` along with the package RColorBrewer to color the points differently 
+
+```{r, eval=FALSE}
+install.packages("RColorBrewer")
+```
+
+```{r}
+library(RColorBrewer)
+cols = brewer.pal(2, "Dark2")
+
+plot(testNumberData$x, testNumberData$y, 
+     col = ifelse(testNumberData$x > 0, cols[1], cols[2]))
+
+# add a line for x = 0 and y = 0
+
+abline(v = 0)
+
+abline(h = 0)
+```
+
+And if you were interested in marking points that had both a positive x value and a positive y value you could use `ifelse()` like this  
+
+```{r}
+cols = brewer.pal(2, "Dark2")
+
+plot(testNumberData$x, testNumberData$y, 
+     col = ifelse(testNumberData$x > 0 & testNumberData$y > 0,
+                  cols[1], cols[2]))
+
+# add a line for x = 0 and y = 0
+
+abline(v = 0)
+
+abline(h = 0)
+```
+You could also use it to change the shapes as well to mark it even further.  Giving hollow dots (pch = 1) to any points with negative values and solid filled in points (pch=16) to points with only positive values
+
+```{r}
+cols = brewer.pal(2, "Dark2")
+
+plot(testNumberData$x, testNumberData$y, 
+     col = ifelse(testNumberData$x > 0 & testNumberData$y > 0,
+                  cols[1], cols[2]),
+     pch = ifelse(testNumberData$x > 0 & testNumberData$y > 0,
+                  16, 1))
+
+# add a line for x = 0 and y = 0
+
+abline(v = 0)
+
+abline(h = 0)
+```
+
+Now things might get a little messy with too many values if we had a bigger dataset like bellow 
+
+```{r}
+cols = brewer.pal(2, "Dark2")
+
+testNumberDataLarge = data.frame(x = runif(2000,-1,1), y = runif(2000,-1,1))
+
+plot(testNumberDataLarge$x, testNumberDataLarge$y, 
+     col = ifelse(testNumberDataLarge$x > 0 & testNumberDataLarge$y > 0,
+                  cols[1], cols[2]),
+     pch = ifelse(testNumberDataLarge$x > 0 & testNumberDataLarge$y > 0,
+                  16, 1))
+
+# add a line for x = 0 and y = 0
+
+abline(v = 0)
+
+abline(h = 0)
+```
+
+Using the package scales and the `alpha()` function we can make the colors transparent
+
+```{r, eval=FALSE}
+install.packages("scales")
+```
+
+```{r}
+library(scales)
+
+cols = alpha(brewer.pal(2, "Dark2"), alpha = .50)
+
+testNumberDataLarge = data.frame(x = runif(2000,-1,1), y = runif(2000,-1,1))
+
+plot(testNumberDataLarge$x, testNumberDataLarge$y, 
+     col = ifelse(testNumberDataLarge$x > 0 & testNumberDataLarge$y > 0,
+                  cols[1], cols[2]),
+     pch = ifelse(testNumberDataLarge$x > 0 & testNumberDataLarge$y > 0,
+                  16, 1))
+
+# add a line for x = 0 and y = 0
+
+abline(v = 0)
+
+abline(h = 0)
+```
+

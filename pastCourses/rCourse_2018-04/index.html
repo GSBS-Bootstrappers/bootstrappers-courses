@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/theme/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://developer.r-project.org/Logo/Rlogo-5.png">
+
+    <title>R</title>
+
+    	<!-- Bootstrap core CSS -->
+    	<link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<!-- Bootstrap showcase theme -->
+    	<link href="../../resources/bootstrap/css/showcase/showcase-theme.css" rel="stylesheet">
+		<style>
+			.viewPage, .nutshell, .fileDownload {
+				margin : 2px;
+			}
+			.inactive {
+				pointer-events : none;
+			}
+		</style>
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../index.html">Bootstrappers Home</a></li>
+            <li class=""><a href="../../index.html">Courses Home</a></li>
+            <li class=""><a href="../../../cal.html">Calendar</a></li>
+            <li class="Courses">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Courses<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              	<li class = ""><a href="../../courses/python1/index.html">Python 1</a></li>
+              	<li class = ""><a href="../../courses/python2/index.html">Python 2</a></li>
+                <li class = "active"><a href="../../courses/rCourse/index.html">R Course</a></li>
+                <li class = ""><a href="../../courses/unix/index.html">Unix</a></li>
+                <li><a href="../../courses/bedtools/index.html">Bedtools</a></li>
+              </ul>
+            </li>
+            <li class="PastCourses">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">All Past Courses<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              	<li class = ""><a href="../../pastCourses/python1_2014-12/index.html">Python 1(2014-12)</a></li>
+              	<li class = ""><a href="../../pastCourses/python2_2015-02/index.html">Python 2(2015-02)</a></li>
+                <li class = ""><a href="../../pastCourses/rCourse_2014-09/index.html">R Course(2014-09)</a></li>
+                <li class = "active"><a href="../../pastCourses/rCourse_2016-04/index.html">R Course(2016-04)</a></li>
+                <li class = ""><a href="../../pastCourses/unix_2014-10/index.html">Unix(2014-10)</a></li>
+                <li class = ""><a href="../../pastCourses/unix_2015-09/index.html">Unix(2015-09)</a></li>
+                <li class = ""><a href="../../pastCourses/bedtools_2015_10/index.html">Bedtools(2015_10)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>R Course</h1>
+        <p>Introductory Course on the using the program R</p>
+      </div>
+      <div class="panel panel-info">
+      			<div class="panel-heading"><h1>Additional Resources</h1></div>
+      			<div class="panel-body">
+      			<ul>
+      				<li><a href="prep/prep.html">Prep Work</a></li>
+      			</ul>
+      			</div>
+      		</div>
+      <div class="panel panel-primary">
+      	<div class="panel-heading"><h1>Course Details</h1></div>
+      	<div class="panel-body">
+      		<p>This is a introductory course on interacting with the program R and RStudio.
+      			  Will go over some basics on loading data and some basic plotting</p>
+      			  <table class="table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Topics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Session I</td>
+                <td>Monday April 9, 2018, 5:30pm-7pm</td>
+              	<td>Hiatt Auditorium S1-608 (Next to Library)</td>
+              	<td>Intro to R, Reading in Data</td>
+              </tr>
+              <tr>
+                <td>Session II</td>
+                <td>Wednesday April 11, 2018, 5:30pm-7pm</td>
+              	<td>Hiatt Auditorium S1-608 (Next to Library)</td>
+              	<td>Reading in Data, Interacting with Data, Simple Stats</td>
+              </tr>
+              <tr>
+                <td>Session III</td>
+                <td>Monday April 16, 2018, 5:30pm-7pm</td>
+              	<td>Hiatt Auditorium S1-608 (Next to Library)</td>
+              	<td>Intro to RMarkdown, Making Informative Dcouments</td>
+              </tr>
+              <tr>
+                <td>Session IV</td>
+                <td>Wednesday April 18, 2018, 5:30pm-7pm</td>
+              	<td>Hiatt Auditorium S1-608 (Next to Library)</td>
+              	<td>Plotting with ggplot2, saving plots</td>
+              </tr>
+              <tr>
+                <td>Session V</td>
+                <td>Monday April 23, 2018, 5:30pm-7pm</td>
+              	<td>Hiatt Auditorium S1-608 (Next to Library)</td>
+              	<td>Plotting with ggplot2, saving plots continued</td>
+              </tr>
+              <tr>
+                <td>Session VI</td>
+                <td>Wednesday April 25, 2018, 5:30pm-7pm</td>
+              	<td>Hiatt Auditorium S1-608 (Next to Library)</td>
+              	<td>Interactive Plots</td>
+              </tr>
+            </tbody>
+      		</table>
+      	</div>
+       </div>
+      <div class="panel panel-success">
+      	<div class="panel-heading"><h1>Course Materials</h1></div>
+      	<div class="panel-body">
+        <div class="col-md-6">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Page</th>
+                <th>File</th>
+                <th>Slides</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Session 1</td>
+                <td><a class = "" href="Session_1/Session_1.html"><button type="button" class="btn btn-success viewPage ">View</button></a></td>
+                <td><a class = "" href="Session_1/Session_1.pdf" download = "Session_1.pdf"><button type="button" class="btn btn-success fileDownload ">Download</button></a></td>
+                <td><a class = "inactive" href="Session_1/Session_1_Slides.pdf" download ="Session_1_Slides.pdf" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+              </tr>
+              <tr>
+                <td>Session 2</td>
+                <td><a class = "inactive" href="Session_2/Session_2.html"><button type="button" class="btn btn-default viewPage ">View</button></a></td>
+                <td><a class = "inactive" href="Session_2/Session_2.pdf" download = "Session_2.pdf" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+                <td><a class = "inactive" href="" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+              </tr>
+              <tr>
+                <td>Session 3</td>
+                <td><a class = "inactive" href="Session_3/Session_3.html"><button type="button" class="btn btn-default viewPage ">View</button></a></td>
+                <td><a class = "inactive" href="Session_3/Session_3.pdf" download = "Session_3/Session_3.pdf" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+                <td><a class = "inactive" href="" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+              </tr>
+              <tr>
+                <td>Session 4</td>
+                <td><a class = "inactive" href="Session_4/Session_4.html"><button type="button" class="btn btn-default viewPage ">View</button></a></td>
+                <td><a class = "inactive" href="Session_4/Session_4.pdf" download = "Session_4.pdf" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+                <td><a class = "inactive" href="" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+              </tr>
+              <tr>
+                <td>Session 5</td>
+                <td><a class = "inactive" href="Session_5/Session_5.html"><button type="button" class="btn btn-default viewPage ">View</button></a></td>
+                <td><a class = "inactive" href="Session_5/Session_5.pdf" download = "Session_5/Session_5.pdf" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+                <td><a class = "inactive" href="" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+              </tr>
+              <tr>
+                <td>Session 6</td>
+                <td><a class = "inactive" href="Session_6/Session_6.html"><button type="button" class="btn btn-default viewPage ">View</button></a></td>
+                <td><a class = "inactive" href="Session_6/Session_6.pdf" download = "Session_6.pdf" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+                <td><a class = "inactive" href="" ><button type="button" class="btn btn-default fileDownload ">Download</button></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+            <div class="panel panel-info">
+      			<div class="panel-heading"><h1>Additional Resources</h1></div>
+      			<div class="panel-body">
+      			<ul>
+      				<li><a href="Additional_Resources/Updating_R.html">Updating R and RStudio</a></li>
+      				<li><a href="resources/helpfulGuides/R_Shortrefcard.pdf" download="R_Shortrefcard.pdf">R_Shortrefcard</a></li>
+      				<li><a href="Additional_Resources/Rcolorstyle.html">Rcolorstyle</a></li>
+      				<li><a href="resources/helpfulGuides/Rfigurelayout.pdf" download="Rfigurelayout.pdf">Rfigurelayout</a></li>
+      				<li><a href="resources/helpfulGuides/Rlinestyle.pdf" download="Rlinestyle.pdf">Rlinestyle</a></li>
+      				<li><a href="Additional_Resources/Some_more_plotting_aspects.html">Some_more_plotting_aspects</a></li>
+      				
+      			</ul>
+      			</div>
+      		</div>
+      		<div class="panel panel-info">
+      		<div class="panel-heading"><h1>Helpfull Links</h1></div>
+      			<div class="panel-body">
+      			<ul>
+      				<li><a href="https://www.rstudio.com/resources/cheatsheets/">Cheatsheets by RStudio Makers</a></li>
+      				<li><a href="https://www.rstudio.com/resources/webinars/">Webinars by RStudio Makers</a></li>
+      				<li><a href="http://seananderson.ca/2014/09/13/dplyr-intro.html">dplyr basics</a></li>
+      				<li><a href="http://docs.ggplot2.org/current/">ggplot2 basics</a></li>
+      				<li><a href="http://colorbrewer2.org/">ColroBrewer</a></li>
+      			</ul>
+      			</div>
+      		</div>
+      		<div class="panel panel-info">
+      		<div class="panel-heading"><h1>Cookbook</h1></div>
+      			<div class="panel-body">
+      			<ul>
+      				<li><a href="Cookbook/ensureLib.html">Ensuring a package/library is Installed</a></li>
+      				<li><a href="Cookbook/For_loops.html">For_loops</a></li>
+      				<li><a href="Cookbook/Combing_Excel_Sheets_into_One_data-frame.html">Combining Excel sheets into one data.frame</a></li>
+      			</ul>
+      			</div>
+      		</div>
+        </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../resources/bootstrap/js/jquery.min.js"></script>
+    <script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+
+	</body>
+</html>
