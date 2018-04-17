@@ -310,7 +310,7 @@ ggplot(ts_longFormat_SOD2, aes(x = time, y = expression, color = exposure)) +
 ```
 
 ## Modifying colors 
-Now the default color variables kind of leave a lot to be desired and we can set these colors to seomthing else by using ggplot2's scale_color_[FUNC_NAME] to change the color plotting aspects. Here we are using the colors supplied by RColorBrewer, which you use by using `scale_color_brewer()`. 
+Now the default color variables kind of leave a lot to be desired and we can set these colors to something else by using ggplot2's scale_color_[FUNC_NAME] to change the color plotting aspects. Here we are using the colors supplied by RColorBrewer, which you use by using `scale_color_brewer()`. 
 ```{r, fig.width=8, fig.height=8}
 ggplot(ts_longFormat_SOD2, aes(x = time, y = expression, color = exposure)) + 
   geom_point() + 
@@ -322,7 +322,7 @@ The color brewer palettes were developed by Martin Krzywinski on which he wrote 
 For more information on how you can change the color other than `scale_color_brewer()` see here http://ggplot2.tidyverse.org/reference/index.html#section-scales. 
 
 ### Setting colors manually  
-As most PIs are extremely picky about colors, there are also easy ways of setting specific colors for specific groupsing using `scale_color_manual()`.  
+As most PIs are extremely picky about colors, there are also easy ways of setting specific colors for specific grouping using `scale_color_manual()`.  
 
 ```{r, fig.width=8, fig.height=8}
 exposureColors = c("#005AC8", "#AA0A3C", "#0AB45A", "#14D2DC") 
@@ -460,7 +460,7 @@ ggplot(ts_longFormat_SOD2, aes(x = time, y = expression, group = exposure, fill 
   scale_fill_brewer(palette = "Dark2")
 ```
 
-Now lets dress up the plot a little bit, we can do this by using ggplot2's `theme()` function which allows the tweaking of many different aspects of how the plot itself looks in general, let's change the legen position so it's on the bottom instead.  
+Now lets dress up the plot a little bit, we can do this by using ggplot2's `theme()` function which allows the tweaking of many different aspects of how the plot itself looks in general, let's change the legend position so it's on the bottom instead.  
 ```{r, fig.width=8, fig.height=8}
 ggplot(ts_longFormat_SOD2, aes(x = time, y = expression, group = exposure, fill = exposure)) + 
   geom_bar(stat = "identity", position = "dodge", color = "black") +
@@ -552,7 +552,7 @@ dev.off()
 
 *  **example_plot.pdf** - The first argument is the name of a file you want to save the plots to, this will erase any file with this name if it already exists so be careful.    
 *  **width** - This is the width of the plot in inches   
-*  **height** - This is the height of the plot in inces  
+*  **height** - This is the height of the plot in inches  
 *  **useDingbats=F** - This turns off the graphic library Dingbats, you always want to set this to FALSE, it causes R to create a larger file but if you don't turn off Dingbats it causes problems when editing the pdf latter in something like Illustrator.      
 
 ### Multiple pages  
@@ -600,8 +600,8 @@ Using the Temperature data frame read in earlier
 <a download = "avg_temps_usa_wide.tab.txt" href = "avg_temps_usa_wide.tab.txt">Average Temperatures USA</a>  
 
 1. Filter the long format data frame created in Part 1 to just one Station_name  
-2. Modify the month column into a factor so that the months are organized in chrological order. (hint use this vector `c("January","February","March","April","May","June","July","August","September","October","November","December"))`  
-3. Create a line and dot plot of temperature for the Station_name you picked in 1 with months on x-axis and temperatures on y-axis, color the lines by years (see what happens to the colors when you cange years into a factor rather than a numeric data type)   
+2. Modify the month column into a factor so that the months are organized in chronological order. (hint use this vector `c("January","February","March","April","May","June","July","August","September","October","November","December"))`  
+3. Create a line and dot plot of temperature for the Station_name you picked in 1 with months on x-axis and temperatures on y-axis, color the lines by years (see what happens to the colors when you change years into a factor rather than a numeric data type)   
 4. Now create a barplot 
 5. Now filter the long format data frame again to be from 3 different stations and to just the year 1995. 
 6. Take the new data frame from 5 and create a barplot x = months and y = temperature and color the bars by station name (try setting the station names to new custom colors of your choosing, you can use http://colorbrewer2.org/ to pick colors)
