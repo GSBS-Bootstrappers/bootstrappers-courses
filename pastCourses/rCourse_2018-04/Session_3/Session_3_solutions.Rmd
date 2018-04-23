@@ -1,0 +1,264 @@
+---
+title: "Session 3"
+author: "Nick Hathaway; nicholas.hathaway@umassmed.edu"
+output:
+  html_document:
+    highlight: tango
+    theme: readable
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    highlight: tango
+    toc: yes
+---
+
+<!--Include script for hiding output chunks-->
+<script>
+$(document).ready(function() {
+	console.log("hello")
+  // Select all <pre> tags that do not have class 'r'
+  $output = $(".toggleOutput");
+  console.log($output)
+  // Add the show/hide-button to each output chunk
+  $output.prepend("<button style=\"float:right\" class=\"btn btn-primary showopt\">Show Output</button><br/>");
+  // Select the <pre> tags, then choose their <code> child tags and toggle visibility 
+  $output.children("code").css({display: "none"});
+  
+  // When the show/hide-button is clicked, toggle the current state and
+  // change the button text
+  $(".showopt").click(function() {
+    $btn = $(this);
+    $chunk = $(this).parent().children("code");
+    if($btn.html() === "Show Output") {
+      $btn.html("Hide Output");
+    } else {
+      $btn.html("Show Output");
+    }
+    $btn.toggleClass("btn-info btn-primary");
+    $chunk.slideToggle("fast", "swing");
+  });
+});
+
+</script>
+
+
+
+
+
+```{r setup, echo=FALSE, message=FALSE}
+require(knitr)
+#turn off mesages and warnings and make it so output isn't prefixed by anything,
+#default is to put "##" in front of all output for some reason
+#also set tidy to true so code is wrapped properly 
+opts_chunk$set(message=FALSE, warning=FALSE, comment = "")
+options(width = 60)
+
+knitr::knit_hooks$set(output = function(x, options) {
+  return(paste0(
+    "```{",
+    ifelse(is.null(options$class),
+      "", 
+      paste0(" .", gsub(" ", " .", options$class))
+    ),
+    "}\n",
+    x,
+    "\n```"
+  ))
+})
+```
+
+# Part 1. Excercises Solutions
+
+Download Average Temperatures USA  
+<a download = "avg_temps_usa_wide.tab.txt" href = "avg_temps_usa_wide.tab.txt">Average Temperatures USA</a>  
+
+1.  convert to **long** format by using gather() on the temperate columns    
+2.  separate columns so you have a column for year and month  
+3.  create a table of mean temperatures for months, cities, and months for each city (various group_by calls)  
+4.  filter table to just one city or just one month  
+
+# Part 1 Solutions 
+
+## Q1
+
+convert to **long** format by using gather() on the temperate columns    
+
+```{r}
+library(tidyverse)  
+temps = readr::read_tsv("avg_temps_usa_wide.tab.txt")
+# temperature columns start on column 6 
+temps_gat = temps %>% 
+  gather(date, temperature, 6:ncol(temps))
+
+```
+
+## Q2 
+
+separate columns so you have a column for year and month  
+
+```{r}
+# Separate and then convert year 
+temps_gat = temps_gat %>% 
+  separate(date, into = c("year", "month")) %>% 
+  mutate(year = as.numeric(year))
+
+### OR
+
+# separate and let separate guess the type of the separated columns use convert = T 
+temps = readr::read_tsv("avg_temps_usa_wide.tab.txt")
+# temperature columns start on column 6 
+temps_gat = temps %>% 
+  gather(date, temperature, 6:ncol(temps))
+temps_gat = temps_gat %>% 
+  separate(date, into = c("year", "month"), convert = T)
+
+
+```
+
+## Q3  
+create a table of mean temperatures for months, cities, and months for each city (various group_by calls)  
+
+```{r}
+# filter off NA 
+temps_gat_filt = temps_gat %>% 
+  filter(!is.na(temperature))
+
+## Summary within cities 
+temps_gat_summary_city = temps_gat_filt %>% 
+  group_by(Station_Name) %>% 
+  summarise(meanTemp = mean(temperature))
+
+## Summary within months
+temps_gat_summary_month = temps_gat_filt %>% 
+  group_by(month) %>% 
+  summarise(meanTemp = mean(temperature))
+
+## Summary of within months within each city 
+temps_gat_summary_city_month = temps_gat_filt %>% 
+  group_by(Station_Name, month) %>% 
+  summarise(meanTemp = mean(temperature))
+
+
+```
+
+## Q4  
+filter table to just one city or just one month 
+
+```{r}
+# Filter to just one city, here BURLINGTON/INT'L ARPT
+temps_gat_BURLINGTON = temps_gat_filt %>% 
+  filter(Station_Name == "BURLINGTON/INT'L ARPT")
+
+# Filter to just one year, here 1994
+temps_gat_1994 = temps_gat_filt %>% 
+  filter(year == 1994)
+
+```
+
+
+# Part 2. Excercises
+
+Using the Temperature data frame read in earlier  
+<a download = "avg_temps_usa_wide.tab.txt" href = "avg_temps_usa_wide.tab.txt">Average Temperatures USA</a>  
+
+1. Filter the long format data frame created in Part 1 to just one Station_name  
+2. Modify the month column into a factor so that the months are organized in chronological order. (hint use this vector `c("January","February","March","April","May","June","July","August","September","October","November","December"))`  
+3. Create a line and dot plot of temperature for the Station_name you picked in 1 with months on x-axis and temperatures on y-axis, color the lines by years (see what happens to the colors when you change years into a factor rather than a numeric data type)   
+4. Now create a barplot 
+5. Now filter the long format data frame again to be from 3 different stations and to just the year 1995. 
+6. Take the new data frame from 5 and create a barplot x = months and y = temperature and color the bars by station name (try setting the station names to new custom colors of your choosing, you can use http://colorbrewer2.org/ to pick colors)
+
+# Part 2 Solutions 
+
+## Q1
+
+Filter the long format data frame created in Part 1 to just one Station_name
+
+```{r}
+temps = readr::read_tsv("avg_temps_usa_wide.tab.txt")
+# temperature columns start on column 6 
+temps_gat = temps %>% 
+  gather(date, temperature, 6:ncol(temps))
+temps_gat = temps_gat %>% 
+  separate(date, into = c("year", "month"), convert = T)
+# filter off NA 
+temps_gat_filt = temps_gat %>% 
+  filter(!is.na(temperature))
+# Filter to just one city
+temps_gat_boston = temps_gat_filt %>% 
+  filter(Station_Name == "BOSTON/LOGAN INT'L ARPT")
+```
+
+## Q2  
+Modify the month column into a factor so that the months are organized in chronological order. (hint use this vector `c("January","February","March","April","May","June","July","August","September","October","November","December"))`  
+```{r}
+temps_gat_boston = temps_gat_boston %>% 
+  mutate(month = factor(month, levels = c("January","February","March","April","May","June","July","August","September","October","November","December")))
+
+```
+
+## Q3    
+Create a line and dot plot of temperature for the Station_name you picked in 1 with months on x-axis and temperatures on y-axis, color the lines by years (see what happens to the colors when you change years into a factor rather than a numeric data type)   
+
+theme(axis.text.x = element_text(angle = -45, hjust = 0)) allows the rotation of the month labels so they fit better 
+```{r}
+linePlot = ggplot(temps_gat_boston,aes(x = month, y = temperature, color = factor(year), group = factor(year)  )) + 
+  geom_line() +
+  geom_point() + 
+  scale_color_brewer(palette = "Paired") + 
+  theme(axis.text.x = element_text(angle = -45, hjust = 0)) + 
+  labs(x = "Month", y = "Temperature (C)", color = "Year")
+
+print(linePlot)
+```
+
+## Q4  
+Now create a barplot  
+```{r}
+barPlot = ggplot(temps_gat_boston) + 
+  geom_bar(aes(x = month, y = temperature, fill = factor(year), group = factor(year)  ), stat = "identity", position = "Dodge") + 
+  scale_fill_brewer(palette = "Paired") + 
+  theme(axis.text.x = element_text(angle = -45, hjust = 0)) + 
+  labs(x = "Month", y = "Temperature (C)", fill = "Year")
+
+print(barPlot)
+
+```
+
+
+## Q5  
+Now filter the long format data frame again to be from 3 different stations and to just the year 1995.
+
+```{r}
+# Filter to just three city
+stations = c("BOSTON/LOGAN INT'L ARPT", "TUCSON/INT'L ARPT", "OLYMPIA/ARPT")
+temps_gat_threeStats_1995 = temps_gat_filt %>% 
+  filter(Station_Name %in%  stations, 
+         year == 1995)
+
+temps_gat_threeStats_1995 = temps_gat_threeStats_1995 %>% 
+  mutate(month = factor(month, levels = c("January","February","March","April","May","June","July","August","September","October","November","December")))
+
+```
+
+## Q6  
+Take the new data frame from 5 and create a barplot x = months and y = temperature and color the bars by station name (try setting the station names to new custom colors of your choosing, you can use http://colorbrewer2.org/ to pick colors)  
+```{r}
+stationColors = c('#e41a1c','#377eb8','#4daf4a')
+names(stationColors) = stations
+
+barPlot = ggplot(temps_gat_threeStats_1995) + 
+  geom_bar(aes(x = month, y = temperature, fill = Station_Name, group = Station_Name ), stat = "identity", position = "Dodge", color =  "black") + 
+  scale_fill_manual(values = stationColors) + 
+  theme_bw() + 
+  theme(axis.text.x = element_text(angle = -45, hjust = 0), 
+        legend.position = "bottom", 
+        panel.border = element_blank()) + 
+  labs(x = "Month", y = "Temperature (C)", fill = "Station") 
+
+print(barPlot)
+
+```
+
+
+

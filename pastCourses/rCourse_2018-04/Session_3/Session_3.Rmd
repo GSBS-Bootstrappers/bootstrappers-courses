@@ -218,7 +218,6 @@ ts_longFormat_exposure_time_summary
 
 ```
 
-
 ## Filtering data  
 
 ```{r}
@@ -227,6 +226,63 @@ ts_longFormat_crt = ts_longFormat %>%
 ts_longFormat_crt
 
 ```
+
+
+### NAs in values 
+Taking means, mins, maxes, etc. can be affected if NA values are present 
+
+```{r}
+vals = c(10,3, 5, 9, 19, 23)
+
+mean(vals)
+min(vals)
+max(vals)
+
+vals = c(10,3, 5, 9, 19, 23, NA)
+
+mean(vals)
+min(vals)
+max(vals)
+
+```
+You can handle this by setting `na.rm = T`
+```{r}
+vals = c(10,3, 5, 9, 19, 23, NA)
+
+mean(vals, na.rm = T)
+min(vals, na.rm = T)
+max(vals, na.rm = T)
+
+```
+
+You can also just get rid of the NA values as well and if within in a data.frame you can use `filter()` you can do. 
+
+```{r}
+# use na.rm =T
+ts_longFormat_exposure_time_summary = ts_longFormat %>% 
+  group_by(exposure, time) %>% 
+  summarise(mean_expression = mean(expression, na.rm =T), 
+            median_expression = median(expression, na.rm =T),
+            max_expression = max(expression, na.rm =T), 
+            min_expression = min(expression, na.rm =T), 
+            sd_expression = sd(expression, na.rm =T))
+
+
+# use filter to keep only values of expression that aren't (!) NA (is.na)
+ts_longFormat_exposure_time_summary = ts_longFormat %>% 
+  filter(!is.na(expression)) %>% 
+  group_by(exposure, time) %>% 
+  summarise(mean_expression = mean(expression), 
+            median_expression = median(expression),
+            max_expression = max(expression), 
+            min_expression = min(expression), 
+            sd_expression = sd(expression))
+
+
+```
+
+
+
 
 dplyr offers a large array of available functions for manipulating data frames. Here is a list of resources for more options:  
 
@@ -243,6 +299,8 @@ Download Average Temperatures USA
 2.  separate columns so you have a column for year and month  
 2.  create a table of mean temperatures for month, city, and months for each city (various group_by calls)  
 1.  filter table to just one city or just one month  
+
+
 
 
 # Plotting  
@@ -304,7 +362,7 @@ ggplot(ts_longFormat_SOD2, aes(x = time, y = expression, group = exposure, color
 
 Also when you add plotting aspects like coloring, ggplot2 assumes that this is also a grouping variable so you no longer have to supply grouping if you are giving a coloring variable.  
 ```{r, fig.width=8, fig.height=8}
-ggplot(ts_longFormat_SOD2, aes(x = time, y = expression, color = exposure)) + 
+plotSod2 = ggplot(ts_longFormat_SOD2, aes(x = time, y = expression, color = exposure)) + 
   geom_point() + 
   geom_line()
 ```
