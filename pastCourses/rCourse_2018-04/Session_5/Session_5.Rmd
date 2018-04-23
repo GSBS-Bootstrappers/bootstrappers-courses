@@ -373,6 +373,8 @@ ggplot(top_ts_longFormat, aes(x = gene, y = expression, fill = gene)) +
 
 ```
 
+Also the library [cowplot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html) is a great library for setting up completely different plots in custum sized panels like in a figure.  
+
 # Part 1 Excerices 
 Using the Temperature data frame from last sessions  
 <a download = "avg_temps_usa_wide.tab.txt" href = "avg_temps_usa_wide.tab.txt">Average Temperatures USA</a>  
