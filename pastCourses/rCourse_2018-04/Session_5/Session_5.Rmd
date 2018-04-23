@@ -307,7 +307,7 @@ ggplot(maln_protein_to_matrix_mat_pca_dat_samplesMeta_sum_filt %>%
 ```
 
 # Dividing Data into Quantiles  
-
+Some times it might be helpful to split data into different bins by creating evenly sized quantiles. This can be done by using the `ntile()` function. Here we are creating quantiles based off of the sd of the Lps exposure, to bin genes by how variable their expression is during the Lps time points.     
 ```{r}
 
 ts_longFormat_lps_sum = ts_longFormat %>% 
@@ -316,20 +316,34 @@ ts_longFormat_lps_sum = ts_longFormat %>%
   summarise(lps_sd = sd(expression))
 ts_longFormat_lps_sum
 
+
 ntiles = 2000
 ts_longFormat_lps_sum = ts_longFormat_lps_sum %>% 
   mutate(lps_sd_quantile = ntile(lps_sd, ntiles))
+
+```
+
+We can add this quantile information back to the original data set by using the `left_join()` function, which takes a data frame and takes another data frame with which it shares columns, by matching information in the shared columns left_join adds what ever columns the first data frame doesn't have and populates these columns by matching up the data in the shared columns.  
+```{r}
 
 ts_longFormat = ts_longFormat %>% 
   left_join(ts_longFormat_lps_sum)
 ts_longFormat
 
+```
+
+Let's take the 2000th quantile 
+```{r}
 top_ts_longFormat = ts_longFormat %>% 
   filter(lps_sd_quantile == 2000)
 
 bottom_ts_longFormat = ts_longFormat %>% 
   filter(lps_sd_quantile == 1)
 
+```
+
+And plot all the genes by using facet_wrap to seperate out the genes and allow their y axis to be different between panels.  
+```{r}
 ggplot(top_ts_longFormat, aes(x = time, y = expression, color = exposure)) + 
   geom_point() + 
   geom_line() + 
@@ -337,20 +351,25 @@ ggplot(top_ts_longFormat, aes(x = time, y = expression, color = exposure)) +
   facet_wrap(~gene, scales = "free_y")
 
 
+```
+
+The facet_wrap function also allows you set how many columns to have by using the `ncol=` arguments.  
+```{r}
 ggplot(top_ts_longFormat, aes(x = time, y = expression, color = exposure)) + 
   geom_point() + 
   geom_line() + 
   scale_color_brewer(palette = "Dark2") + 
   facet_wrap(~gene, scales = "free_y", ncol = 3)
 
+```
 
+facet_grid is another faceting function that sets out things in a grid pattern which is better for showing relationships, the face_wrap just create a panel for each level and puts these panels in the order that the levels go but facet_grid will layout the panels in a grid.   
+```{r}
 ggplot(top_ts_longFormat, aes(x = gene, y = expression, fill = gene)) + 
   geom_bar(stat = "identity", color = "black") + 
   scale_fill_brewer(palette = "Paired") + 
   facet_grid(time~exposure) +
    theme(axis.text.x = element_text(angle = -45, hjust = 0))
-
-
 
 ```
 
