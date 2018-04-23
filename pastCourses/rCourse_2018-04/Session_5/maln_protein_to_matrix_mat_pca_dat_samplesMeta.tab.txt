@@ -1,0 +1,2399 @@
+sample	country	region	hdbcluster	reads	collection_year
+Ghana.387_t1	Ghana	West Africa	6	Ghana.387	2013
+Ghana.407_t1	Ghana	West Africa	5	Ghana.407	2013
+Guinea.91_t1	Guinea	West Africa	5	Guinea.91	2011
+Malawi.134_t1	Malawi	East Africa	5	Malawi.134	2011
+DRC.081_t2	DRC	Central Africa	5	DRC.081	2013
+DRC.081_t2	DRC	Central Africa	5	DRC.083	2013
+Ghana.427_t1	Ghana	West Africa	5	Ghana.427	2013
+Gambia.43_t3	Gambia	West Africa	5	Gambia.43	2008
+Gambia.43_t3	Gambia	West Africa	5	Gambia.57	2008
+Gambia.43_t3	Mali	West Africa	5	Mali.12	2010
+Guinea.19_t2	Guinea	West Africa	5	Guinea.19	2011
+Guinea.19_t2	Guinea	West Africa	5	Guinea.51	2011
+Malawi.146_t2	Malawi	East Africa	5	Malawi.146	2011
+Malawi.146_t2	Malawi	East Africa	5	Malawi.180	2011
+Malawi.167_t1	Malawi	East Africa	5	Malawi.167	2011
+Ghana.388_t1	Ghana	West Africa	5	Ghana.388	2013
+Senegal.078_t1	Senegal	West Africa	5	Senegal.078	2009
+Malawi.102_t1	Malawi	East Africa	5	Malawi.102	2011
+Senegal.062_t1	Senegal	West Africa	5	Senegal.062	2011
+DRC.104_t2	DRC	Central Africa	5	DRC.104	2013
+DRC.104_t2	Ghana	West Africa	5	Ghana.080	2010
+EF614228_t1	EF614228	Lab	5	EF614228	"NA"
+Ghana.064_t2	Ghana	West Africa	5	Ghana.064	2009
+Ghana.064_t2	Guinea	West Africa	5	Guinea.60	2011
+Cambodia.004_t3	Cambodia	South East Asia	5	Cambodia.004	2011
+Cambodia.004_t3	Cambodia	South East Asia	5	Cambodia.376	2011
+Cambodia.004_t3	Cambodia	South East Asia	5	Cambodia.394	2011
+Gambia.40_t2	Gambia	West Africa	5	Gambia.40	2008
+Gambia.40_t2	Malawi	East Africa	5	Malawi.044	2011
+Malawi.002_t1	Malawi	East Africa	5	Malawi.002	2011
+DRC.013_t1	DRC	Central Africa	5	DRC.013	2013
+Ghana.457_t1	Ghana	West Africa	5	Ghana.457	2013
+Guinea.05_t1	Guinea	West Africa	5	Guinea.05	2011
+Ghana.295_t1	Ghana	West Africa	5	Ghana.295	2012
+Ghana.357_t1	Ghana	West Africa	5	Ghana.357	2012
+Gambia.20_t1	Gambia	West Africa	5	Gambia.20	2008
+Gambia.37_t3	Gambia	West Africa	5	Gambia.37	2008
+Gambia.37_t3	Malawi	East Africa	5	Malawi.066	2011
+Gambia.37_t3	Malawi	East Africa	5	Malawi.093	2011
+DRC.101_t1	DRC	Central Africa	5	DRC.101	2013
+Ghana.057_t2	Ghana	West Africa	5	Ghana.057	2009
+Ghana.057_t2	Ghana	West Africa	5	Ghana.370	2012
+Ghana.205_t1	Ghana	West Africa	5	Ghana.205	2011
+Malawi.008_t1	Malawi	East Africa	5	Malawi.008	2011
+Ghana.359_t1	Ghana	West Africa	5	Ghana.359	2012
+Malawi.217_t1	Malawi	East Africa	5	Malawi.217	2011
+Ghana.147_t1	Ghana	West Africa	5	Ghana.147	2010
+Mali.06_t1	Mali	West Africa	5	Mali.06	2002
+Gambia.21_t6	Gambia	West Africa	5	Gambia.21	2008
+Gambia.21_t6	Ghana	West Africa	5	Ghana.155	2010
+Gambia.21_t6	Ghana	West Africa	5	Ghana.246	2011
+Gambia.21_t6	Ghana	West Africa	5	Ghana.271	2011
+Gambia.21_t6	Ghana	West Africa	5	Ghana.393	2013
+Gambia.21_t6	Guinea	West Africa	5	Guinea.92	2011
+Guinea.27_t1	Guinea	West Africa	5	Guinea.27	2011
+Gambia.22_t1	Gambia	West Africa	5	Gambia.22	2008
+Malawi.071_t3	Malawi	East Africa	5	Malawi.071	2011
+Malawi.071_t3	Malawi	East Africa	5	Malawi.204	2011
+Malawi.071_t3	Thailand	South East Asia	5	Thailand.205	2008
+Ghana.489_t1	Ghana	West Africa	5	Ghana.489	2011
+Malawi.110_t1	Malawi	East Africa	5	Malawi.110	2011
+Ghana.120_t4	Ghana	West Africa	5	Ghana.120	2010
+Ghana.120_t4	Ghana	West Africa	5	Ghana.170	2010
+Ghana.120_t4	Ghana	West Africa	5	Ghana.395	2013
+Ghana.120_t4	Ghana	West Africa	5	Ghana.400	2013
+Senegal.090_t1	Senegal	West Africa	5	Senegal.090	2009
+Ghana.308_t1	Ghana	West Africa	5	Ghana.308	2012
+Cambodia.073_t2	Cambodia	South East Asia	5	Cambodia.073	2009
+Cambodia.073_t2	Thailand	South East Asia	5	Thailand.040	2011
+Malawi.196_t1	Malawi	East Africa	5	Malawi.196	2011
+Ghana.381_t1	Ghana	West Africa	5	Ghana.381	2013
+Cambodia.148_t3	Cambodia	South East Asia	5	Cambodia.148	2010
+Cambodia.148_t3	Cambodia	South East Asia	5	Cambodia.288	2011
+Cambodia.148_t3	Viet_Nam	South East Asia	5	Viet_Nam.054	2011
+Malawi.097_t1	Malawi	East Africa	5	Malawi.097	2011
+Malawi.062_t1	Malawi	East Africa	5	Malawi.062	2011
+Ghana.041_t3	Ghana	West Africa	5	Ghana.041	2009
+Ghana.041_t3	Ghana	West Africa	5	Ghana.315	2012
+Ghana.041_t3	Ghana	West Africa	5	Ghana.468	2013
+Myanmar.26_t1	Myanmar	South East Asia	5	Myanmar.26	2012
+Senegal.027_t1	Senegal	West Africa	5	Senegal.027	2010
+Ghana.165_t3	Ghana	West Africa	5	Ghana.165	2010
+Ghana.165_t3	Mali	West Africa	5	Mali.58	2007
+Ghana.165_t3	Senegal	West Africa	5	Senegal.066	2009
+Malawi.014_t5	Malawi	East Africa	5	Malawi.014	2011
+Malawi.014_t5	Malawi	East Africa	5	Malawi.095	2011
+Malawi.014_t5	Malawi	East Africa	5	Malawi.149	2011
+Malawi.014_t5	Malawi	East Africa	5	Malawi.261	2011
+Malawi.014_t5	Ghana	West Africa	5	Ghana.426	2013
+Malawi.040_t2	Malawi	East Africa	5	Malawi.040	2011
+Malawi.040_t2	Uganda	East Africa	5	Uganda.3	2006
+Ghana.189_t3	Ghana	West Africa	5	Ghana.189	2010
+Ghana.189_t3	Ghana	West Africa	5	Ghana.492	2011
+Ghana.189_t3	Mali	West Africa	5	Mali.09	2002
+Guinea.31_t1	Guinea	West Africa	5	Guinea.31	2011
+DRC.070_t4	DRC	Central Africa	5	DRC.070	2013
+DRC.070_t4	DRC	Central Africa	5	DRC.096	2013
+DRC.070_t4	Ghana	West Africa	5	Ghana.011	2009
+DRC.070_t4	Malawi	East Africa	5	Malawi.234	2011
+Mali.36_t1	Mali	West Africa	5	Mali.36	2007
+Malawi.144_t2	Malawi	East Africa	5	Malawi.144	2011
+Malawi.144_t2	Malawi	East Africa	5	Malawi.179	2011
+Malawi.077_t1	Malawi	East Africa	5	Malawi.077	2011
+Bangladesh.47_t1	Bangladesh	South East Asia	5	Bangladesh.47	2012
+Ghana.144_t3	Ghana	West Africa	5	Ghana.144	2010
+Ghana.144_t3	Guinea	West Africa	5	Guinea.30	2011
+Ghana.144_t3	Senegal	West Africa	5	Senegal.002	2004
+Malawi.172_t2	Malawi	East Africa	5	Malawi.172	2011
+Malawi.172_t2	Malawi	East Africa	5	Malawi.255	2011
+Ghana.031_t3	Ghana	West Africa	5	Ghana.031	2009
+Ghana.031_t3	Ghana	West Africa	5	Ghana.221	2010
+Ghana.031_t3	Mali	West Africa	5	Mali.24	2007
+Bangladesh.37_t1	Bangladesh	South East Asia	5	Bangladesh.37	2012
+Ghana.151_t1	Ghana	West Africa	6	Ghana.151	2010
+5_1.1_t1	5_1-1	Lab	6	5_1-1	"NA"
+Ghana.296_t1	Ghana	West Africa	6	Ghana.296	2012
+Senegal.001_t1	Senegal	West Africa	6	Senegal.001	2004
+Ghana.083_t1	Ghana	West Africa	6	Ghana.083	2009
+Ghana.255_t1	Ghana	West Africa	6	Ghana.255	2011
+Cambodia.397_t8	Cambodia	South East Asia	6	Cambodia.397	2011
+Cambodia.397_t8	Cambodia	South East Asia	6	Cambodia.398	2011
+Cambodia.397_t8	Cambodia	South East Asia	6	Cambodia.399	2011
+Cambodia.397_t8	Cambodia	South East Asia	6	Cambodia.401	2011
+Cambodia.397_t8	Cambodia	South East Asia	6	Cambodia.405	2011
+Cambodia.397_t8	Cambodia	South East Asia	6	Cambodia.416	2011
+Cambodia.397_t8	Cambodia	South East Asia	6	Cambodia.417	2011
+Cambodia.397_t8	Viet_Nam	South East Asia	6	Viet_Nam.097	2011
+Laos.44_t2	Laos	South East Asia	6	Laos.44	2011
+Laos.44_t2	Thailand	South East Asia	6	Thailand.108	2012
+Ghana.078_t1	Ghana	West Africa	6	Ghana.078	2010
+Senegal.014_t1	Senegal	West Africa	6	Senegal.014	2010
+Ghana.177_t2	Ghana	West Africa	6	Ghana.177	2010
+Ghana.177_t2	Ghana	West Africa	6	Ghana.301	2012
+Malawi.262_t1	Malawi	East Africa	6	Malawi.262	2011
+Cambodia.386_t4	Cambodia	South East Asia	6	Cambodia.386	2011
+Cambodia.386_t4	Cambodia	South East Asia	6	Cambodia.389	2011
+Cambodia.386_t4	Cambodia	South East Asia	6	Cambodia.390	2011
+Cambodia.386_t4	Cambodia	South East Asia	6	Cambodia.485	2012
+Cambodia.215_t4	Cambodia	South East Asia	6	Cambodia.215	2011
+Cambodia.215_t4	Cambodia	South East Asia	6	Cambodia.373	2011
+Cambodia.215_t4	Laos	South East Asia	6	Laos.12	2011
+Cambodia.215_t4	Laos	South East Asia	6	Laos.22	2011
+DRC.040_t3	DRC	Central Africa	6	DRC.040	2013
+DRC.040_t3	Ghana	West Africa	6	Ghana.131	2010
+DRC.040_t3	Ghana	West Africa	6	Ghana.270	2011
+Ghana.200_t1	Ghana	West Africa	6	Ghana.200	2011
+Mali.64_t1	Mali	West Africa	6	Mali.64	2007
+DRC.071_t1	DRC	Central Africa	6	DRC.071	2013
+DRC.012_t3	DRC	Central Africa	6	DRC.012	2013
+DRC.012_t3	Ghana	West Africa	6	Ghana.258	2011
+DRC.012_t3	Guinea	West Africa	6	Guinea.66	2011
+Malawi.205_t2	Malawi	East Africa	6	Malawi.205	2011
+Malawi.205_t2	Uganda	East Africa	6	Uganda.5	2006
+Ghana.256_t2	Ghana	West Africa	6	Ghana.256	2010
+Ghana.256_t2	Guinea	West Africa	6	Guinea.50	2011
+Ghana.050_t3	Ghana	West Africa	6	Ghana.050	2009
+Ghana.050_t3	Ghana	West Africa	6	Ghana.162	2010
+Ghana.050_t3	Ghana	West Africa	6	Ghana.333	2012
+Malawi.011_t2	Malawi	East Africa	6	Malawi.011	2011
+Malawi.011_t2	Malawi	East Africa	6	Malawi.228	2011
+Ghana.129_t1	Ghana	West Africa	6	Ghana.129	2010
+DRC.088_t1	DRC	Central Africa	6	DRC.088	2013
+Malawi.055_t1	Malawi	East Africa	6	Malawi.055	2011
+Malawi.139_t1	Malawi	East Africa	6	Malawi.139	2011
+Ghana.032_t1	Ghana	West Africa	6	Ghana.032	2009
+Gambia.17_t1	Gambia	West Africa	6	Gambia.17	2008
+Ghana.251_t1	Ghana	West Africa	6	Ghana.251	2011
+Malawi.107_t1	Malawi	East Africa	6	Malawi.107	2011
+Ghana.242_t1	Ghana	West Africa	6	Ghana.242	2011
+Ghana.187_t2	Ghana	West Africa	6	Ghana.187	2010
+Ghana.187_t2	Ghana	West Africa	6	Ghana.275	2010
+Malawi.032_t2	Malawi	East Africa	6	Malawi.032	2011
+Malawi.032_t2	Malawi	East Africa	6	Malawi.089	2011
+Mali.10_t1	Mali	West Africa	6	Mali.10	2002
+Guinea.08_t1	Guinea	West Africa	6	Guinea.08	2011
+Ghana.140_t3	Ghana	West Africa	6	Ghana.140	2010
+Ghana.140_t3	Ghana	West Africa	6	Ghana.249	2009
+Ghana.140_t3	Ghana	West Africa	6	Ghana.245	2011
+Gambia.24_t3	Gambia	West Africa	6	Gambia.24	2008
+Gambia.24_t3	Gambia	West Africa	6	Gambia.32	2008
+Gambia.24_t3	Gambia	West Africa	6	Gambia.52	2008
+Ghana.481_t1	Ghana	West Africa	6	Ghana.481	2013
+Ghana.463_t1	Ghana	West Africa	6	Ghana.463	2013
+Ghana.206_t1	Ghana	West Africa	6	Ghana.206	2011
+Ghana.390_t1	Ghana	West Africa	6	Ghana.390	2013
+Malawi.043_t1	Malawi	East Africa	6	Malawi.043	2011
+Gambia.13_t3	Gambia	West Africa	6	Gambia.13	2008
+Gambia.13_t3	Gambia	West Africa	6	Gambia.19	2008
+Gambia.13_t3	Ghana	West Africa	6	Ghana.108	2010
+Ghana.076_t2	Ghana	West Africa	6	Ghana.076	2010
+Ghana.076_t2	Ghana	West Africa	6	Ghana.077	2010
+Ghana.268_t1	Ghana	West Africa	6	Ghana.268	2010
+Malawi.038_t2	Malawi	East Africa	6	Malawi.038	2011
+Malawi.038_t2	Malawi	East Africa	6	Malawi.168	2011
+DRC.014_t9	DRC	Central Africa	6	DRC.014	2013
+DRC.014_t9	Gambia	West Africa	6	Gambia.36	2008
+DRC.014_t9	Ghana	West Africa	6	Ghana.304	2012
+DRC.014_t9	Ghana	West Africa	6	Ghana.311	2012
+DRC.014_t9	Guinea	West Africa	6	Guinea.34	2011
+DRC.014_t9	Guinea	West Africa	6	Guinea.49	2011
+DRC.014_t9	Malawi	East Africa	6	Malawi.166	2011
+DRC.014_t9	Malawi	East Africa	6	Malawi.219	2011
+DRC.014_t9	Malawi	East Africa	6	Malawi.241	2011
+Gambia.03_t5	Gambia	West Africa	5	Gambia.03	2008
+Gambia.03_t5	Ghana	West Africa	5	Ghana.178	2010
+Gambia.03_t5	Ghana	West Africa	5	Ghana.406	2013
+Gambia.03_t5	Mali	West Africa	5	Mali.35	2007
+Gambia.03_t5	Guinea	West Africa	5	Guinea.64	2011
+Cambodia.132_t1	Cambodia	South East Asia	5	Cambodia.132	2010
+Cambodia.069_t4	Cambodia	South East Asia	5	Cambodia.069	2011
+Cambodia.069_t4	Cambodia	South East Asia	5	Cambodia.348	2011
+Cambodia.069_t4	Viet_Nam	South East Asia	5	Viet_Nam.032	2011
+Cambodia.069_t4	Viet_Nam	South East Asia	5	Viet_Nam.088	2012
+Cambodia.153_t3	Cambodia	South East Asia	5	Cambodia.153	2010
+Cambodia.153_t3	Viet_Nam	South East Asia	5	Viet_Nam.011	2011
+Cambodia.153_t3	Viet_Nam	South East Asia	5	Viet_Nam.096	2011
+Malawi.135_t1	Malawi	East Africa	5	Malawi.135	2011
+Viet_Nam.065_t1	Viet_Nam	South East Asia	5	Viet_Nam.065	2011
+Ghana.317_t2	Ghana	West Africa	6	Ghana.317	2012
+Ghana.317_t2	Malawi	East Africa	6	Malawi.036	2011
+Mali.33_t1	Mali	West Africa	6	Mali.33	2007
+Ghana.471_t1	Ghana	West Africa	6	Ghana.471	2013
+Malawi.191_t1	Malawi	East Africa	6	Malawi.191	2011
+Mali.22_t1	Mali	West Africa	6	Mali.22	2010
+Malawi.020_t1	Malawi	East Africa	6	Malawi.020	2011
+Senegal.017_t1	Senegal	West Africa	6	Senegal.017	2009
+Ghana.379_t1	Ghana	West Africa	6	Ghana.379	2012
+Ghana.305_t1	Ghana	West Africa	6	Ghana.305	2012
+Guinea.85_t5	Guinea	West Africa	6	Guinea.85	2011
+Guinea.85_t5	Malawi	East Africa	6	Malawi.054	2011
+Guinea.85_t5	Malawi	East Africa	6	Malawi.096	2011
+Guinea.85_t5	Malawi	East Africa	6	Malawi.169	2011
+Guinea.85_t5	Senegal	West Africa	6	Senegal.091	2009
+Senegal.083_t1	Senegal	West Africa	6	Senegal.083	2009
+Senegal.101_t1	Senegal	West Africa	6	Senegal.101	2008
+Ghana.043_t9	Ghana	West Africa	6	Ghana.043	2009
+Ghana.043_t9	Ghana	West Africa	6	Ghana.114	2010
+Ghana.043_t9	Ghana	West Africa	6	Ghana.222	2011
+Ghana.043_t9	Guinea	West Africa	6	Guinea.48	2011
+Ghana.043_t9	Guinea	West Africa	6	Guinea.54	2011
+Ghana.043_t9	Guinea	West Africa	6	Guinea.77	2011
+Ghana.043_t9	Guinea	West Africa	6	Guinea.96	2011
+Ghana.043_t9	Mali	West Africa	6	Mali.62	2007
+Ghana.043_t9	Nigeria	West Africa	6	Nigeria.1	2011
+Cambodia.204_t6	Cambodia	South East Asia	6	Cambodia.204	2009
+Cambodia.204_t6	Cambodia	South East Asia	6	Cambodia.222	2011
+Cambodia.204_t6	Cambodia	South East Asia	6	Cambodia.274	2011
+Cambodia.204_t6	Cambodia	South East Asia	6	Cambodia.346	2011
+Cambodia.204_t6	Viet_Nam	South East Asia	6	Viet_Nam.015	2011
+Cambodia.204_t6	Viet_Nam	South East Asia	6	Viet_Nam.061	2011
+Cambodia.168_t3	Cambodia	South East Asia	6	Cambodia.168	2010
+Cambodia.168_t3	Cambodia	South East Asia	6	Cambodia.327	2011
+Cambodia.168_t3	Cambodia	South East Asia	6	Cambodia.379	2011
+Gambia.49_t2	Gambia	West Africa	6	Gambia.49	2008
+Gambia.49_t2	Ghana	West Africa	6	Ghana.213	2011
+Guinea.81_t1	Guinea	West Africa	6	Guinea.81	2011
+Mali.60_t1	Mali	West Africa	6	Mali.60	2007
+Malawi.018_t4	Malawi	East Africa	6	Malawi.018	2011
+Malawi.018_t4	Malawi	East Africa	6	Malawi.061	2011
+Malawi.018_t4	Malawi	East Africa	6	Malawi.084	2011
+Malawi.018_t4	Malawi	East Africa	6	Malawi.250	2011
+Malawi.227_t1	Malawi	East Africa	6	Malawi.227	2011
+Ghana.362_t2	Ghana	West Africa	6	Ghana.362	2012
+Ghana.362_t2	Ghana	West Africa	6	Ghana.375	2012
+Ghana.044_t1	Ghana	West Africa	6	Ghana.044	2009
+Mali.77_t1	Mali	West Africa	6	Mali.77	2007
+Ghana.125_t1	Ghana	West Africa	6	Ghana.125	2010
+Ghana.002_t1	Ghana	West Africa	6	Ghana.002	2009
+Ghana.118_t1	Ghana	West Africa	6	Ghana.118	2010
+French_Guiana.07_t7	French_Guiana	South America	6	French_Guiana.07	2010
+French_Guiana.07_t7	French_Guiana	South America	6	French_Guiana.10	2010
+French_Guiana.07_t7	French_Guiana	South America	6	French_Guiana.14	2011
+French_Guiana.07_t7	French_Guiana	South America	6	French_Guiana.29	2010
+French_Guiana.07_t7	French_Guiana	South America	6	French_Guiana.42	2012
+French_Guiana.07_t7	French_Guiana	South America	6	French_Guiana.53	2013
+French_Guiana.07_t7	Mali	West Africa	6	Mali.51	2007
+Malawi.081_t2	Malawi	East Africa	6	Malawi.081	2011
+Malawi.081_t2	Malawi	East Africa	6	Malawi.211	2011
+Ghana.369_t1	Ghana	West Africa	6	Ghana.369	2012
+Guinea.89_t1	Guinea	West Africa	6	Guinea.89	2011
+Ghana.173_t4	Ghana	West Africa	6	Ghana.173	2009
+Ghana.173_t4	Ghana	West Africa	6	Ghana.312	2012
+Ghana.173_t4	Ghana	West Africa	6	Ghana.415	2013
+Ghana.173_t4	Guinea	West Africa	6	Guinea.07	2011
+Ghana.094_t2	Ghana	West Africa	6	Ghana.094	2010
+Ghana.094_t2	Ghana	West Africa	6	Ghana.149	2010
+DRC.048_t1	DRC	Central Africa	6	DRC.048	2013
+Gambia.35_t1	Gambia	West Africa	6	Gambia.35	2008
+Ghana.056_t5	Ghana	West Africa	6	Ghana.056	2009
+Ghana.056_t5	Ghana	West Africa	6	Ghana.130	2010
+Ghana.056_t5	Ghana	West Africa	6	Ghana.293	2012
+Ghana.056_t5	DRC	Central Africa	6	DRC.017	2013
+Ghana.056_t5	Uganda	East Africa	6	Uganda.4	2006
+Ghana.435_t1	Ghana	West Africa	6	Ghana.435	2013
+DRC.056_t3	DRC	Central Africa	6	DRC.056	2013
+DRC.056_t3	DRC	Central Africa	6	DRC.069	2013
+DRC.056_t3	Malawi	East Africa	6	Malawi.202	2011
+DRC.008_t1	DRC	Central Africa	6	DRC.008	2013
+Bangladesh.14_t1	Bangladesh	South East Asia	6	Bangladesh.14	2012
+Bangladesh.50_t1	Bangladesh	South East Asia	6	Bangladesh.50	2012
+Ghana.226_t4	Ghana	West Africa	6	Ghana.226	2011
+Ghana.226_t4	Guinea	West Africa	6	Guinea.75	2011
+Ghana.226_t4	Mali	West Africa	6	Mali.13	2010
+Ghana.226_t4	Mali	West Africa	6	Mali.40	2007
+Malawi.073_t1	Malawi	East Africa	6	Malawi.073	2011
+DRC.001_t1	DRC	Central Africa	6	DRC.001	2013
+Malawi.151_t1	Malawi	East Africa	6	Malawi.151	2011
+DRC.059_t1	DRC	Central Africa	6	DRC.059	2013
+Cambodia.269_t5	Cambodia	South East Asia	6	Cambodia.269	2011
+Cambodia.269_t5	Laos	South East Asia	6	Laos.20	2011
+Cambodia.269_t5	Laos	South East Asia	6	Laos.41	2011
+Cambodia.269_t5	Myanmar	South East Asia	6	Myanmar.16	2012
+Cambodia.269_t5	Viet_Nam	South East Asia	6	Viet_Nam.086	2012
+Ghana.111_t1	Ghana	West Africa	6	Ghana.111	2010
+Laos.30_t1	Laos	South East Asia	6	Laos.30	2011
+Laos.64_t1	Laos	South East Asia	6	Laos.64	2012
+Bangladesh.53_t1	Bangladesh	South East Asia	6	Bangladesh.53	2012
+Cambodia.242_t4	Cambodia	South East Asia	6	Cambodia.242	2011
+Cambodia.242_t4	Cambodia	South East Asia	6	Cambodia.261	2011
+Cambodia.242_t4	Cambodia	South East Asia	6	Cambodia.266	2011
+Cambodia.242_t4	Cambodia	South East Asia	6	Cambodia.466	2012
+Bangladesh.44_t1	Bangladesh	South East Asia	6	Bangladesh.44	2012
+Cambodia.102_t5	Cambodia	South East Asia	6	Cambodia.102	2010
+Cambodia.102_t5	Cambodia	South East Asia	6	Cambodia.374	2011
+Cambodia.102_t5	Cambodia	South East Asia	6	Cambodia.377	2011
+Cambodia.102_t5	Cambodia	South East Asia	6	Cambodia.384	2011
+Cambodia.102_t5	Cambodia	South East Asia	6	Cambodia.498	2012
+Thailand.024_t3	Thailand	South East Asia	6	Thailand.024	2012
+Thailand.024_t3	Thailand	South East Asia	6	Thailand.068	2012
+Thailand.024_t3	Ghana	West Africa	6	Ghana.071	2010
+Cambodia.155_t9	Cambodia	South East Asia	6	Cambodia.155	2010
+Cambodia.155_t9	Cambodia	South East Asia	6	Cambodia.221	2011
+Cambodia.155_t9	Cambodia	South East Asia	6	Cambodia.230	2011
+Cambodia.155_t9	Cambodia	South East Asia	6	Cambodia.276	2011
+Cambodia.155_t9	Cambodia	South East Asia	6	Cambodia.352	2011
+Cambodia.155_t9	Cambodia	South East Asia	6	Cambodia.365	2011
+Cambodia.155_t9	Cambodia	South East Asia	6	Cambodia.448	2012
+Cambodia.155_t9	Viet_Nam	South East Asia	6	Viet_Nam.016	2011
+Cambodia.155_t9	Viet_Nam	South East Asia	6	Viet_Nam.048	2011
+Cambodia.211_t18	Cambodia	South East Asia	6	Cambodia.211	2011
+Cambodia.211_t18	Cambodia	South East Asia	6	Cambodia.437	2012
+Cambodia.211_t18	Cambodia	South East Asia	6	Cambodia.439	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.056	2011
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.077	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.081	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.091	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.098	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.102	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.112	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.121	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.126	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.151	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.163	2014
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.219	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.246	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.247	2012
+Cambodia.211_t18	Thailand	South East Asia	6	Thailand.253	2012
+Senegal.097_t1	Senegal	West Africa	1	Senegal.097	2009
+Ghana.429_t1	Ghana	West Africa	1	Ghana.429	2013
+Guinea.32_t1	Guinea	West Africa	1	Guinea.32	2011
+Malawi.042_t1	Malawi	East Africa	4	Malawi.042	2011
+Cambodia.099_t2	Cambodia	South East Asia	4	Cambodia.099	2010
+Cambodia.099_t2	Cambodia	South East Asia	4	Cambodia.161	2010
+Cambodia.286_t2	Cambodia	South East Asia	4	Cambodia.286	2011
+Cambodia.286_t2	Cambodia	South East Asia	4	Cambodia.308	2011
+Malawi.027_t1	Malawi	East Africa	4	Malawi.027	2011
+Ghana.008_t1	Ghana	West Africa	4	Ghana.008	2009
+Ghana.040_t3	Ghana	West Africa	4	Ghana.040	2009
+Ghana.040_t3	Guinea	West Africa	4	Guinea.23	2011
+Ghana.040_t3	Mali	West Africa	4	Mali.67	2007
+Ghana.238_t1	Ghana	West Africa	4	Ghana.238	2011
+Ghana.033_t2	Ghana	West Africa	4	Ghana.033	2009
+Ghana.033_t2	Guinea	West Africa	4	Guinea.88	2011
+Senegal.088_t1	Senegal	West Africa	4	Senegal.088	2009
+Malawi.215_t1	Malawi	East Africa	4	Malawi.215	2011
+Mali.70_t1	Mali	West Africa	4	Mali.70	2007
+Gambia.61_t3	Gambia	West Africa	4	Gambia.61	2008
+Gambia.61_t3	Ghana	West Africa	4	Ghana.460	2013
+Gambia.61_t3	Senegal	West Africa	4	Senegal.102	2008
+Ghana.486_t2	Ghana	West Africa	4	Ghana.486	2013
+Ghana.486_t2	Mali	West Africa	4	Mali.75	2007
+Malawi.253_t2	Malawi	East Africa	4	Malawi.253	2011
+Malawi.253_t2	Malawi	East Africa	4	Malawi.263	2011
+Gambia.60_t1	Gambia	West Africa	4	Gambia.60	2008
+Ghana.285_t1	Ghana	West Africa	4	Ghana.285	2012
+Ghana.021_t1	Ghana	West Africa	4	Ghana.021	2009
+Preichenowi_t1	Preichenowi	Lab	1	Preichenowi	"NA"
+Ghana.372_t1	Ghana	West Africa	4	Ghana.372	2012
+Gambia.07_t2	Gambia	West Africa	3	Gambia.07	2008
+Gambia.07_t2	Ghana	West Africa	3	Ghana.100	2010
+DRC.037_t1	DRC	Central Africa	2	DRC.037	2013
+Malawi.004_t1	Malawi	East Africa	2	Malawi.004	2011
+Guinea.22_t1	Guinea	West Africa	3	Guinea.22	2011
+Malawi.076_t1	Malawi	East Africa	2	Malawi.076	2011
+DRC.105_t1	DRC	Central Africa	3	DRC.105	2013
+Ghana.026_t1	Ghana	West Africa	2	Ghana.026	2009
+Malawi.184_t1	Malawi	East Africa	2	Malawi.184	2011
+Guinea.78_t1	Guinea	West Africa	2	Guinea.78	2011
+DRC.041_t2	DRC	Central Africa	2	DRC.041	2013
+DRC.041_t2	Ghana	West Africa	2	Ghana.348	2012
+Ghana.294_t1	Ghana	West Africa	2	Ghana.294	2012
+Ghana.168_t5	Ghana	West Africa	2	Ghana.168	2010
+Ghana.168_t5	Ghana	West Africa	2	Ghana.446	2013
+Ghana.168_t5	Senegal	West Africa	2	Senegal.010	2007
+Ghana.168_t5	Senegal	West Africa	2	Senegal.036	2010
+Ghana.168_t5	Senegal	West Africa	2	Senegal.043	2010
+Ghana.049_t1	Ghana	West Africa	2	Ghana.049	2009
+DRC.063_t2	DRC	Central Africa	2	DRC.063	2013
+DRC.063_t2	Malawi	East Africa	2	Malawi.028	2011
+Malawi.138_t1	Malawi	East Africa	2	Malawi.138	2011
+DRC.015_t1	DRC	Central Africa	2	DRC.015	2013
+Gambia.10_t10	Gambia	West Africa	2	Gambia.10	2008
+Gambia.10_t10	Senegal	West Africa	2	Senegal.019	2011
+Gambia.10_t10	Senegal	West Africa	2	Senegal.021	2010
+Gambia.10_t10	Senegal	West Africa	2	Senegal.031	2011
+Gambia.10_t10	Senegal	West Africa	2	Senegal.032	2011
+Gambia.10_t10	Senegal	West Africa	2	Senegal.039	2011
+Gambia.10_t10	Senegal	West Africa	2	Senegal.057	2011
+Gambia.10_t10	Senegal	West Africa	2	Senegal.071	2011
+Gambia.10_t10	Senegal	West Africa	2	Senegal.080	2011
+Gambia.10_t10	Senegal	West Africa	2	Senegal.094	2010
+Ghana.148_t1	Ghana	West Africa	2	Ghana.148	2010
+Ghana.220_t1	Ghana	West Africa	2	Ghana.220	2010
+Ghana.413_t3	Ghana	West Africa	3	Ghana.413	2013
+Ghana.413_t3	Senegal	West Africa	3	Senegal.058	2009
+Ghana.413_t3	Senegal	West Africa	3	Senegal.082	2009
+Malawi.194_t1	Malawi	East Africa	3	Malawi.194	2011
+Malawi.098_t1	Malawi	East Africa	2	Malawi.098	2011
+Malawi.222_t1	Malawi	East Africa	2	Malawi.222	2011
+Ghana.465_t1	Ghana	West Africa	2	Ghana.465	2013
+Ghana.107_t1	Ghana	West Africa	2	Ghana.107	2010
+Guinea.39_t1	Guinea	West Africa	2	Guinea.39	2011
+DRC.019_t1	DRC	Central Africa	2	DRC.019	2013
+Ghana.327_t1	Ghana	West Africa	2	Ghana.327	2013
+Senegal.103_t1	Senegal	West Africa	2	Senegal.103	2008
+Ghana.292_t1	Ghana	West Africa	2	Ghana.292	2012
+Mali.03_t1	Mali	West Africa	2	Mali.03	2002
+Mali.59_t1	Mali	West Africa	3	Mali.59	2007
+DRC.092_t1	DRC	Central Africa	2	DRC.092	2013
+Ghana.366_t2	Ghana	West Africa	2	Ghana.366	2012
+Ghana.366_t2	Mali	West Africa	2	Mali.04	2002
+Malawi.104_t1	Malawi	East Africa	2	Malawi.104	2011
+Ghana.325_t2	Ghana	West Africa	2	Ghana.325	2012
+Ghana.325_t2	Ghana	West Africa	2	Ghana.459	2013
+DRC.044_t1	DRC	Central Africa	2	DRC.044	2013
+Mali.02_t1	Mali	West Africa	2	Mali.02	2002
+Ghana.273_t1	Ghana	West Africa	3	Ghana.273	2011
+Ghana.286_t1	Ghana	West Africa	3	Ghana.286	2012
+DRC.010_t1	DRC	Central Africa	2	DRC.010	2013
+Ghana.141_t1	Ghana	West Africa	2	Ghana.141	2010
+Mali.72_t1	Mali	West Africa	2	Mali.72	2007
+Ghana.209_t2	Ghana	West Africa	2	Ghana.209	2011
+Ghana.209_t2	Ghana	West Africa	2	Ghana.227	2011
+Senegal.047_t1	Senegal	West Africa	2	Senegal.047	2010
+Malawi.137_t2	Malawi	East Africa	2	Malawi.137	2011
+Malawi.137_t2	Malawi	East Africa	2	Malawi.251	2011
+Ghana.052_t1	Ghana	West Africa	2	Ghana.052	2009
+Ghana.195_t7	Ghana	West Africa	2	Ghana.195	2011
+Ghana.195_t7	Ghana	West Africa	2	Ghana.225	2011
+Ghana.195_t7	Ghana	West Africa	2	Ghana.237	2011
+Ghana.195_t7	Ghana	West Africa	2	Ghana.257	2011
+Ghana.195_t7	Ghana	West Africa	2	Ghana.421	2013
+Ghana.195_t7	Malawi	East Africa	2	Malawi.119	2011
+Ghana.195_t7	Malawi	East Africa	2	Malawi.121	2011
+Ghana.377_t4	Ghana	West Africa	2	Ghana.377	2012
+Ghana.377_t4	Malawi	East Africa	2	Malawi.030	2011
+Ghana.377_t4	Malawi	East Africa	2	Malawi.087	2011
+Ghana.377_t4	Malawi	East Africa	2	Malawi.136	2011
+Malawi.106_t1	Malawi	East Africa	2	Malawi.106	2011
+Ghana.414_t1	Ghana	West Africa	2	Ghana.414	2013
+DRC.068_t1	DRC	Central Africa	2	DRC.068	2013
+Laos.62_t2	Laos	South East Asia	2	Laos.62	2012
+Laos.62_t2	Laos	South East Asia	2	Laos.67	2012
+Cambodia.100_t3	Cambodia	South East Asia	2	Cambodia.100	2010
+Cambodia.100_t3	Cambodia	South East Asia	2	Cambodia.146	2010
+Cambodia.100_t3	Cambodia	South East Asia	2	Cambodia.484	2012
+Cambodia.169_t1	Cambodia	South East Asia	2	Cambodia.169	2010
+Guinea.72_t1	Guinea	West Africa	2	Guinea.72	2011
+Ghana.126_t1	Ghana	West Africa	2	Ghana.126	2010
+Ghana.167_t1	Ghana	West Africa	2	Ghana.167	2010
+Guinea.53_t2	Guinea	West Africa	2	Guinea.53	2011
+Guinea.53_t2	Mali	West Africa	2	Mali.16	2010
+Ghana.462_t1	Ghana	West Africa	2	Ghana.462	2013
+DRC.026_t1	DRC	Central Africa	2	DRC.026	2013
+Mali.79_t1	Mali	West Africa	2	Mali.79	2007
+Ghana.198_t1	Ghana	West Africa	3	Ghana.198	2011
+Senegal.054_t1	Senegal	West Africa	3	Senegal.054	2011
+Malawi.247_t1	Malawi	East Africa	2	Malawi.247	2011
+Guinea.40_t2	Guinea	West Africa	3	Guinea.40	2011
+Guinea.40_t2	Malawi	East Africa	3	Malawi.233	2011
+French_Guiana.05_t4	French_Guiana	South America	3	French_Guiana.05	2009
+French_Guiana.05_t4	French_Guiana	South America	3	French_Guiana.08	2010
+French_Guiana.05_t4	Ghana	West Africa	3	Ghana.472	2013
+French_Guiana.05_t4	Mali	West Africa	3	Mali.07	2002
+Malawi.173_t1	Malawi	East Africa	2	Malawi.173	2011
+Malawi.201_t1	Malawi	East Africa	2	Malawi.201	2011
+Malawi.060_t1	Malawi	East Africa	2	Malawi.060	2011
+Gambia.41_t1	Gambia	West Africa	2	Gambia.41	2008
+Malawi.258_t1	Malawi	East Africa	2	Malawi.258	2011
+Ghana.386_t1	Ghana	West Africa	2	Ghana.386	2013
+Ghana.124_t1	Ghana	West Africa	2	Ghana.124	2010
+Cambodia.444_t6	Cambodia	South East Asia	2	Cambodia.444	2012
+Cambodia.444_t6	Cambodia	South East Asia	2	Cambodia.445	2012
+Cambodia.444_t6	Laos	South East Asia	2	Laos.53	2011
+Cambodia.444_t6	Laos	South East Asia	2	Laos.85	2012
+Cambodia.444_t6	Thailand	South East Asia	2	Thailand.211	2008
+Cambodia.444_t6	K1	Lab	2	K1	"NA"
+Ghana.363_t1	Ghana	West Africa	2	Ghana.363	2012
+Ghana.432_t2	Ghana	West Africa	2	Ghana.432	2013
+Ghana.432_t2	Uganda	East Africa	2	Uganda.6	2007
+Bangladesh.06_t11	Bangladesh	South East Asia	2	Bangladesh.06	2012
+Bangladesh.06_t11	Cambodia	South East Asia	2	Cambodia.159	2010
+Bangladesh.06_t11	Cambodia	South East Asia	2	Cambodia.305	2011
+Bangladesh.06_t11	Cambodia	South East Asia	2	Cambodia.328	2011
+Bangladesh.06_t11	Myanmar	South East Asia	2	Myanmar.11	2012
+Bangladesh.06_t11	Myanmar	South East Asia	2	Myanmar.19	2012
+Bangladesh.06_t11	Myanmar	South East Asia	2	Myanmar.40	2012
+Bangladesh.06_t11	Myanmar	South East Asia	2	Myanmar.45	2012
+Bangladesh.06_t11	Thailand	South East Asia	2	Thailand.036	2012
+Bangladesh.06_t11	Thailand	South East Asia	2	Thailand.087	2012
+Bangladesh.06_t11	Thailand	South East Asia	2	Thailand.203	2008
+Senegal.006_t1	Senegal	West Africa	2	Senegal.006	2001
+Gambia.56_t3	Gambia	West Africa	2	Gambia.56	2008
+Gambia.56_t3	Ghana	West Africa	2	Ghana.039	2009
+Gambia.56_t3	Ghana	West Africa	2	Ghana.401	2013
+DRC.077_t1	DRC	Central Africa	2	DRC.077	2013
+Ghana.403_t1	Ghana	West Africa	3	Ghana.403	2013
+Mali.39_t1	Mali	West Africa	3	Mali.39	2007
+Ghana.009_t1	Ghana	West Africa	2	Ghana.009	2009
+Malawi.240_t2	Malawi	East Africa	2	Malawi.240	2011
+Malawi.240_t2	Mali	West Africa	2	Mali.28	2007
+DRC.004_t5	DRC	Central Africa	2	DRC.004	2013
+DRC.004_t5	DRC	Central Africa	2	DRC.107	2013
+DRC.004_t5	Ghana	West Africa	2	Ghana.012	2009
+DRC.004_t5	Ghana	West Africa	2	Ghana.058	2009
+DRC.004_t5	Guinea	West Africa	2	Guinea.21	2011
+Malawi.142_t1	Malawi	East Africa	2	Malawi.142	2011
+Gambia.34_t1	Gambia	West Africa	2	Gambia.34	2008
+Malawi.123_t1	Malawi	East Africa	2	Malawi.123	2011
+Ghana.349_t1	Ghana	West Africa	2	Ghana.349	2012
+Malawi.237_t1	Malawi	East Africa	2	Malawi.237	2011
+Thailand.012_t1	Thailand	South East Asia	2	Thailand.012	2011
+Thailand.004_t2	Thailand	South East Asia	2	Thailand.004	2011
+Thailand.004_t2	Thailand	South East Asia	2	Thailand.094	2012
+Cambodia.122_t2	Cambodia	South East Asia	2	Cambodia.122	2010
+Cambodia.122_t2	Cambodia	South East Asia	2	Cambodia.199	2011
+PfHB3_01_t1	PfHB3_01	Lab	2	PfHB3_01	"NA"
+PfHB3_12_t1	PfHB3_12	Lab	2	PfHB3_12	"NA"
+Malawi.065_t1	Malawi	East Africa	2	Malawi.065	2011
+DRC.086_t2	DRC	Central Africa	2	DRC.086	2013
+DRC.086_t2	DRC	Central Africa	2	DRC.099	2013
+Ghana.425_t1	Ghana	West Africa	2	Ghana.425	2013
+Bangladesh.21_t1	Bangladesh	South East Asia	2	Bangladesh.21	2012
+Ghana.380_t1	Ghana	West Africa	2	Ghana.380	2012
+Ghana.330_t1	Ghana	West Africa	2	Ghana.330	2013
+Ghana.347_t1	Ghana	West Africa	2	Ghana.347	2012
+Malawi.021_t1	Malawi	East Africa	2	Malawi.021	2011
+Cambodia.489_t8	Cambodia	South East Asia	2	Cambodia.489	2012
+Cambodia.489_t8	Laos	South East Asia	2	Laos.76	2012
+Cambodia.489_t8	Myanmar	South East Asia	2	Myanmar.57	2012
+Cambodia.489_t8	Myanmar	South East Asia	2	Myanmar.58	2012
+Cambodia.489_t8	Myanmar	South East Asia	2	Myanmar.64	2012
+Cambodia.489_t8	Thailand	South East Asia	2	Thailand.029	2011
+Cambodia.489_t8	Thailand	South East Asia	2	Thailand.095	2012
+Cambodia.489_t8	Thailand	South East Asia	2	Thailand.096	2012
+Malawi.108_t1	Malawi	East Africa	2	Malawi.108	2011
+Bangladesh.07_t1	Bangladesh	South East Asia	2	Bangladesh.07	2012
+Ghana.017_t5	Ghana	West Africa	2	Ghana.017	2009
+Ghana.017_t5	Ghana	West Africa	2	Ghana.150	2010
+Ghana.017_t5	Senegal	West Africa	2	Senegal.015	2009
+Ghana.017_t5	Senegal	West Africa	2	Senegal.056	2009
+Ghana.017_t5	Senegal	West Africa	2	Senegal.099	2008
+Ghana.001_t2	Ghana	West Africa	2	Ghana.001	2009
+Ghana.001_t2	Mali	West Africa	2	Mali.05	2002
+Cambodia.223_t7	Cambodia	South East Asia	2	Cambodia.223	2011
+Cambodia.223_t7	Cambodia	South East Asia	2	Cambodia.300	2011
+Cambodia.223_t7	Cambodia	South East Asia	2	Cambodia.306	2011
+Cambodia.223_t7	Cambodia	South East Asia	2	Cambodia.436	2012
+Cambodia.223_t7	Cambodia	South East Asia	2	Cambodia.438	2012
+Cambodia.223_t7	Cambodia	South East Asia	2	Cambodia.479	2012
+Cambodia.223_t7	Cambodia	South East Asia	2	Cambodia.483	2012
+Cambodia.152_t26	Cambodia	South East Asia	2	Cambodia.152	2010
+Cambodia.152_t26	Cambodia	South East Asia	2	Cambodia.157	2010
+Cambodia.152_t26	Cambodia	South East Asia	2	Cambodia.216	2011
+Cambodia.152_t26	Cambodia	South East Asia	2	Cambodia.318	2011
+Cambodia.152_t26	Cambodia	South East Asia	2	Cambodia.391	2011
+Cambodia.152_t26	Laos	South East Asia	2	Laos.68	2012
+Cambodia.152_t26	Myanmar	South East Asia	2	Myanmar.20	2012
+Cambodia.152_t26	Myanmar	South East Asia	2	Myanmar.21	2012
+Cambodia.152_t26	Myanmar	South East Asia	2	Myanmar.32	2012
+Cambodia.152_t26	Thailand	South East Asia	2	Thailand.034	2011
+Cambodia.152_t26	Thailand	South East Asia	2	Thailand.057	2011
+Cambodia.152_t26	Thailand	South East Asia	2	Thailand.196	2008
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.003	2011
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.006	2011
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.009	2011
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.049	2011
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.052	2011
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.053	2011
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.071	2012
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.072	2012
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.073	2012
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.075	2012
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.079	2012
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.082	2012
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.084	2012
+Cambodia.152_t26	Viet_Nam	South East Asia	2	Viet_Nam.087	2012
+Myanmar.15_t2	Myanmar	South East Asia	2	Myanmar.15	2012
+Myanmar.15_t2	Myanmar	South East Asia	2	Myanmar.34	2012
+Ghana.211_t1	Ghana	West Africa	2	Ghana.211	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.008	2012
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.015	2013
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.020	2013
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.025	2013
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.034	2013
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.043	2013
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.046	2013
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.071	2013
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.076	2009
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.079	2009
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.092	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.114	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.115	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.117	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.118	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.119	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.130	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.137	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.139	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.140	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.142	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.170	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.171	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.174	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.176	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.185	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.187	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.194	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.201	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.202	2009
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.206	2009
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.207	2010
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.208	2009
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.227	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.232	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.234	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.251	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.252	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.257	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.263	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.275	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.282	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.301	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.349	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.350	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.355	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.359	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.362	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.363	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.368	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.382	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.421	2011
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.476	2012
+Cambodia.008_t104	Cambodia	South East Asia	2	Cambodia.486	2012
+Cambodia.008_t104	Laos	South East Asia	2	Laos.35	2011
+Cambodia.008_t104	Laos	South East Asia	2	Laos.86	2012
+Cambodia.008_t104	Myanmar	South East Asia	2	Myanmar.43	2012
+Cambodia.008_t104	Myanmar	South East Asia	2	Myanmar.47	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.009	2011
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.013	2011
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.017	2011
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.021	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.022	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.023	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.031	2011
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.035	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.061	2011
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.069	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.070	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.076	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.080	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.082	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.099	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.120	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.123	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.125	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.149	2011
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.150	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.155	2013
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.156	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.158	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.160	2013
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.167	2014
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.178	2008
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.184	2014
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.191	2008
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.193	2008
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.201	2008
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.217	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.223	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.225	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.229	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.233	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.234	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.254	2012
+Cambodia.008_t104	Thailand	South East Asia	2	Thailand.258	2014
+Cambodia.008_t104	Viet_Nam	South East Asia	2	Viet_Nam.004	2011
+Cambodia.008_t104	Viet_Nam	South East Asia	2	Viet_Nam.022	2011
+Cambodia.008_t104	Viet_Nam	South East Asia	2	Viet_Nam.036	2011
+Cambodia.008_t104	Viet_Nam	South East Asia	2	Viet_Nam.037	2011
+Cambodia.008_t104	Viet_Nam	South East Asia	2	Viet_Nam.045	2011
+Cambodia.008_t104	Viet_Nam	South East Asia	2	Viet_Nam.046	2011
+Cambodia.008_t104	Viet_Nam	South East Asia	2	Viet_Nam.063	2011
+Cambodia.008_t104	Viet_Nam	South East Asia	2	Viet_Nam.099	2011
+Ghana.093_t9	Ghana	West Africa	2	Ghana.093	2010
+Ghana.093_t9	Ghana	West Africa	2	Ghana.234	2011
+Ghana.093_t9	Ghana	West Africa	2	Ghana.353	2012
+Ghana.093_t9	Ghana	West Africa	2	Ghana.449	2013
+Ghana.093_t9	Ghana	West Africa	2	Ghana.487	2011
+Ghana.093_t9	Guinea	West Africa	2	Guinea.10	2011
+Ghana.093_t9	Guinea	West Africa	2	Guinea.33	2011
+Ghana.093_t9	Senegal	West Africa	2	Senegal.029	2010
+Ghana.093_t9	Senegal	West Africa	2	Senegal.042	2010
+Cambodia.131_t1	Cambodia	South East Asia	2	Cambodia.131	2010
+Bangladesh.45_t1	Bangladesh	South East Asia	2	Bangladesh.45	2012
+Laos.80_t1	Laos	South East Asia	2	Laos.80	2012
+DRC.089_t2	DRC	Central Africa	3	DRC.089	2013
+DRC.089_t2	Ghana	West Africa	3	Ghana.287	2012
+Ghana.191_t1	Ghana	West Africa	2	Ghana.191	2011
+Ghana.299_t1	Ghana	West Africa	2	Ghana.299	2012
+Mali.26_t1	Mali	West Africa	2	Mali.26	2007
+Malawi.022_t1	Malawi	East Africa	2	Malawi.022	2011
+Malawi.245_t1	Malawi	East Africa	2	Malawi.245	2011
+Ghana.217_t8	Ghana	West Africa	2	Ghana.217	2011
+Ghana.217_t8	Ghana	West Africa	2	Ghana.445	2013
+Ghana.217_t8	Mali	West Africa	2	Mali.37	2007
+Ghana.217_t8	Senegal	West Africa	2	Senegal.008	2002
+Ghana.217_t8	Senegal	West Africa	2	Senegal.016	2011
+Ghana.217_t8	Senegal	West Africa	2	Senegal.023	2009
+Ghana.217_t8	Senegal	West Africa	2	Senegal.046	2010
+Ghana.217_t8	Senegal	West Africa	2	Senegal.077	2011
+Ghana.113_t1	Ghana	West Africa	2	Ghana.113	2010
+Malawi.025_t1	Malawi	East Africa	2	Malawi.025	2011
+DRC.006_t2	DRC	Central Africa	2	DRC.006	2013
+DRC.006_t2	DRC	Central Africa	2	DRC.073	2013
+Myanmar.12_t6	Myanmar	South East Asia	1	Myanmar.12	2012
+Myanmar.12_t6	Myanmar	South East Asia	1	Myanmar.18	2012
+Myanmar.12_t6	Myanmar	South East Asia	1	Myanmar.42	2012
+Myanmar.12_t6	Thailand	South East Asia	1	Thailand.137	2012
+Myanmar.12_t6	Thailand	South East Asia	1	Thailand.138	2012
+Myanmar.12_t6	Thailand	South East Asia	1	Thailand.142	2012
+Cambodia.160_t2	Cambodia	South East Asia	2	Cambodia.160	2010
+Cambodia.160_t2	Cambodia	South East Asia	2	Cambodia.371	2011
+Ghana.055_t1	Ghana	West Africa	2	Ghana.055	2009
+Ghana.433_t1	Ghana	West Africa	2	Ghana.433	2013
+Malawi.006_t3	Malawi	East Africa	2	Malawi.006	2011
+Malawi.006_t3	Malawi	East Africa	2	Malawi.231	2011
+Malawi.006_t3	EF614231	Lab	2	EF614231	"NA"
+Ghana.314_t5	Ghana	West Africa	2	Ghana.314	2012
+Ghana.314_t5	Malawi	East Africa	2	Malawi.152	2011
+Ghana.314_t5	Malawi	East Africa	2	Malawi.200	2011
+Ghana.314_t5	Malawi	East Africa	2	Malawi.210	2011
+Ghana.314_t5	Malawi	East Africa	2	Malawi.226	2011
+Ghana.397_t1	Ghana	West Africa	2	Ghana.397	2013
+Malawi.132_t1	Malawi	East Africa	2	Malawi.132	2011
+Senegal.055_t1	Senegal	West Africa	1	Senegal.055	2010
+Bangladesh.11_t27	Bangladesh	South East Asia	1	Bangladesh.11	2012
+Bangladesh.11_t27	Cambodia	South East Asia	1	Cambodia.166	2010
+Bangladesh.11_t27	Cambodia	South East Asia	1	Cambodia.295	2011
+Bangladesh.11_t27	Cambodia	South East Asia	1	Cambodia.319	2011
+Bangladesh.11_t27	Cambodia	South East Asia	1	Cambodia.383	2011
+Bangladesh.11_t27	Laos	South East Asia	1	Laos.26	2011
+Bangladesh.11_t27	Laos	South East Asia	1	Laos.33	2011
+Bangladesh.11_t27	Laos	South East Asia	1	Laos.58	2012
+Bangladesh.11_t27	Laos	South East Asia	1	Laos.59	2012
+Bangladesh.11_t27	Laos	South East Asia	1	Laos.83	2012
+Bangladesh.11_t27	Myanmar	South East Asia	1	Myanmar.01	2011
+Bangladesh.11_t27	Myanmar	South East Asia	1	Myanmar.07	2011
+Bangladesh.11_t27	Myanmar	South East Asia	1	Myanmar.33	2012
+Bangladesh.11_t27	Myanmar	South East Asia	1	Myanmar.36	2012
+Bangladesh.11_t27	Myanmar	South East Asia	1	Myanmar.54	2012
+Bangladesh.11_t27	Myanmar	South East Asia	1	Myanmar.65	2013
+Bangladesh.11_t27	Thailand	South East Asia	1	Thailand.016	2011
+Bangladesh.11_t27	Thailand	South East Asia	1	Thailand.033	2011
+Bangladesh.11_t27	Thailand	South East Asia	1	Thailand.204	2008
+Bangladesh.11_t27	Thailand	South East Asia	1	Thailand.210	2008
+Bangladesh.11_t27	Thailand	South East Asia	1	Thailand.230	2012
+Bangladesh.11_t27	Thailand	South East Asia	1	Thailand.231	2012
+Bangladesh.11_t27	Thailand	South East Asia	1	Thailand.251	2012
+Bangladesh.11_t27	Thailand	South East Asia	1	Thailand.252	2012
+Bangladesh.11_t27	Viet_Nam	South East Asia	1	Viet_Nam.014	2011
+Bangladesh.11_t27	Viet_Nam	South East Asia	1	Viet_Nam.035	2011
+Bangladesh.11_t27	Viet_Nam	South East Asia	1	Viet_Nam.047	2011
+Bangladesh.32_t16	Bangladesh	South East Asia	2	Bangladesh.32	2012
+Bangladesh.32_t16	Bangladesh	South East Asia	2	Bangladesh.39	2012
+Bangladesh.32_t16	Myanmar	South East Asia	2	Myanmar.13	2012
+Bangladesh.32_t16	Myanmar	South East Asia	2	Myanmar.17	2012
+Bangladesh.32_t16	Myanmar	South East Asia	2	Myanmar.52	2012
+Bangladesh.32_t16	Myanmar	South East Asia	2	Myanmar.61	2012
+Bangladesh.32_t16	Myanmar	South East Asia	2	Myanmar.62	2012
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.002	2011
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.066	2012
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.075	2012
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.103	2011
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.122	2012
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.189	2008
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.195	2008
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.207	2008
+Bangladesh.32_t16	Thailand	South East Asia	2	Thailand.206	2008
+Malawi.009_t1	Malawi	East Africa	2	Malawi.009	2011
+Ghana.139_t1	Ghana	West Africa	2	Ghana.139	2010
+DRC.087_t6	DRC	Central Africa	2	DRC.087	2013
+DRC.087_t6	Ghana	West Africa	2	Ghana.069	2009
+DRC.087_t6	Ghana	West Africa	2	Ghana.119	2010
+DRC.087_t6	Ghana	West Africa	2	Ghana.224	2011
+DRC.087_t6	Ghana	West Africa	2	Ghana.342	2012
+DRC.087_t6	Guinea	West Africa	2	Guinea.95	2011
+Mali.68_t1	Mali	West Africa	2	Mali.68	2007
+Ghana.451_t1	Ghana	West Africa	2	Ghana.451	2013
+Ghana.300_t1	Ghana	West Africa	2	Ghana.300	2012
+Ghana.454_t1	Ghana	West Africa	2	Ghana.454	2013
+Malawi.023_t1	Malawi	East Africa	2	Malawi.023	2011
+DRC.110_t3	DRC	Central Africa	2	DRC.110	2013
+DRC.110_t3	Ghana	West Africa	2	Ghana.201	2011
+DRC.110_t3	Mali	West Africa	2	Mali.42	2007
+DRC.055_t1	DRC	Central Africa	2	DRC.055	2013
+Malawi.112_t1	Malawi	East Africa	2	Malawi.112	2011
+Malawi.183_t2	Malawi	East Africa	2	Malawi.183	2011
+Malawi.183_t2	Malawi	East Africa	2	Malawi.256	2011
+DRC.020_t1	DRC	Central Africa	2	DRC.020	2013
+Ghana.478_t1	Ghana	West Africa	3	Ghana.478	2013
+Mali.47_t1	Mali	West Africa	2	Mali.47	2007
+Ghana.419_t1	Ghana	West Africa	3	Ghana.419	2013
+Nigeria.3_t1	Nigeria	West Africa	3	Nigeria.3	2012
+DRC.016_t1	DRC	Central Africa	3	DRC.016	2013
+Ghana.013_t2	Ghana	West Africa	2	Ghana.013	2009
+Ghana.013_t2	Mali	West Africa	2	Mali.23	2007
+Malawi.088_t1	Malawi	East Africa	2	Malawi.088	2011
+Gambia.15_t2	Gambia	West Africa	2	Gambia.15	2008
+Gambia.15_t2	Gambia	West Africa	2	Gambia.27	2008
+Malawi.079_t1	Malawi	East Africa	2	Malawi.079	2011
+DRC.079_t1	DRC	Central Africa	2	DRC.079	2013
+DRC.082_t2	DRC	Central Africa	2	DRC.082	2013
+DRC.082_t2	DRC	Central Africa	2	DRC.084	2013
+Ghana.182_t2	Ghana	West Africa	2	Ghana.182	2010
+Ghana.182_t2	Mali	West Africa	2	Mali.65	2007
+Ghana.117_t1	Ghana	West Africa	2	Ghana.117	2010
+Malawi.175_t1	Malawi	East Africa	2	Malawi.175	2011
+DRC.093_t1	DRC	Central Africa	2	DRC.093	2013
+Gambia.06_t4	Gambia	West Africa	2	Gambia.06	2008
+Gambia.06_t4	Ghana	West Africa	2	Ghana.091	2010
+Gambia.06_t4	Guinea	West Africa	2	Guinea.02	2011
+Gambia.06_t4	Senegal	West Africa	2	Senegal.093	2009
+Ghana.045_t1	Ghana	West Africa	2	Ghana.045	2009
+Ghana.063_t1	Ghana	West Africa	3	Ghana.063	2009
+Ghana.235_t1	Ghana	West Africa	4	Ghana.235	2011
+Ghana.334_t2	Ghana	West Africa	3	Ghana.334	2012
+Ghana.334_t2	Ghana	West Africa	3	Ghana.477	2013
+Gambia.29_t1	Gambia	West Africa	3	Gambia.29	2008
+Ghana.194_t1	Ghana	West Africa	3	Ghana.194	2011
+Guinea.52_t1	Guinea	West Africa	3	Guinea.52	2011
+Ghana.229_t3	Ghana	West Africa	3	Ghana.229	2011
+Ghana.229_t3	Ghana	West Africa	3	Ghana.236	2011
+Ghana.229_t3	Ghana	West Africa	3	Ghana.345	2012
+Ghana.171_t1	Ghana	West Africa	3	Ghana.171	2010
+Ghana.172_t1	Ghana	West Africa	3	Ghana.172	2010
+Mali.69_t1	Mali	West Africa	3	Mali.69	2007
+Guinea.09_t2	Guinea	West Africa	3	Guinea.09	2011
+Guinea.09_t2	Guinea	West Africa	3	Guinea.86	2011
+Guinea.56_t1	Guinea	West Africa	2	Guinea.56	2011
+Bangladesh.19_t2	Bangladesh	South East Asia	3	Bangladesh.19	2012
+Bangladesh.19_t2	Malawi	East Africa	3	Malawi.224	2011
+Senegal.026_t3	Senegal	West Africa	3	Senegal.026	2011
+Senegal.026_t3	Senegal	West Africa	3	Senegal.034	2010
+Senegal.026_t3	Senegal	West Africa	3	Senegal.045	2011
+Ghana.145_t2	Ghana	West Africa	2	Ghana.145	2010
+Ghana.145_t2	Ghana	West Africa	2	Ghana.373	2012
+Ghana.105_t1	Ghana	West Africa	2	Ghana.105	2010
+Senegal.020_t1	Senegal	West Africa	2	Senegal.020	2010
+Senegal.049_t1	Senegal	West Africa	2	Senegal.049	2010
+Ghana.028_t1	Ghana	West Africa	2	Ghana.028	2009
+Ghana.355_t1	Ghana	West Africa	3	Ghana.355	2012
+Gambia.25_t3	Gambia	West Africa	2	Gambia.25	2008
+Gambia.25_t3	Gambia	West Africa	2	Gambia.33	2008
+Gambia.25_t3	Gambia	West Africa	2	Gambia.53	2008
+Bangladesh.27_t2	Bangladesh	South East Asia	2	Bangladesh.27	2012
+Bangladesh.27_t2	Ghana	West Africa	2	Ghana.461	2013
+Ghana.214_t1	Ghana	West Africa	2	Ghana.214	2011
+Ghana.383_t1	Ghana	West Africa	2	Ghana.383	2013
+Ghana.048_t1	Ghana	West Africa	2	Ghana.048	2009
+Bangladesh.10_t1	Bangladesh	South East Asia	2	Bangladesh.10	2012
+Ghana.339_t1	Ghana	West Africa	3	Ghana.339	2012
+Guinea.76_t1	Guinea	West Africa	3	Guinea.76	2011
+Ghana.022_t1	Ghana	West Africa	3	Ghana.022	2009
+Gambia.16_t8	Gambia	West Africa	3	Gambia.16	2008
+Gambia.16_t8	Gambia	West Africa	3	Gambia.23	2008
+Gambia.16_t8	Ghana	West Africa	3	Ghana.146	2010
+Gambia.16_t8	Ghana	West Africa	3	Ghana.197	2011
+Gambia.16_t8	Senegal	West Africa	3	Senegal.007	2002
+Gambia.16_t8	Senegal	West Africa	3	Senegal.035	2011
+Gambia.16_t8	Senegal	West Africa	3	Senegal.050	2010
+Gambia.16_t8	Senegal	West Africa	3	Senegal.089	2008
+Cambodia.307_t3	Cambodia	South East Asia	3	Cambodia.307	2011
+Cambodia.307_t3	Laos	South East Asia	3	Laos.27	2011
+Cambodia.307_t3	Viet_Nam	South East Asia	3	Viet_Nam.021	2011
+Bangladesh.52_t1	Bangladesh	South East Asia	3	Bangladesh.52	2012
+Malawi.039_t2	Malawi	East Africa	3	Malawi.039	2011
+Malawi.039_t2	Malawi	East Africa	3	Malawi.099	2011
+Malawi.080_t1	Malawi	East Africa	3	Malawi.080	2011
+Malawi.105_t1	Malawi	East Africa	3	Malawi.105	2011
+Ghana.277_t1	Ghana	West Africa	2	Ghana.277	2009
+Malawi.164_t1	Malawi	East Africa	2	Malawi.164	2011
+Ghana.466_t1	Ghana	West Africa	3	Ghana.466	2013
+Ghana.358_t1	Ghana	West Africa	3	Ghana.358	2012
+Ghana.284_t1	Ghana	West Africa	3	Ghana.284	2011
+Ghana.455_t2	Ghana	West Africa	3	Ghana.455	2013
+Ghana.455_t2	Mali	West Africa	3	Mali.57	2007
+Guinea.46_t1	Guinea	West Africa	3	Guinea.46	2011
+Malawi.163_t1	Malawi	East Africa	3	Malawi.163	2011
+Ghana.233_t1	Ghana	West Africa	3	Ghana.233	2011
+Ghana.470_t2	Ghana	West Africa	3	Ghana.470	2013
+Ghana.470_t2	Senegal	West Africa	3	Senegal.084	2009
+Mali.20_t1	Mali	West Africa	3	Mali.20	2010
+Gambia.50_t1	Gambia	West Africa	3	Gambia.50	2008
+Ghana.015_t2	Ghana	West Africa	2	Ghana.015	2009
+Ghana.015_t2	Ghana	West Africa	2	Ghana.025	2009
+Ghana.279_t1	Ghana	West Africa	2	Ghana.279	2009
+DRC.090_t1	DRC	Central Africa	2	DRC.090	2013
+Ghana.169_t1	Ghana	West Africa	3	Ghana.169	2010
+Ghana.443_t1	Ghana	West Africa	2	Ghana.443	2013
+Ghana.498_t1	Ghana	West Africa	3	Ghana.498	2012
+Ghana.254_t5	Ghana	West Africa	2	Ghana.254	2011
+Ghana.254_t5	Ghana	West Africa	2	Ghana.320	2012
+Ghana.254_t5	Ghana	West Africa	2	Ghana.488	2011
+Ghana.254_t5	Malawi	East Africa	2	Malawi.057	2011
+Ghana.254_t5	Malawi	East Africa	2	Malawi.158	2011
+Senegal.074_t1	Senegal	West Africa	2	Senegal.074	2011
+Ghana.469_t1	Ghana	West Africa	2	Ghana.469	2013
+Ghana.423_t1	Ghana	West Africa	2	Ghana.423	2013
+Ghana.193_t1	Ghana	West Africa	2	Ghana.193	2011
+Ghana.266_t1	Ghana	West Africa	2	Ghana.266	2011
+DRC.043_t1	DRC	Central Africa	3	DRC.043	2013
+Ghana.005_t1	Ghana	West Africa	2	Ghana.005	2009
+Guinea.69_t1	Guinea	West Africa	2	Guinea.69	2011
+Senegal.059_t1	Senegal	West Africa	2	Senegal.059	2008
+Ghana.065_t1	Ghana	West Africa	2	Ghana.065	2009
+Mali.50_t3	Mali	West Africa	2	Mali.50	2007
+Mali.50_t3	Senegal	West Africa	2	Senegal.030	2010
+Mali.50_t3	Senegal	West Africa	2	Senegal.037	2010
+Ghana.036_t1	Ghana	West Africa	2	Ghana.036	2009
+Ghana.218_t2	Ghana	West Africa	2	Ghana.218	2011
+Ghana.218_t2	Guinea	West Africa	2	Guinea.90	2011
+Ghana.051_t4	Ghana	West Africa	2	Ghana.051	2009
+Ghana.051_t4	Ghana	West Africa	2	Ghana.174	2010
+Ghana.051_t4	Ghana	West Africa	2	Ghana.183	2010
+Ghana.051_t4	Ghana	West Africa	2	Ghana.303	2012
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.04	2009
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.18	2012
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.21	2012
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.23	2009
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.30	2010
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.34	2012
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.35	2012
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.38	2012
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.43	2012
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.45	2012
+French_Guiana.04_t12	French_Guiana	South America	2	French_Guiana.52	2013
+French_Guiana.04_t12	EF614229	Lab	2	EF614229	"NA"
+Malawi.012_t1	Malawi	East Africa	2	Malawi.012	2011
+Malawi.035_t2	Malawi	East Africa	2	Malawi.035	2011
+Malawi.035_t2	Myanmar	South East Asia	2	Myanmar.60	2012
+Bangladesh.51_t1	Bangladesh	South East Asia	2	Bangladesh.51	2012
+Malawi.074_t1	Malawi	East Africa	2	Malawi.074	2011
+DRC.030_t1	DRC	Central Africa	3	DRC.030	2013
+Ghana.116_t1	Ghana	West Africa	3	Ghana.116	2010
+Ghana.030_t1	Ghana	West Africa	2	Ghana.030	2009
+Ghana.066_t8	Ghana	West Africa	2	Ghana.066	2009
+Ghana.066_t8	Ghana	West Africa	2	Ghana.138	2010
+Ghana.066_t8	Ghana	West Africa	2	Ghana.281	2009
+Ghana.066_t8	Malawi	East Africa	2	Malawi.029	2011
+Ghana.066_t8	Malawi	East Africa	2	Malawi.193	2011
+Ghana.066_t8	Malawi	East Africa	2	Malawi.212	2011
+Ghana.066_t8	Uganda	East Africa	2	Uganda.7	2007
+Ghana.066_t8	Tanzania_2000708	Lab	2	Tanzania_2000708	"NA"
+Guinea.12_t2	Guinea	West Africa	2	Guinea.12	2011
+Guinea.12_t2	Malawi	East Africa	2	Malawi.050	2011
+Guinea.01_t1	Guinea	West Africa	2	Guinea.01	2011
+Ghana.404_t2	Ghana	West Africa	2	Ghana.404	2013
+Ghana.404_t2	Malawi	East Africa	2	Malawi.147	2011
+Ghana.156_t4	Ghana	West Africa	2	Ghana.156	2010
+Ghana.156_t4	Guinea	West Africa	2	Guinea.45	2011
+Ghana.156_t4	Senegal	West Africa	2	Senegal.024	2009
+Ghana.156_t4	Senegal	West Africa	2	Senegal.100	2008
+Guinea.29_t1	Guinea	West Africa	2	Guinea.29	2011
+DRC.050_t1	DRC	Central Africa	2	DRC.050	2013
+Ghana.398_t1	Ghana	West Africa	2	Ghana.398	2013
+Gambia.01_t2	Gambia	West Africa	2	Gambia.01	2008
+Gambia.01_t2	Gambia	West Africa	2	Gambia.11	2008
+Ghana.068_t1	Ghana	West Africa	2	Ghana.068	2009
+Guinea.06_t2	Guinea	West Africa	2	Guinea.06	2011
+Guinea.06_t2	Guinea	West Africa	2	Guinea.63	2011
+Ghana.046_t1	Ghana	West Africa	2	Ghana.046	2009
+DRC.064_t1	DRC	Central Africa	3	DRC.064	2013
+Santa_Lucia_Salvador_I_t1	Santa_Lucia_Salvador_I	Lab	2	Santa_Lucia_Salvador_I	"NA"
+DRC.024_t8	DRC	Central Africa	3	DRC.024	2013
+DRC.024_t8	Ghana	West Africa	3	Ghana.223	2011
+DRC.024_t8	Guinea	West Africa	3	Guinea.24	2011
+DRC.024_t8	Guinea	West Africa	3	Guinea.38	2011
+DRC.024_t8	Senegal	West Africa	3	Senegal.069	2008
+DRC.024_t8	Senegal	West Africa	3	Senegal.092	2010
+DRC.024_t8	Senegal	West Africa	3	Senegal.095	2009
+DRC.024_t8	Guinea	West Africa	3	Guinea.59	2011
+DRC.065_t2	DRC	Central Africa	3	DRC.065	2013
+DRC.065_t2	DRC	Central Africa	3	DRC.109	2013
+Viet_Nam.002_t1	Viet_Nam	South East Asia	2	Viet_Nam.002	2011
+Ghana.232_t1	Ghana	West Africa	2	Ghana.232	2011
+DRC.021_t1	DRC	Central Africa	2	DRC.021	2013
+Bangladesh.29_t38	Bangladesh	South East Asia	2	Bangladesh.29	2012
+Bangladesh.29_t38	Bangladesh	South East Asia	2	Bangladesh.43	2012
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.089	2010
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.090	2010
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.091	2010
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.116	2010
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.136	2010
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.173	2010
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.180	2010
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.188	2010
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.385	2011
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.387	2011
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.388	2011
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.393	2011
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.411	2011
+Bangladesh.29_t38	Cambodia	South East Asia	2	Cambodia.433	2011
+Bangladesh.29_t38	Laos	South East Asia	2	Laos.34	2011
+Bangladesh.29_t38	Laos	South East Asia	2	Laos.51	2011
+Bangladesh.29_t38	Myanmar	South East Asia	2	Myanmar.28	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.008	2011
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.020	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.058	2011
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.062	2011
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.063	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.074	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.093	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.097	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.129	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.168	2014
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.171	2014
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.197	2008
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.221	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.222	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.232	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.238	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.250	2012
+Bangladesh.29_t38	Thailand	South East Asia	2	Thailand.260	2014
+Bangladesh.29_t38	Viet_Nam	South East Asia	2	Viet_Nam.100	2011
+Thailand.045_t7	Thailand	South East Asia	2	Thailand.045	2011
+Thailand.045_t7	Thailand	South East Asia	2	Thailand.046	2011
+Thailand.045_t7	Thailand	South East Asia	2	Thailand.048	2011
+Thailand.045_t7	Thailand	South East Asia	2	Thailand.051	2011
+Thailand.045_t7	Thailand	South East Asia	2	Thailand.054	2011
+Thailand.045_t7	Thailand	South East Asia	2	Thailand.140	2012
+Thailand.045_t7	Thailand	South East Asia	2	Thailand.145	2012
+Malawi.192_t2	Malawi	East Africa	2	Malawi.192	2011
+Malawi.192_t2	Malawi	East Africa	2	Malawi.213	2011
+Malawi.161_t1	Malawi	East Africa	2	Malawi.161	2011
+Ghana.396_t2	Ghana	West Africa	2	Ghana.396	2013
+Ghana.396_t2	Guinea	West Africa	2	Guinea.57	2011
+Ghana.164_t1	Ghana	West Africa	2	Ghana.164	2010
+Ghana.260_t6	Ghana	West Africa	2	Ghana.260	2011
+Ghana.260_t6	Guinea	West Africa	2	Guinea.70	2011
+Ghana.260_t6	Guinea	West Africa	2	Guinea.73	2011
+Ghana.260_t6	Malawi	East Africa	2	Malawi.260	2011
+Ghana.260_t6	Mali	West Africa	2	Mali.14	2010
+Ghana.260_t6	Senegal	West Africa	2	Senegal.096	2009
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.02	"NA"
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.16	2011
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.17	2011
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.19	2012
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.24	2009
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.26	2009
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.32	2010
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.37	2012
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.46	2012
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.51	2013
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.54	2013
+French_Guiana.02_t16	French_Guiana	South America	2	French_Guiana.55	2013
+French_Guiana.02_t16	Ghana	West Africa	2	Ghana.075	2010
+French_Guiana.02_t16	7G8	Lab	2	7G8	"NA"
+French_Guiana.02_t16	FCH-4	Lab	2	FCH-4	"NA"
+French_Guiana.02_t16	EF614233	Lab	2	EF614233	"NA"
+India.1_t4	India	India	2	India.1	2012
+India.1_t4	India	India	2	India.3	2012
+India.1_t4	India	India	2	India.4	2012
+India.1_t4	India	India	2	India.6	2015
+Malawi.111_t2	Malawi	East Africa	2	Malawi.111	2011
+Malawi.111_t2	Malawi	East Africa	2	Malawi.114	2011
+Malawi.140_t1	Malawi	East Africa	2	Malawi.140	2011
+Ghana.326_t1	Ghana	West Africa	2	Ghana.326	2013
+Ghana.023_t2	Ghana	West Africa	2	Ghana.023	2009
+Ghana.023_t2	Ghana	West Africa	2	Ghana.302	2012
+Ghana.405_t1	Ghana	West Africa	2	Ghana.405	2013
+Mali.29_t1	Mali	West Africa	2	Mali.29	2007
+Bangladesh.42_t24	Bangladesh	South East Asia	2	Bangladesh.42	2012
+Bangladesh.42_t24	DRC	Central Africa	2	DRC.022	2013
+Bangladesh.42_t24	Gambia	West Africa	2	Gambia.45	2008
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.072	2010
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.085	2009
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.101	2010
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.154	2010
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.244	2011
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.264	2011
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.280	2009
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.289	2012
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.290	2012
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.382	2013
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.424	2013
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.452	2013
+Bangladesh.42_t24	Ghana	West Africa	2	Ghana.453	2013
+Bangladesh.42_t24	Guinea	West Africa	2	Guinea.58	2011
+Bangladesh.42_t24	Malawi	East Africa	2	Malawi.058	2011
+Bangladesh.42_t24	Malawi	East Africa	2	Malawi.128	2011
+Bangladesh.42_t24	Malawi	East Africa	2	Malawi.195	2011
+Bangladesh.42_t24	Malawi	East Africa	2	Malawi.216	2011
+Bangladesh.42_t24	Nigeria	West Africa	2	Nigeria.2	2012
+Bangladesh.42_t24	Senegal	West Africa	2	Senegal.041	2011
+Bangladesh.42_t24	Senegal	West Africa	2	Senegal.003	2004
+Ghana.313_t1	Ghana	West Africa	2	Ghana.313	2012
+Guinea.42_t3	Guinea	West Africa	2	Guinea.42	2011
+Guinea.42_t3	Malawi	East Africa	2	Malawi.190	2011
+Guinea.42_t3	Mali	West Africa	2	Mali.17	2010
+Bangladesh.54_t2	Bangladesh	South East Asia	2	Bangladesh.54	2012
+Bangladesh.54_t2	Myanmar	South East Asia	2	Myanmar.31	2012
+Laos.84_t2	Laos	South East Asia	2	Laos.84	2012
+Laos.84_t2	Viet_Nam	South East Asia	2	Viet_Nam.066	2011
+Ghana.440_t1	Ghana	West Africa	2	Ghana.440	2013
+Malawi.203_t1	Malawi	East Africa	2	Malawi.203	2011
+Bangladesh.18_t38	Bangladesh	South East Asia	1	Bangladesh.18	2012
+Bangladesh.18_t38	Bangladesh	South East Asia	1	Bangladesh.34	2012
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.044	2013
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.065	2013
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.134	2010
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.150	2010
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.158	2010
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.172	2010
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.213	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.228	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.233	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.246	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.262	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.280	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.285	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.299	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.335	2011
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.446	2012
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.478	2012
+Bangladesh.18_t38	Cambodia	South East Asia	1	Cambodia.482	2012
+Bangladesh.18_t38	Guinea	West Africa	1	Guinea.41	2011
+Bangladesh.18_t38	Laos	South East Asia	1	Laos.04	2011
+Bangladesh.18_t38	Laos	South East Asia	1	Laos.08	2011
+Bangladesh.18_t38	Laos	South East Asia	1	Laos.13	2011
+Bangladesh.18_t38	Laos	South East Asia	1	Laos.32	2011
+Bangladesh.18_t38	Laos	South East Asia	1	Laos.52	2011
+Bangladesh.18_t38	Laos	South East Asia	1	Laos.81	2012
+Bangladesh.18_t38	Laos	South East Asia	1	Laos.82	2012
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.015	2011
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.044	2011
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.047	2011
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.049	2011
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.052	2011
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.053	2011
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.144	2012
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.215	2011
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.218	2012
+Bangladesh.18_t38	Thailand	South East Asia	1	Thailand.224	2012
+Gambia.44_t14	Gambia	West Africa	1	Gambia.44	2008
+Gambia.44_t14	Ghana	West Africa	1	Ghana.018	2009
+Gambia.44_t14	Ghana	West Africa	1	Ghana.123	2010
+Gambia.44_t14	Ghana	West Africa	1	Ghana.278	2009
+Gambia.44_t14	Ghana	West Africa	1	Ghana.416	2013
+Gambia.44_t14	Ghana	West Africa	1	Ghana.444	2013
+Gambia.44_t14	Guinea	West Africa	1	Guinea.16	2011
+Gambia.44_t14	Guinea	West Africa	1	Guinea.83	2011
+Gambia.44_t14	Malawi	East Africa	1	Malawi.052	2011
+Gambia.44_t14	Malawi	East Africa	1	Malawi.053	2011
+Gambia.44_t14	Malawi	East Africa	1	Malawi.125	2011
+Gambia.44_t14	Mali	West Africa	1	Mali.25	2007
+Gambia.44_t14	Mali	West Africa	1	Mali.52	2007
+Gambia.44_t14	Senegal	West Africa	1	Senegal.081	2011
+Malawi.083_t1	Malawi	East Africa	2	Malawi.083	2011
+Cambodia.289_t3	Cambodia	South East Asia	2	Cambodia.289	2011
+Cambodia.289_t3	Cambodia	South East Asia	2	Cambodia.298	2011
+Cambodia.289_t3	Cambodia	South East Asia	2	Cambodia.490	2012
+Cambodia.154_t1	Cambodia	South East Asia	2	Cambodia.154	2010
+Laos.74_t6	Laos	South East Asia	2	Laos.74	2012
+Laos.74_t6	Viet_Nam	South East Asia	2	Viet_Nam.001	2011
+Laos.74_t6	Viet_Nam	South East Asia	2	Viet_Nam.038	2011
+Laos.74_t6	Viet_Nam	South East Asia	2	Viet_Nam.064	2011
+Laos.74_t6	Viet_Nam	South East Asia	2	Viet_Nam.081	2012
+Laos.74_t6	Viet_Nam	South East Asia	2	Viet_Nam.083	2012
+Bangladesh.35_t1	Bangladesh	South East Asia	2	Bangladesh.35	2012
+Bangladesh.03_t2	Bangladesh	South East Asia	2	Bangladesh.03	2012
+Bangladesh.03_t2	Bangladesh	South East Asia	2	Bangladesh.25	2012
+Malawi.156_t1	Malawi	East Africa	2	Malawi.156	2011
+Ghana.490_t1	Ghana	West Africa	2	Ghana.490	2011
+Ghana.411_t7	Ghana	West Africa	2	Ghana.411	2013
+Ghana.411_t7	Guinea	West Africa	2	Guinea.93	2011
+Ghana.411_t7	Malawi	East Africa	2	Malawi.016	2011
+Ghana.411_t7	Malawi	East Africa	2	Malawi.103	2011
+Ghana.411_t7	Malawi	East Africa	2	Malawi.116	2011
+Ghana.411_t7	Malawi	East Africa	2	Malawi.252	2011
+Ghana.411_t7	Mali	West Africa	2	Mali.31	2007
+Viet_Nam.067_t1	Viet_Nam	South East Asia	2	Viet_Nam.067	2011
+Thailand.194_t1	Thailand	South East Asia	2	Thailand.194	2014
+EF614227_t1	EF614227	Lab	2	EF614227	"NA"
+Myanmar.06_t2	Myanmar	South East Asia	2	Myanmar.06	2011
+Myanmar.06_t2	Myanmar	South East Asia	2	Myanmar.59	2012
+Bangladesh.28_t18	Bangladesh	South East Asia	2	Bangladesh.28	2012
+Bangladesh.28_t18	Cambodia	South East Asia	2	Cambodia.084	2010
+Bangladesh.28_t18	Cambodia	South East Asia	2	Cambodia.097	2010
+Bangladesh.28_t18	Laos	South East Asia	2	Laos.31	2011
+Bangladesh.28_t18	Laos	South East Asia	2	Laos.37	2011
+Bangladesh.28_t18	Laos	South East Asia	2	Laos.39	2011
+Bangladesh.28_t18	Laos	South East Asia	2	Laos.42	2011
+Bangladesh.28_t18	Laos	South East Asia	2	Laos.43	2011
+Bangladesh.28_t18	Laos	South East Asia	2	Laos.69	2012
+Bangladesh.28_t18	Laos	South East Asia	2	Laos.72	2012
+Bangladesh.28_t18	Myanmar	South East Asia	2	Myanmar.30	2012
+Bangladesh.28_t18	Myanmar	South East Asia	2	Myanmar.50	2012
+Bangladesh.28_t18	Thailand	South East Asia	2	Thailand.213	2011
+Bangladesh.28_t18	Viet_Nam	South East Asia	2	Viet_Nam.023	2011
+Bangladesh.28_t18	Viet_Nam	South East Asia	2	Viet_Nam.025	2011
+Bangladesh.28_t18	Bangladesh	South East Asia	2	Bangladesh.16	2012
+Bangladesh.28_t18	Myanmar	South East Asia	2	Myanmar.27	2012
+Bangladesh.28_t18	Thailand	South East Asia	2	Thailand.106	2012
+Malawi.045_t2	Malawi	East Africa	2	Malawi.045	2011
+Malawi.045_t2	Malawi	East Africa	2	Malawi.221	2011
+Malawi.046_t1	Malawi	East Africa	2	Malawi.046	2011
+Ghana.316_t1	Ghana	West Africa	2	Ghana.316	2012
+Ghana.263_t1	Ghana	West Africa	2	Ghana.263	2009
+Senegal.038_t1	Senegal	West Africa	2	Senegal.038	2009
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.056	2013
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.107	2010
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.125	2010
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.126	2010
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.178	2010
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.192	2010
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.200	2011
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.239	2011
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.243	2011
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.314	2011
+Cambodia.056_t30	Cambodia	South East Asia	3	Cambodia.343	2011
+Cambodia.056_t30	Laos	South East Asia	3	Laos.79	2012
+Cambodia.056_t30	Myanmar	South East Asia	3	Myanmar.09	2011
+Cambodia.056_t30	Myanmar	South East Asia	3	Myanmar.10	2011
+Cambodia.056_t30	Myanmar	South East Asia	3	Myanmar.22	2012
+Cambodia.056_t30	Myanmar	South East Asia	3	Myanmar.38	2012
+Cambodia.056_t30	Myanmar	South East Asia	3	Myanmar.56	2012
+Cambodia.056_t30	Thailand	South East Asia	3	Thailand.025	2012
+Cambodia.056_t30	Thailand	South East Asia	3	Thailand.038	2012
+Cambodia.056_t30	Thailand	South East Asia	3	Thailand.165	2014
+Cambodia.056_t30	Thailand	South East Asia	3	Thailand.169	2014
+Cambodia.056_t30	Thailand	South East Asia	3	Thailand.241	2012
+Cambodia.056_t30	Viet_Nam	South East Asia	3	Viet_Nam.008	2011
+Cambodia.056_t30	Viet_Nam	South East Asia	3	Viet_Nam.020	2011
+Cambodia.056_t30	Viet_Nam	South East Asia	3	Viet_Nam.027	2011
+Cambodia.056_t30	Viet_Nam	South East Asia	3	Viet_Nam.030	2011
+Cambodia.056_t30	Viet_Nam	South East Asia	3	Viet_Nam.040	2011
+Cambodia.056_t30	Viet_Nam	South East Asia	3	Viet_Nam.091	2012
+Cambodia.056_t30	Viet_Nam	South East Asia	3	Viet_Nam.093	2012
+Cambodia.056_t30	Viet_Nam	South East Asia	3	Viet_Nam.103	2012
+Malawi.223_t2	Malawi	East Africa	2	Malawi.223	2011
+Malawi.223_t2	Malawi	East Africa	2	Malawi.249	2011
+DRC.036_t2	DRC	Central Africa	2	DRC.036	2013
+DRC.036_t2	Ghana	West Africa	2	Ghana.042	2009
+DRC.029_t4	DRC	Central Africa	2	DRC.029	2013
+DRC.029_t4	Malawi	East Africa	2	Malawi.063	2011
+DRC.029_t4	Malawi	East Africa	2	Malawi.124	2011
+DRC.029_t4	Malawi	East Africa	2	Malawi.207	2011
+Mali.32_t1	Mali	West Africa	2	Mali.32	2007
+Ghana.458_t1	Ghana	West Africa	2	Ghana.458	2013
+IT_t2	IT	Lab	2	IT	"NA"
+IT_t2	Vietnam_Oak-Knoll_FVO	Lab	2	Vietnam_Oak-Knoll_FVO	"NA"
+Cambodia.164_t2	Cambodia	South East Asia	2	Cambodia.164	2010
+Cambodia.164_t2	Thailand	South East Asia	2	Thailand.148	2012
+Myanmar.14_t2	Myanmar	South East Asia	2	Myanmar.14	2012
+Myanmar.14_t2	Myanmar	South East Asia	2	Myanmar.63	2012
+Ghana.409_t1	Ghana	West Africa	2	Ghana.409	2013
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.156	2010
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.210	2011
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.294	2011
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.296	2011
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.297	2011
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.317	2011
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.321	2011
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.358	2011
+Cambodia.156_t11	Cambodia	South East Asia	2	Cambodia.480	2012
+Cambodia.156_t11	Viet_Nam	South East Asia	2	Viet_Nam.089	2012
+Cambodia.156_t11	Viet_Nam	South East Asia	2	Viet_Nam.094	2011
+Laos.10_t1	Laos	South East Asia	2	Laos.10	2011
+Ghana.431_t1	Ghana	West Africa	2	Ghana.431	2013
+Bangladesh.48_t1	Bangladesh	South East Asia	2	Bangladesh.48	2012
+Thailand.090_t6	Thailand	South East Asia	2	Thailand.090	2012
+Thailand.090_t6	Thailand	South East Asia	2	Thailand.187	2008
+Thailand.090_t6	Thailand	South East Asia	2	Thailand.227	2012
+Thailand.090_t6	Thailand	South East Asia	2	Thailand.243	2012
+Thailand.090_t6	Thailand	South East Asia	2	Thailand.245	2012
+Thailand.090_t6	Thailand	South East Asia	2	Thailand.249	2012
+Gambia.48_t1	Gambia	West Africa	2	Gambia.48	2008
+Mali.41_t1	Mali	West Africa	2	Mali.41	2007
+Cambodia.063_t4	Cambodia	South East Asia	2	Cambodia.063	2013
+Cambodia.063_t4	Cambodia	South East Asia	2	Cambodia.080	2009
+Cambodia.063_t4	Cambodia	South East Asia	2	Cambodia.105	2010
+Cambodia.063_t4	Cambodia	South East Asia	2	Cambodia.369	2011
+Ghana.243_t2	Ghana	West Africa	2	Ghana.243	2011
+Ghana.243_t2	Guinea	West Africa	2	Guinea.35	2011
+Malawi.182_t1	Malawi	East Africa	1	Malawi.182	2011
+Cambodia.088_t3	Cambodia	South East Asia	2	Cambodia.088	2010
+Cambodia.088_t3	Cambodia	South East Asia	2	Cambodia.179	2010
+Cambodia.088_t3	Cambodia	South East Asia	2	Cambodia.193	2010
+Ghana.497_t1	Ghana	West Africa	2	Ghana.497	2012
+Malawi.100_t1	Malawi	East Africa	2	Malawi.100	2011
+Ghana.088_t1	Ghana	West Africa	2	Ghana.088	2010
+Senegal.018_t1	Senegal	West Africa	2	Senegal.018	2009
+Ghana.152_t1	Ghana	West Africa	2	Ghana.152	2010
+Thailand.011_t6	Thailand	South East Asia	2	Thailand.011	2011
+Thailand.011_t6	Thailand	South East Asia	2	Thailand.030	2011
+Thailand.011_t6	Thailand	South East Asia	2	Thailand.059	2011
+Thailand.011_t6	Thailand	South East Asia	2	Thailand.101	2012
+Thailand.011_t6	Thailand	South East Asia	2	Thailand.209	2008
+Thailand.011_t6	Thailand	South East Asia	2	Thailand.214	2011
+Cambodia.219_t2	Cambodia	South East Asia	2	Cambodia.219	2011
+Cambodia.219_t2	Cambodia	South East Asia	2	Cambodia.447	2012
+Myanmar.35_t1	Myanmar	South East Asia	2	Myanmar.35	2012
+Malawi.150_t1	Malawi	East Africa	2	Malawi.150	2011
+DRC.051_t1	DRC	Central Africa	2	DRC.051	2013
+DRC.060_t1	DRC	Central Africa	2	DRC.060	2013
+Cambodia.214_t7	Cambodia	South East Asia	2	Cambodia.214	2011
+Cambodia.214_t7	Cambodia	South East Asia	2	Cambodia.325	2011
+Cambodia.214_t7	Cambodia	South East Asia	2	Cambodia.372	2011
+Cambodia.214_t7	Laos	South East Asia	2	Laos.77	2012
+Cambodia.214_t7	Myanmar	South East Asia	2	Myanmar.02	2011
+Cambodia.214_t7	Myanmar	South East Asia	2	Myanmar.05	2011
+Cambodia.214_t7	Myanmar	South East Asia	2	Myanmar.23	2012
+Ghana.210_t1	Ghana	West Africa	2	Ghana.210	2011
+Malawi.082_t1	Malawi	East Africa	2	Malawi.082	2011
+Malawi.239_t1	Malawi	East Africa	2	Malawi.239	2011
+Malawi.155_t1	Malawi	East Africa	2	Malawi.155	2011
+Ghana.132_t1	Ghana	West Africa	2	Ghana.132	2010
+Malawi.208_t2	Malawi	East Africa	2	Malawi.208	2011
+Malawi.208_t2	Mali	West Africa	2	Mali.55	2007
+Ghana.250_t1	Ghana	West Africa	2	Ghana.250	2011
+Ghana.122_t1	Ghana	West Africa	2	Ghana.122	2010
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.109	2010
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.113	2010
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.143	2010
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.151	2010
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.198	2011
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.248	2011
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.270	2011
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.309	2011
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.311	2011
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.315	2011
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.323	2011
+Cambodia.109_t20	Cambodia	South East Asia	2	Cambodia.380	2011
+Cambodia.109_t20	Laos	South East Asia	2	Laos.02	2011
+Cambodia.109_t20	Laos	South East Asia	2	Laos.03	2011
+Cambodia.109_t20	Laos	South East Asia	2	Laos.15	2011
+Cambodia.109_t20	Laos	South East Asia	2	Laos.17	2011
+Cambodia.109_t20	Laos	South East Asia	2	Laos.24	2011
+Cambodia.109_t20	Laos	South East Asia	2	Laos.90	2012
+Cambodia.109_t20	Thailand	South East Asia	2	Thailand.027	2011
+Cambodia.109_t20	Viet_Nam	South East Asia	2	Viet_Nam.077	2012
+Gambia.54_t1	Gambia	West Africa	2	Gambia.54	2008
+Ghana.019_t1	Ghana	West Africa	2	Ghana.019	2009
+DRC.058_t1	DRC	Central Africa	2	DRC.058	2013
+DRC.052_t21	DRC	Central Africa	2	DRC.052	2013
+DRC.052_t21	Gambia	West Africa	2	Gambia.14	2008
+DRC.052_t21	Gambia	West Africa	2	Gambia.26	2008
+DRC.052_t21	Gambia	West Africa	2	Gambia.51	2008
+DRC.052_t21	Ghana	West Africa	2	Ghana.074	2010
+DRC.052_t21	Ghana	West Africa	2	Ghana.090	2010
+DRC.052_t21	Ghana	West Africa	2	Ghana.143	2010
+DRC.052_t21	Ghana	West Africa	2	Ghana.157	2010
+DRC.052_t21	Ghana	West Africa	2	Ghana.161	2010
+DRC.052_t21	Ghana	West Africa	2	Ghana.207	2011
+DRC.052_t21	Ghana	West Africa	2	Ghana.230	2011
+DRC.052_t21	Ghana	West Africa	2	Ghana.247	2011
+DRC.052_t21	Ghana	West Africa	2	Ghana.267	2011
+DRC.052_t21	Ghana	West Africa	2	Ghana.309	2012
+DRC.052_t21	Ghana	West Africa	2	Ghana.341	2012
+DRC.052_t21	Ghana	West Africa	2	Ghana.420	2013
+DRC.052_t21	Ghana	West Africa	2	Ghana.484	2013
+DRC.052_t21	Guinea	West Africa	2	Guinea.20	2011
+DRC.052_t21	Mali	West Africa	2	Mali.66	2007
+DRC.052_t21	Senegal	West Africa	2	Senegal.051	2010
+DRC.052_t21	Senegal	West Africa	2	Senegal.107	2005
+Ghana.442_t1	Ghana	West Africa	2	Ghana.442	2013
+Malawi.117_t1	Malawi	East Africa	2	Malawi.117	2011
+French_Guiana.03_t9	French_Guiana	South America	2	French_Guiana.03	2009
+French_Guiana.03_t9	French_Guiana	South America	2	French_Guiana.09	2010
+French_Guiana.03_t9	French_Guiana	South America	2	French_Guiana.11	2010
+French_Guiana.03_t9	French_Guiana	South America	2	French_Guiana.27	2009
+French_Guiana.03_t9	French_Guiana	South America	2	French_Guiana.33	2010
+French_Guiana.03_t9	Ghana	West Africa	2	Ghana.003	2009
+French_Guiana.03_t9	Ghana	West Africa	2	Ghana.324	2012
+French_Guiana.03_t9	Guinea	West Africa	2	Guinea.18	2011
+French_Guiana.03_t9	Mali	West Africa	2	Mali.19	2010
+Ghana.092_t1	Ghana	West Africa	2	Ghana.092	2010
+Senegal.004_t1	Senegal	West Africa	2	Senegal.004	2002
+Malawi.246_t1	Malawi	East Africa	2	Malawi.246	2011
+Myanmar.25_t1	Myanmar	South East Asia	2	Myanmar.25	2012
+Gambia.09_t3	Gambia	West Africa	2	Gambia.09	2008
+Gambia.09_t3	Malawi	East Africa	2	Malawi.031	2011
+Gambia.09_t3	Malawi	East Africa	2	Malawi.181	2011
+Mali.53_t1	Mali	West Africa	2	Mali.53	2007
+Ghana.081_t1	Ghana	West Africa	2	Ghana.081	2011
+Ghana.307_t2	Ghana	West Africa	2	Ghana.307	2012
+Ghana.307_t2	Senegal	West Africa	2	Senegal.085	2009
+Laos.56_t5	Laos	South East Asia	2	Laos.56	2012
+Laos.56_t5	Thailand	South East Asia	2	Thailand.071	2012
+Laos.56_t5	Thailand	South East Asia	2	Thailand.073	2012
+Laos.56_t5	Thailand	South East Asia	2	Thailand.240	2012
+Laos.56_t5	Thailand	South East Asia	2	Thailand.257	2014
+DRC.094_t1	DRC	Central Africa	2	DRC.094	2013
+Ghana.095_t1	Ghana	West Africa	2	Ghana.095	2010
+EF614230_t1	EF614230	Lab	2	EF614230	"NA"
+DRC.102_t1	DRC	Central Africa	2	DRC.102	2013
+Bangladesh.15_t3	Bangladesh	South East Asia	2	Bangladesh.15	2012
+Bangladesh.15_t3	Bangladesh	South East Asia	2	Bangladesh.22	2012
+Bangladesh.15_t3	Thailand	South East Asia	2	Thailand.161	2014
+Ghana.297_t1	Ghana	West Africa	2	Ghana.297	2012
+Malawi.091_t3	Malawi	East Africa	2	Malawi.091	2011
+Malawi.091_t3	Mali	West Africa	2	Mali.45	2007
+Malawi.091_t3	Mali	West Africa	2	Mali.71	2007
+Laos.11_t2	Laos	South East Asia	2	Laos.11	2011
+Laos.11_t2	Laos	South East Asia	2	Laos.21	2011
+Bangladesh.08_t9	Bangladesh	South East Asia	2	Bangladesh.08	2012
+Bangladesh.08_t9	Ghana	West Africa	2	Ghana.485	2013
+Bangladesh.08_t9	Guinea	West Africa	2	Guinea.25	2011
+Bangladesh.08_t9	Guinea	West Africa	2	Guinea.37	2011
+Bangladesh.08_t9	Malawi	East Africa	2	Malawi.051	2011
+Bangladesh.08_t9	Malawi	East Africa	2	Malawi.067	2011
+Bangladesh.08_t9	Malawi	East Africa	2	Malawi.243	2011
+Bangladesh.08_t9	Ghana	West Africa	2	Ghana.110	2010
+Bangladesh.08_t9	Ghana	West Africa	2	Ghana.331	2012
+Ghana.208_t3	Ghana	West Africa	2	Ghana.208	2011
+Ghana.208_t3	Senegal	West Africa	2	Senegal.009	2011
+Ghana.208_t3	Senegal	West Africa	2	Senegal.105	2004
+Senegal.072_t1	Senegal	West Africa	2	Senegal.072	2009
+Malawi.254_t2	Malawi	East Africa	3	Malawi.254	2011
+Malawi.254_t2	Malawi	East Africa	3	Malawi.264	2011
+Ghana.354_t1	Ghana	West Africa	3	Ghana.354	2012
+Cambodia.149_t4	Cambodia	South East Asia	3	Cambodia.149	2010
+Cambodia.149_t4	Cambodia	South East Asia	3	Cambodia.163	2010
+Cambodia.149_t4	Cambodia	South East Asia	3	Cambodia.322	2011
+Cambodia.149_t4	Cambodia	South East Asia	3	Cambodia.326	2011
+Ghana.438_t1	Ghana	West Africa	3	Ghana.438	2013
+Gambia.05_t5	Gambia	West Africa	3	Gambia.05	2008
+Gambia.05_t5	Gambia	West Africa	3	Gambia.30	2008
+Gambia.05_t5	Gambia	West Africa	3	Gambia.38	2008
+Gambia.05_t5	Gambia	West Africa	3	Gambia.39	2008
+Gambia.05_t5	Ghana	West Africa	3	Ghana.098	2010
+Guinea.65_t1	Guinea	West Africa	3	Guinea.65	2011
+Malawi.187_t2	Malawi	East Africa	3	Malawi.187	2011
+Malawi.187_t2	Malawi	East Africa	3	Malawi.259	2011
+Ghana.035_t2	Ghana	West Africa	4	Ghana.035	2009
+Ghana.035_t2	Ghana	West Africa	4	Ghana.127	2010
+Ghana.020_t1	Ghana	West Africa	3	Ghana.020	2009
+Guinea.03_t1	Guinea	West Africa	3	Guinea.03	2011
+Ghana.368_t1	Ghana	West Africa	3	Ghana.368	2012
+Malawi.225_t1	Malawi	East Africa	3	Malawi.225	2011
+Malawi.257_t1	Malawi	East Africa	3	Malawi.257	2011
+Senegal.025_t3	Senegal	West Africa	3	Senegal.025	2011
+Senegal.025_t3	Senegal	West Africa	3	Senegal.033	2010
+Senegal.025_t3	Senegal	West Africa	3	Senegal.044	2011
+Malawi.017_t1	Malawi	East Africa	3	Malawi.017	2011
+Ghana.087_t3	Ghana	West Africa	3	Ghana.087	2010
+Ghana.087_t3	Ghana	West Africa	3	Ghana.179	2010
+Ghana.087_t3	Ghana	West Africa	3	Ghana.364	2012
+Mali.63_t1	Mali	West Africa	3	Mali.63	2007
+Guinea.79_t1	Guinea	West Africa	3	Guinea.79	2011
+Ghana.061_t4	Ghana	West Africa	3	Ghana.061	2009
+Ghana.061_t4	Ghana	West Africa	3	Ghana.160	2010
+Ghana.061_t4	Ghana	West Africa	3	Ghana.265	2011
+Ghana.061_t4	Ghana	West Africa	3	Ghana.402	2013
+Ghana.338_t5	Ghana	West Africa	3	Ghana.338	2012
+Ghana.338_t5	Ghana	West Africa	3	Ghana.450	2013
+Ghana.338_t5	Malawi	East Africa	3	Malawi.122	2011
+Ghana.338_t5	Malawi	East Africa	3	Malawi.242	2011
+Ghana.338_t5	Senegal	West Africa	3	Senegal.067	2009
+Ghana.137_t3	Ghana	West Africa	3	Ghana.137	2010
+Ghana.137_t3	Ghana	West Africa	3	Ghana.212	2011
+Ghana.137_t3	Ghana	West Africa	3	Ghana.310	2012
+Malawi.214_t2	Malawi	East Africa	3	Malawi.214	2011
+Malawi.214_t2	5_1-2	Lab	3	5_1-2	"NA"
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.006	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.009	2012
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.010	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.011	2010
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.012	2012
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.037	2013
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.039	2013
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.042	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.047	2013
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.053	2013
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.058	2013
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.060	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.075	2009
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.078	2009
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.095	2010
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.120	2010
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.133	2010
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.145	2010
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.162	2010
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.203	2009
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.235	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.238	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.278	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.334	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.337	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.338	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.395	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.409	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.413	2011
+Cambodia.006_t43	Cambodia	South East Asia	3	Cambodia.419	2011
+Cambodia.006_t43	Laos	South East Asia	3	Laos.60	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.039	2011
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.043	2011
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.127	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.128	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.132	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.133	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.134	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.146	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.153	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.154	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.157	2012
+Cambodia.006_t43	Thailand	South East Asia	3	Thailand.159	2013
+Thailand.202_t2	Thailand	South East Asia	3	Thailand.202	2008
+Thailand.202_t2	Thailand	South East Asia	3	Thailand.259	2002
+Thailand.147_t1	Thailand	South East Asia	3	Thailand.147	2012
+Mali.01_t1	Mali	West Africa	3	Mali.01	2002
+DRC.039_t6	DRC	Central Africa	3	DRC.039	2013
+DRC.039_t6	Ghana	West Africa	3	Ghana.109	2010
+DRC.039_t6	Ghana	West Africa	3	Ghana.259	2011
+DRC.039_t6	Ghana	West Africa	3	Ghana.428	2013
+DRC.039_t6	Ghana	West Africa	3	Ghana.441	2013
+DRC.039_t6	Senegal	West Africa	3	Senegal.052	2010
+DRC.061_t3	DRC	Central Africa	3	DRC.061	2013
+DRC.061_t3	DRC	Central Africa	3	DRC.062	2013
+DRC.061_t3	GB4	Lab	3	GB4	"NA"
+DRC.042_t1	DRC	Central Africa	3	DRC.042	2013
+DRC.038_t1	DRC	Central Africa	3	DRC.038	2013
+DRC.023_t1	DRC	Central Africa	3	DRC.023	2013
+Mali.76_t1	Mali	West Africa	3	Mali.76	2007
+DRC.057_t3	DRC	Central Africa	3	DRC.057	2013
+DRC.057_t3	Ghana	West Africa	3	Ghana.328	2013
+DRC.057_t3	Ghana	West Africa	3	Ghana.495	2012
+Ghana.103_t2	Ghana	West Africa	3	Ghana.103	2010
+Ghana.103_t2	Ghana	West Africa	3	Ghana.422	2013
+EF614232_t1	EF614232	Lab	3	EF614232	"NA"
+Malawi.143_t1	Malawi	East Africa	3	Malawi.143	2011
+DRC.047_t11	DRC	Central Africa	3	DRC.047	2013
+DRC.047_t11	Ghana	West Africa	3	Ghana.054	2009
+DRC.047_t11	Ghana	West Africa	3	Ghana.133	2010
+DRC.047_t11	Ghana	West Africa	3	Ghana.163	2010
+DRC.047_t11	Ghana	West Africa	3	Ghana.202	2011
+DRC.047_t11	Ghana	West Africa	3	Ghana.410	2013
+DRC.047_t11	Ghana	West Africa	3	Ghana.434	2013
+DRC.047_t11	Ghana	West Africa	3	Ghana.482	2013
+DRC.047_t11	Malawi	East Africa	3	Malawi.159	2011
+DRC.047_t11	Malawi	East Africa	3	Malawi.165	2011
+DRC.047_t11	Senegal	West Africa	3	Senegal.104	2008
+Malawi.130_t1	Malawi	East Africa	3	Malawi.130	2011
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.279	2011
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.303	2011
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.354	2011
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.356	2011
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.357	2011
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.442	2012
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.443	2012
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.474	2012
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.475	2012
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.481	2012
+Cambodia.279_t16	Cambodia	South East Asia	3	Cambodia.488	2012
+Cambodia.279_t16	Laos	South East Asia	3	Laos.65	2012
+Cambodia.279_t16	Thailand	South East Asia	3	Thailand.028	2011
+Cambodia.279_t16	Thailand	South East Asia	3	Thailand.164	2014
+Cambodia.279_t16	Thailand	South East Asia	3	Thailand.182	2014
+Cambodia.279_t16	Thailand	South East Asia	3	Thailand.242	2012
+Viet_Nam.012_t1	Viet_Nam	South East Asia	3	Viet_Nam.012	2011
+DRC.098_t1	DRC	Central Africa	3	DRC.098	2013
+Ghana.344_t1	Ghana	West Africa	3	Ghana.344	2012
+Cambodia.217_t1	Cambodia	South East Asia	2	Cambodia.217	2011
+Cambodia.312_t2	Cambodia	South East Asia	2	Cambodia.312	2011
+Cambodia.312_t2	Cambodia	South East Asia	2	Cambodia.316	2011
+Laos.19_t3	Laos	South East Asia	2	Laos.19	2011
+Laos.19_t3	Laos	South East Asia	2	Laos.46	2011
+Laos.19_t3	Laos	South East Asia	2	Laos.71	2012
+DRC.053_t6	DRC	Central Africa	2	DRC.053	2013
+DRC.053_t6	Ghana	West Africa	2	Ghana.014	2009
+DRC.053_t6	Ghana	West Africa	2	Ghana.473	2013
+DRC.053_t6	Malawi	East Africa	2	Malawi.145	2011
+DRC.053_t6	Mali	West Africa	2	Mali.44	2007
+DRC.053_t6	Senegal	West Africa	2	Senegal.076	2009
+DRC.074_t1	DRC	Central Africa	3	DRC.074	2013
+Malawi.177_t1	Malawi	East Africa	3	Malawi.177	2011
+DRC.007_t1	DRC	Central Africa	3	DRC.007	2013
+Ghana.336_t2	Ghana	West Africa	3	Ghana.336	2012
+Ghana.336_t2	Malawi	East Africa	3	Malawi.209	2011
+Malawi.048_t1	Malawi	East Africa	3	Malawi.048	2011
+Malawi.230_t1	Malawi	East Africa	3	Malawi.230	2011
+Ghana.448_t1	Ghana	West Africa	3	Ghana.448	2013
+Ghana.360_t1	Ghana	West Africa	3	Ghana.360	2012
+DRC.076_t1	DRC	Central Africa	3	DRC.076	2013
+Ghana.034_t5	Ghana	West Africa	3	Ghana.034	2009
+Ghana.034_t5	Ghana	West Africa	3	Ghana.067	2009
+Ghana.034_t5	Ghana	West Africa	3	Ghana.112	2010
+Ghana.034_t5	Guinea	West Africa	3	Guinea.62	2011
+Ghana.034_t5	Mali	West Africa	3	Mali.43	2007
+Ghana.047_t2	Ghana	West Africa	3	Ghana.047	2009
+Ghana.047_t2	Mali	West Africa	3	Mali.27	2007
+Gambia.42_t5	Gambia	West Africa	3	Gambia.42	2008
+Gambia.42_t5	Gambia	West Africa	3	Gambia.58	2008
+Gambia.42_t5	Ghana	West Africa	3	Ghana.016	2009
+Gambia.42_t5	Mali	West Africa	3	Mali.30	2007
+Gambia.42_t5	Mali	West Africa	3	Mali.74	2007
+Ghana.079_t1	Ghana	West Africa	3	Ghana.079	2010
+Gambia.04_t1	Gambia	West Africa	3	Gambia.04	2008
+Ghana.261_t1	Ghana	West Africa	3	Ghana.261	2011
+Cambodia.205_t6	Cambodia	South East Asia	3	Cambodia.205	2009
+Cambodia.205_t6	Cambodia	South East Asia	3	Cambodia.241	2011
+Cambodia.205_t6	Cambodia	South East Asia	3	Cambodia.254	2011
+Cambodia.205_t6	Cambodia	South East Asia	3	Cambodia.260	2011
+Cambodia.205_t6	Cambodia	South East Asia	3	Cambodia.265	2011
+Cambodia.205_t6	Cambodia	South East Asia	3	Cambodia.310	2011
+Cambodia.147_t14	Cambodia	South East Asia	3	Cambodia.147	2010
+Cambodia.147_t14	DRC	Central Africa	3	DRC.097	2013
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.005	2011
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.006	2011
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.060	2011
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.084	2012
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.085	2012
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.088	2012
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.100	2012
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.119	2012
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.179	2008
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.199	2008
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.208	2008
+Cambodia.147_t14	Thailand	South East Asia	3	Thailand.235	2012
+Cambodia.247_t2	Cambodia	South East Asia	3	Cambodia.247	2011
+Cambodia.247_t2	Cambodia	South East Asia	3	Cambodia.268	2011
+Malawi.085_t2	Malawi	East Africa	3	Malawi.085	2011
+Malawi.085_t2	Malawi	East Africa	3	Malawi.198	2011
+Ghana.480_t1	Ghana	West Africa	3	Ghana.480	2013
+Bangladesh.49_t1	Bangladesh	South East Asia	3	Bangladesh.49	2012
+DRC.103_t10	DRC	Central Africa	3	DRC.103	2013
+DRC.103_t10	Ghana	West Africa	3	Ghana.215	2011
+DRC.103_t10	Ghana	West Africa	3	Ghana.367	2012
+DRC.103_t10	Ghana	West Africa	3	Ghana.456	2013
+DRC.103_t10	Malawi	East Africa	3	Malawi.019	2011
+DRC.103_t10	Senegal	West Africa	3	Senegal.011	2009
+DRC.103_t10	Senegal	West Africa	3	Senegal.063	2007
+DRC.103_t10	Senegal	West Africa	3	Senegal.075	2009
+DRC.103_t10	Senegal	West Africa	3	Senegal.086	2009
+DRC.103_t10	Senegal	West Africa	3	Senegal.098	2008
+Ghana.240_t1	Ghana	West Africa	3	Ghana.240	2011
+DRC.045_t1	DRC	Central Africa	3	DRC.045	2013
+Gambia.02_t1	Gambia	West Africa	3	Gambia.02	2008
+Bangladesh.23_t1	Bangladesh	South East Asia	3	Bangladesh.23	2012
+Cambodia.375_t2	Cambodia	South East Asia	3	Cambodia.375	2011
+Cambodia.375_t2	Laos	South East Asia	3	Laos.87	2012
+Bangladesh.38_t1	Bangladesh	South East Asia	3	Bangladesh.38	2012
+Malawi.186_t4	Malawi	East Africa	3	Malawi.186	2011
+Malawi.186_t4	Myanmar	South East Asia	3	Myanmar.53	2012
+Malawi.186_t4	Thailand	South East Asia	3	Thailand.188	2008
+Malawi.186_t4	Viet_Nam	South East Asia	3	Viet_Nam.060	2011
+Myanmar.03_t4	Myanmar	South East Asia	3	Myanmar.03	2011
+Myanmar.03_t4	Thailand	South East Asia	3	Thailand.105	2011
+Myanmar.03_t4	Thailand	South East Asia	3	Thailand.110	2012
+Myanmar.03_t4	Thailand	South East Asia	3	Thailand.115	2012
+Ghana.135_t1	Ghana	West Africa	2	Ghana.135	2010
+DRC.028_t1	DRC	Central Africa	3	DRC.028	2013
+Ghana.231_t1	Ghana	West Africa	2	Ghana.231	2011
+Ghana.319_t1	Ghana	West Africa	3	Ghana.319	2012
+Malawi.189_t1	Malawi	East Africa	3	Malawi.189	2011
+Mali.34_t1	Mali	West Africa	3	Mali.34	2007
+Ghana.323_t1	Ghana	West Africa	2	Ghana.323	2012
+Cambodia.096_t4	Cambodia	South East Asia	3	Cambodia.096	2010
+Cambodia.096_t4	Laos	South East Asia	3	Laos.14	2011
+Cambodia.096_t4	Laos	South East Asia	3	Laos.48	2011
+Cambodia.096_t4	Thailand	South East Asia	3	Thailand.079	2012
+Bangladesh.31_t1	Bangladesh	South East Asia	2	Bangladesh.31	2012
+Bangladesh.01_t3	Bangladesh	South East Asia	2	Bangladesh.01	2012
+Bangladesh.01_t3	Bangladesh	South East Asia	2	Bangladesh.09	2012
+Bangladesh.01_t3	Bangladesh	South East Asia	2	Bangladesh.13	2012
+Laos.29_t2	Laos	South East Asia	2	Laos.29	2011
+Laos.29_t2	Laos	South East Asia	2	Laos.38	2011
+Ghana.062_t5	Ghana	West Africa	2	Ghana.062	2009
+Ghana.062_t5	Ghana	West Africa	2	Ghana.181	2010
+Ghana.062_t5	Ghana	West Africa	2	Ghana.262	2009
+Ghana.062_t5	Ghana	West Africa	2	Ghana.418	2013
+Ghana.062_t5	Guinea	West Africa	2	Guinea.67	2011
+Ghana.204_t2	Ghana	West Africa	2	Ghana.204	2011
+Ghana.204_t2	Ghana	West Africa	2	Ghana.384	2013
+Ghana.188_t2	Ghana	West Africa	2	Ghana.188	2010
+Ghana.188_t2	Malawi	East Africa	2	Malawi.049	2011
+Myanmar.08_t1	Myanmar	South East Asia	2	Myanmar.08	2011
+DRC.106_t1	DRC	Central Africa	2	DRC.106	2013
+Malawi.118_t2	Malawi	East Africa	2	Malawi.118	2011
+Malawi.118_t2	Malawi	East Africa	2	Malawi.120	2011
+Laos.88_t1	Laos	South East Asia	3	Laos.88	2011
+Cambodia.361_t17	Cambodia	South East Asia	3	Cambodia.361	2011
+Cambodia.361_t17	Cambodia	South East Asia	3	Cambodia.367	2011
+Cambodia.361_t17	Laos	South East Asia	3	Laos.05	2011
+Cambodia.361_t17	Laos	South East Asia	3	Laos.28	2011
+Cambodia.361_t17	Laos	South East Asia	3	Laos.36	2011
+Cambodia.361_t17	Laos	South East Asia	3	Laos.49	2011
+Cambodia.361_t17	Myanmar	South East Asia	3	Myanmar.04	2011
+Cambodia.361_t17	Myanmar	South East Asia	3	Myanmar.41	2012
+Cambodia.361_t17	Myanmar	South East Asia	3	Myanmar.46	2012
+Cambodia.361_t17	Thailand	South East Asia	3	Thailand.003	2011
+Cambodia.361_t17	Thailand	South East Asia	3	Thailand.007	2011
+Cambodia.361_t17	Thailand	South East Asia	3	Thailand.065	2012
+Cambodia.361_t17	Thailand	South East Asia	3	Thailand.092	2012
+Cambodia.361_t17	Thailand	South East Asia	3	Thailand.177	2008
+Cambodia.361_t17	Thailand	South East Asia	3	Thailand.200	2008
+Cambodia.361_t17	Thailand	South East Asia	3	Thailand.212	2011
+Cambodia.361_t17	Thailand	South East Asia	3	Thailand.220	2012
+Viet_Nam.013_t1	Viet_Nam	South East Asia	3	Viet_Nam.013	2011
+Ghana.176_t3	Ghana	West Africa	2	Ghana.176	2011
+Ghana.176_t3	Guinea	West Africa	2	Guinea.80	2011
+Ghana.176_t3	Malawi	East Africa	2	Malawi.068	2011
+DRC.078_t1	DRC	Central Africa	3	DRC.078	2013
+Senegal.065_t2	Senegal	West Africa	3	Senegal.065	2009
+Senegal.065_t2	Senegal	West Africa	3	Senegal.087	2009
+DRC.091_t1	DRC	Central Africa	2	DRC.091	2013
+Ghana.027_t1	Ghana	West Africa	3	Ghana.027	2009
+Malawi.206_t1	Malawi	East Africa	2	Malawi.206	2011
+Ghana.417_t1	Ghana	West Africa	3	Ghana.417	2013
+Guinea.87_t1	Guinea	West Africa	3	Guinea.87	2011
+DRC.027_t3	DRC	Central Africa	3	DRC.027	2013
+DRC.027_t3	Ghana	West Africa	3	Ghana.196	2011
+DRC.027_t3	Ghana	West Africa	3	Ghana.371	2012
+Ghana.060_t1	Ghana	West Africa	3	Ghana.060	2009
+Malawi.236_t1	Malawi	East Africa	3	Malawi.236	2011
+Ghana.219_t1	Ghana	West Africa	2	Ghana.219	2010
+Ghana.464_t1	Ghana	West Africa	2	Ghana.464	2013
+Bangladesh.12_t1	Bangladesh	South East Asia	2	Bangladesh.12	2012
+Bangladesh.46_t1	Bangladesh	South East Asia	2	Bangladesh.46	2012
+Guinea.14_t1	Guinea	West Africa	2	Guinea.14	2011
+DRC.108_t1	DRC	Central Africa	2	DRC.108	2013
+Ghana.476_t1	Ghana	West Africa	2	Ghana.476	2013
+Ghana.496_t2	Ghana	West Africa	2	Ghana.496	2012
+Ghana.496_t2	Senegal	West Africa	2	Senegal.073	2010
+Ghana.084_t1	Ghana	West Africa	2	Ghana.084	2009
+Guinea.47_t1	Guinea	West Africa	2	Guinea.47	2011
+Malawi.113_t1	Malawi	East Africa	2	Malawi.113	2011
+Mali.48_t1	Mali	West Africa	2	Mali.48	2007
+Ghana.004_t1	Ghana	West Africa	2	Ghana.004	2009
+Senegal.040_t1	Senegal	West Africa	2	Senegal.040	2010
+Gambia.47_t4	Gambia	West Africa	1	Gambia.47	2008
+Gambia.47_t4	Ghana	West Africa	1	Ghana.276	2011
+Gambia.47_t4	Guinea	West Africa	1	Guinea.44	2011
+Gambia.47_t4	Mali	West Africa	1	Mali.11	2010
+Gambia.12_t2	Gambia	West Africa	1	Gambia.12	2008
+Gambia.12_t2	Gambia	West Africa	1	Gambia.18	2008
+Ghana.038_t1	Ghana	West Africa	2	Ghana.038	2009
+Uganda.8_t1	Uganda	East Africa	2	Uganda.8	2007
+Ghana.024_t2	Ghana	West Africa	2	Ghana.024	2009
+Ghana.024_t2	Ghana	West Africa	2	Ghana.447	2013
+Uganda.1_t1	Uganda	East Africa	2	Uganda.1	2006
+DRC.072_t1	DRC	Central Africa	2	DRC.072	2013
+Ghana.121_t1	Ghana	West Africa	2	Ghana.121	2010
+Malawi.024_t1	Malawi	East Africa	2	Malawi.024	2011
+SEV2_H5_t1	SEV2_H5	Lab	3	SEV2_H5	"NA"
+Malawi.174_t1	Malawi	East Africa	3	Malawi.174	2011
+Malawi.229_t1	Malawi	East Africa	3	Malawi.229	2011
+Ghana.166_t1	Ghana	West Africa	3	Ghana.166	2010
+Ghana.479_t1	Ghana	West Africa	3	Ghana.479	2013
+Malawi.154_t1	Malawi	East Africa	3	Malawi.154	2011
+DRC.046_t1	DRC	Central Africa	3	DRC.046	2013
+Mali.49_t1	Mali	West Africa	3	Mali.49	2007
+DRC.075_t1	DRC	Central Africa	3	DRC.075	2013
+Ghana.248_t1	Ghana	West Africa	3	Ghana.248	2009
+Senegal.108_t1	Senegal	West Africa	3	Senegal.108	2005
+Ghana.430_t1	Ghana	West Africa	3	Ghana.430	2013
+Malawi.126_t1	Malawi	East Africa	3	Malawi.126	2011
+Senegal.048_t1	Senegal	West Africa	3	Senegal.048	2010
+Ghana.089_t1	Ghana	West Africa	3	Ghana.089	2010
+Ghana.272_t1	Ghana	West Africa	3	Ghana.272	2011
+Malawi.141_t1	Malawi	East Africa	3	Malawi.141	2011
+Ghana.102_t1	Ghana	West Africa	3	Ghana.102	2010
+Ghana.350_t1	Ghana	West Africa	3	Ghana.350	2012
+Ghana.142_t2	Ghana	West Africa	3	Ghana.142	2010
+Ghana.142_t2	Ghana	West Africa	3	Ghana.291	2012
+Ghana.253_t1	Ghana	West Africa	3	Ghana.253	2011
+Viet_Nam.028_t1	Viet_Nam	South East Asia	3	Viet_Nam.028	2011
+Malawi.078_t1	Malawi	East Africa	3	Malawi.078	2011
+Malawi.090_t1	Malawi	East Africa	3	Malawi.090	2011
+Ghana.007_t1	Ghana	West Africa	3	Ghana.007	2009
+DRC.031_t4	DRC	Central Africa	4	DRC.031	2013
+DRC.031_t4	DRC	Central Africa	4	DRC.035	2013
+DRC.031_t4	Ghana	West Africa	4	Ghana.203	2011
+DRC.031_t4	Ghana	West Africa	4	Ghana.412	2013
+DRC.005_t2	DRC	Central Africa	3	DRC.005	2013
+DRC.005_t2	Ghana	West Africa	3	Ghana.467	2013
+DRC.100_t1	DRC	Central Africa	3	DRC.100	2013
+Ghana.332_t1	Ghana	West Africa	3	Ghana.332	2012
+Laos.18_t8	Laos	South East Asia	3	Laos.18	2011
+Laos.18_t8	Viet_Nam	South East Asia	3	Viet_Nam.007	2011
+Laos.18_t8	Viet_Nam	South East Asia	3	Viet_Nam.026	2011
+Laos.18_t8	Viet_Nam	South East Asia	3	Viet_Nam.029	2011
+Laos.18_t8	Viet_Nam	South East Asia	3	Viet_Nam.039	2011
+Laos.18_t8	Viet_Nam	South East Asia	3	Viet_Nam.090	2012
+Laos.18_t8	Viet_Nam	South East Asia	3	Viet_Nam.092	2012
+Laos.18_t8	Viet_Nam	South East Asia	3	Viet_Nam.102	2012
+RO33_t1	RO33	Lab	3	RO33	"NA"
+Malawi.157_t1	Malawi	East Africa	3	Malawi.157	2011
+Guinea.04_t2	Guinea	West Africa	3	Guinea.04	2011
+Guinea.04_t2	Senegal	West Africa	3	Senegal.061	2009
+DRC.009_t1	DRC	Central Africa	3	DRC.009	2013
+Ghana.389_t1	Ghana	West Africa	3	Ghana.389	2013
+DRC.018_t2	DRC	Central Africa	3	DRC.018	2013
+DRC.018_t2	Ghana	West Africa	3	Ghana.184	2010
+Ghana.239_t1	Ghana	West Africa	3	Ghana.239	2011
+EF614225_t1	EF614225	Lab	3	EF614225	"NA"
+Viet_Nam.085_t1	Viet_Nam	South East Asia	3	Viet_Nam.085	2012
+Cambodia.104_t10	Cambodia	South East Asia	3	Cambodia.104	2010
+Cambodia.104_t10	Cambodia	South East Asia	3	Cambodia.124	2010
+Cambodia.104_t10	Cambodia	South East Asia	3	Cambodia.195	2011
+Cambodia.104_t10	Cambodia	South East Asia	3	Cambodia.224	2011
+Cambodia.104_t10	Cambodia	South East Asia	3	Cambodia.290	2011
+Cambodia.104_t10	Cambodia	South East Asia	3	Cambodia.302	2011
+Cambodia.104_t10	Cambodia	South East Asia	3	Cambodia.360	2011
+Cambodia.104_t10	Cambodia	South East Asia	3	Cambodia.366	2011
+Cambodia.104_t10	Laos	South East Asia	3	Laos.63	2012
+Cambodia.104_t10	Thailand	South East Asia	3	Thailand.130	2012
+Thailand.104_t7	Thailand	South East Asia	3	Thailand.104	2011
+Thailand.104_t7	Thailand	South East Asia	3	Thailand.109	2012
+Thailand.104_t7	Thailand	South East Asia	3	Thailand.116	2012
+Thailand.104_t7	Thailand	South East Asia	3	Thailand.117	2012
+Thailand.104_t7	Thailand	South East Asia	3	Thailand.192	2008
+Thailand.104_t7	Thailand	South East Asia	3	Thailand.263	2014
+Thailand.104_t7	Viet_Nam	South East Asia	3	Viet_Nam.062	2011
+EF614226_t1	EF614226	Lab	3	EF614226	"NA"
+Ghana.099_t1	Ghana	West Africa	3	Ghana.099	2010
+Bangladesh.33_t3	Bangladesh	South East Asia	3	Bangladesh.33	2012
+Bangladesh.33_t3	Bangladesh	South East Asia	3	Bangladesh.36	2012
+Bangladesh.33_t3	Bangladesh	South East Asia	3	Bangladesh.40	2012
+Viet_Nam.042_t1	Viet_Nam	South East Asia	3	Viet_Nam.042	2011
+DRC.049_t1	DRC	Central Africa	3	DRC.049	2013
+Malawi.148_t1	Malawi	East Africa	3	Malawi.148	2011
+DRC.034_t4	DRC	Central Africa	3	DRC.034	2013
+DRC.034_t4	Ghana	West Africa	3	Ghana.175	2010
+DRC.034_t4	Ghana	West Africa	3	Ghana.408	2013
+DRC.034_t4	Senegal	West Africa	3	Senegal.012	2010
+Bangladesh.41_t5	Bangladesh	South East Asia	3	Bangladesh.41	2012
+Bangladesh.41_t5	Ghana	West Africa	3	Ghana.136	2010
+Bangladesh.41_t5	Ghana	West Africa	3	Ghana.298	2012
+Bangladesh.41_t5	Guinea	West Africa	3	Guinea.26	2011
+Bangladesh.41_t5	Myanmar	South East Asia	3	Myanmar.49	2012
+Malawi.026_t1	Malawi	East Africa	3	Malawi.026	2011
+DRC.067_t2	DRC	Central Africa	3	DRC.067	2013
+DRC.067_t2	Malawi	East Africa	3	Malawi.070	2011
+Ghana.070_t2	Ghana	West Africa	3	Ghana.070	2010
+Ghana.070_t2	Senegal	West Africa	3	Senegal.079	2009
+Ghana.361_t1	Ghana	West Africa	3	Ghana.361	2012
+Ghana.399_t1	Ghana	West Africa	3	Ghana.399	2013
+Ghana.115_t1	Ghana	West Africa	3	Ghana.115	2010
+Guinea.15_t1	Guinea	West Africa	3	Guinea.15	2011
+Viet_Nam.041_t1	Viet_Nam	South East Asia	3	Viet_Nam.041	2011
+Cambodia.313_t4	Cambodia	South East Asia	3	Cambodia.313	2011
+Cambodia.313_t4	Laos	South East Asia	3	Laos.25	2011
+Cambodia.313_t4	Laos	South East Asia	3	Laos.45	2011
+Cambodia.313_t4	Laos	South East Asia	3	Laos.54	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.002	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.003	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.013	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.014	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.018	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.019	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.024	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.028	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.029	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.038	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.040	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.041	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.045	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.050	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.055	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.057	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.059	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.062	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.064	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.066	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.067	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.072	2013
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.077	2009
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.082	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.085	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.087	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.098	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.106	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.110	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.111	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.121	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.127	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.128	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.129	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.138	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.141	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.144	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.175	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.177	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.182	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.184	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.189	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.191	2010
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.209	2009
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.220	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.229	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.231	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.236	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.240	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.244	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.245	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.250	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.253	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.255	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.256	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.258	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.259	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.267	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.272	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.273	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.277	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.283	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.284	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.293	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.329	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.331	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.332	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.333	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.336	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.339	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.340	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.341	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.344	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.351	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.353	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.364	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.400	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.402	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.407	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.412	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.415	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.418	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.422	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.423	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.427	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.428	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.429	2011
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.435	2012
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.463	2012
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.464	2012
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.465	2012
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.496	2012
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.497	2012
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.501	2012
+Cambodia.002_t108	Cambodia	South East Asia	3	Cambodia.503	2011
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.018	2011
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.043	2011
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.051	2011
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.058	2011
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.059	2011
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.070	2012
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.074	2012
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.076	2012
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.078	2012
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.080	2012
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.098	2011
+Cambodia.002_t108	Viet_Nam	South East Asia	3	Viet_Nam.101	2012
+Cambodia.002_t108	Thailand	South East Asia	3	Thailand.174	2008
+Bangladesh.17_t10	Bangladesh	South East Asia	3	Bangladesh.17	2012
+Bangladesh.17_t10	Bangladesh	South East Asia	3	Bangladesh.55	2012
+Bangladesh.17_t10	DRC	Central Africa	3	DRC.080	2013
+Bangladesh.17_t10	DRC	Central Africa	3	DRC.085	2013
+Bangladesh.17_t10	Malawi	East Africa	3	Malawi.075	2011
+Bangladesh.17_t10	Mali	West Africa	3	Mali.38	2007
+Bangladesh.17_t10	Thailand	South East Asia	3	Thailand.010	2011
+Bangladesh.17_t10	Thailand	South East Asia	3	Thailand.050	2011
+Bangladesh.17_t10	Thailand	South East Asia	3	Thailand.162	2014
+Bangladesh.17_t10	Thailand	South East Asia	3	Thailand.181	2014
+Malawi.086_t1	Malawi	East Africa	3	Malawi.086	2011
+3D7_t2	3D7	Lab	3	3D7	"NA"
+3D7_t2	NF54	Lab	3	NF54	"NA"
+Ghana.241_t2	Ghana	West Africa	3	Ghana.241	2011
+Ghana.241_t2	Guinea	West Africa	3	Guinea.82	2011
+Ghana.494_t1	Ghana	West Africa	3	Ghana.494	2011
+Bangladesh.02_t3	Bangladesh	South East Asia	3	Bangladesh.02	2012
+Bangladesh.02_t3	Bangladesh	South East Asia	3	Bangladesh.26	2012
+Bangladesh.02_t3	Malawi	East Africa	3	Malawi.199	2011
+Mali.08_t1	Mali	West Africa	3	Mali.08	2002
+Ghana.029_t1	Ghana	West Africa	3	Ghana.029	2009
+Mali.21_t1	Mali	West Africa	3	Mali.21	2010
+Malawi.129_t1	Malawi	East Africa	3	Malawi.129	2011
+Viet_Nam.010_t3	Viet_Nam	South East Asia	3	Viet_Nam.010	2011
+Viet_Nam.010_t3	Viet_Nam	South East Asia	3	Viet_Nam.050	2011
+Viet_Nam.010_t3	Viet_Nam	South East Asia	3	Viet_Nam.095	2011
+Malawi.015_t1	Malawi	East Africa	3	Malawi.015	2011
+Viet_Nam.019_t5	Viet_Nam	South East Asia	3	Viet_Nam.019	2011
+Viet_Nam.019_t5	Viet_Nam	South East Asia	3	Viet_Nam.024	2011
+Viet_Nam.019_t5	Viet_Nam	South East Asia	3	Viet_Nam.031	2011
+Viet_Nam.019_t5	Viet_Nam	South East Asia	3	Viet_Nam.057	2011
+Viet_Nam.019_t5	Viet_Nam	South East Asia	3	Viet_Nam.069	2012
+Guinea.36_t1	Guinea	West Africa	3	Guinea.36	2011
+Ghana.158_t4	Ghana	West Africa	3	Ghana.158	2010
+Ghana.158_t4	Ghana	West Africa	3	Ghana.283	2010
+Ghana.158_t4	Guinea	West Africa	3	Guinea.71	2011
+Ghana.158_t4	Guinea	West Africa	3	Guinea.74	2011
+Gambia.55_t1	Gambia	West Africa	3	Gambia.55	2008
+Malawi.127_t1	Malawi	East Africa	4	Malawi.127	2011
+DRC.011_t1	DRC	Central Africa	3	DRC.011	2013
+Malawi.162_t1	Malawi	East Africa	3	Malawi.162	2011
+Ghana.318_t2	Ghana	West Africa	3	Ghana.318	2012
+Ghana.318_t2	Mali	West Africa	3	Mali.46	2007
+Ghana.288_t1	Ghana	West Africa	3	Ghana.288	2012
+Ghana.282_t2	Ghana	West Africa	3	Ghana.282	2011
+Ghana.282_t2	Malawi	East Africa	3	Malawi.115	2011
+DRC.095_t1	DRC	Central Africa	3	DRC.095	2013
+Ghana.391_t1	Ghana	West Africa	3	Ghana.391	2013
+Ghana.392_t1	Ghana	West Africa	3	Ghana.392	2013
+Cambodia.036_t1	Cambodia	South East Asia	3	Cambodia.036	2013
+DRC.025_t2	DRC	Central Africa	3	DRC.025	2013
+DRC.025_t2	Malawi	East Africa	3	Malawi.109	2011
+Cambodia.392_t1	Cambodia	South East Asia	3	Cambodia.392	2011
+Malawi.244_t1	Malawi	East Africa	3	Malawi.244	2011
+Malawi.064_t6	Malawi	East Africa	4	Malawi.064	2011
+Malawi.064_t6	Malawi	East Africa	4	Malawi.232	2011
+Malawi.064_t6	Myanmar	South East Asia	4	Myanmar.24	2012
+Malawi.064_t6	Myanmar	South East Asia	4	Myanmar.29	2012
+Malawi.064_t6	Myanmar	South East Asia	4	Myanmar.39	2012
+Malawi.064_t6	Thailand	South East Asia	4	Thailand.014	2011
+Malawi.220_t1	Malawi	East Africa	3	Malawi.220	2011
+Ghana.376_t1	Ghana	West Africa	3	Ghana.376	2012
+Ghana.006_t2	Ghana	West Africa	3	Ghana.006	2009
+Ghana.006_t2	Senegal	West Africa	3	Senegal.070	2009
+Senegal.068_t1	Senegal	West Africa	3	Senegal.068	2009
+DRC.032_t1	DRC	Central Africa	3	DRC.032	2013
+DRC.054_t1	DRC	Central Africa	3	DRC.054	2013
+Ghana.343_t1	Ghana	West Africa	3	Ghana.343	2012
+Senegal.064_t1	Senegal	West Africa	3	Senegal.064	2009
+Gambia.46_t4	Gambia	West Africa	3	Gambia.46	2008
+Gambia.46_t4	Ghana	West Africa	3	Ghana.356	2012
+Gambia.46_t4	Guinea	West Africa	3	Guinea.43	2011
+Gambia.46_t4	Guinea	West Africa	3	Guinea.68	2011
+Cambodia.218_t1	Cambodia	South East Asia	4	Cambodia.218	2011
+Thailand.026_t2	Thailand	South East Asia	3	Thailand.026	2012
+Thailand.026_t2	Thailand	South East Asia	3	Thailand.236	2012
+Malawi.197_t1	Malawi	East Africa	3	Malawi.197	2011
+Malawi.033_t1	Malawi	East Africa	4	Malawi.033	2011
+Malawi.092_t1	Malawi	East Africa	3	Malawi.092	2011
+Bangladesh.05_t1	Bangladesh	South East Asia	3	Bangladesh.05	2012
+Guinea.11_t2	Guinea	West Africa	3	Guinea.11	2011
+Guinea.11_t2	Mali	West Africa	3	Mali.15	2010
+Ghana.491_t1	Ghana	West Africa	3	Ghana.491	2011
+Malawi.013_t1	Malawi	East Africa	3	Malawi.013	2011
+Malawi.041_t1	Malawi	East Africa	3	Malawi.041	2011
+Ghana.153_t2	Ghana	West Africa	3	Ghana.153	2010
+Ghana.153_t2	Ghana	West Africa	3	Ghana.346	2012
+DRC.002_t7	DRC	Central Africa	3	DRC.002	2013
+DRC.002_t7	Gambia	West Africa	3	Gambia.08	2008
+DRC.002_t7	Gambia	West Africa	3	Gambia.31	2008
+DRC.002_t7	Gambia	West Africa	3	Gambia.59	2008
+DRC.002_t7	Ghana	West Africa	3	Ghana.192	2011
+DRC.002_t7	Ghana	West Africa	3	Ghana.335	2012
+DRC.002_t7	Ghana	West Africa	3	Ghana.437	2013
+Ghana.228_t5	Ghana	West Africa	4	Ghana.228	2011
+Ghana.228_t5	Ghana	West Africa	4	Ghana.493	2011
+Ghana.228_t5	Guinea	West Africa	4	Guinea.13	2011
+Ghana.228_t5	Senegal	West Africa	4	Senegal.005	2002
+Ghana.228_t5	Uganda	East Africa	4	Uganda.2	2006
+Ghana.199_t3	Ghana	West Africa	4	Ghana.199	2011
+Ghana.199_t3	Malawi	East Africa	4	Malawi.133	2011
+Ghana.199_t3	Senegal	West Africa	4	Senegal.028	2010
+Malawi.037_t1	Malawi	East Africa	3	Malawi.037	2011
+Ghana.128_t2	Ghana	West Africa	3	Ghana.128	2010
+Ghana.128_t2	Ghana	West Africa	3	Ghana.474	2013
+Ghana.159_t1	Ghana	West Africa	3	Ghana.159	2010
+Guinea.61_t3	Guinea	West Africa	3	Guinea.61	2011
+Guinea.61_t3	Malawi	East Africa	3	Malawi.056	2011
+Guinea.61_t3	Mali	West Africa	3	Mali.56	2007
+Guinea.17_t1	Guinea	West Africa	3	Guinea.17	2011
+Mali.73_t1	Mali	West Africa	3	Mali.73	2007
+Ghana.104_t1	Ghana	West Africa	3	Ghana.104	2010
+Ghana.436_t1	Ghana	West Africa	3	Ghana.436	2013
+Ghana.322_t1	Ghana	West Africa	3	Ghana.322	2012
+Malawi.001_t7	Malawi	East Africa	3	Malawi.001	2011
+Malawi.001_t7	Malawi	East Africa	3	Malawi.005	2011
+Malawi.001_t7	Malawi	East Africa	3	Malawi.101	2011
+Malawi.001_t7	Malawi	East Africa	3	Malawi.238	2011
+Malawi.001_t7	Malayan_Camp	Lab	3	Malayan_Camp	"NA"
+Malawi.001_t7	Uganda_Palo_Alto_FUP-H	Lab	3	Uganda_Palo_Alto_FUP-H	"NA"
+Malawi.001_t7	Malawi	East Africa	3	Malawi.034	2011
+Malawi.218_t1	Malawi	East Africa	3	Malawi.218	2011
+Ghana.306_t2	Ghana	West Africa	3	Ghana.306	2012
+Ghana.306_t2	Guinea	West Africa	3	Guinea.55	2011
+Mali.78_t1	Mali	West Africa	3	Mali.78	2007
+Ghana.037_t1	Ghana	West Africa	3	Ghana.037	2009
+DRC.003_t1	DRC	Central Africa	3	DRC.003	2013
+Malawi.003_t2	Malawi	East Africa	3	Malawi.003	2011
+Malawi.003_t2	Malawi	East Africa	3	Malawi.160	2011
+Malawi.153_t1	Malawi	East Africa	3	Malawi.153	2011
+Mali.54_t1	Mali	West Africa	3	Mali.54	2007
+Ghana.190_t1	Ghana	West Africa	3	Ghana.190	2011
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.01	"NA"
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.06	2009
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.13	2011
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.15	2011
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.20	2012
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.22	2012
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.25	2009
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.28	2010
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.31	2010
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.36	2012
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.39	2012
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.40	2012
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.41	2012
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.44	2012
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.47	2012
+French_Guiana.01_t16	French_Guiana	South America	3	French_Guiana.50	2013
+Senegal.053_t1	Senegal	West Africa	3	Senegal.053	2011
+Ghana.252_t1	Ghana	West Africa	3	Ghana.252	2011
+Ghana.010_t7	Ghana	West Africa	3	Ghana.010	2009
+Ghana.010_t7	Ghana	West Africa	3	Ghana.106	2010
+Ghana.010_t7	Ghana	West Africa	3	Ghana.186	2010
+Ghana.010_t7	Ghana	West Africa	3	Ghana.394	2013
+Ghana.010_t7	Guinea	West Africa	3	Guinea.28	2011
+Ghana.010_t7	Mali	West Africa	3	Mali.18	2010
+Ghana.010_t7	Senegal	West Africa	3	Senegal.106	2004
+Ghana.475_t2	Ghana	West Africa	3	Ghana.475	2013
+Ghana.475_t2	Guinea	West Africa	3	Guinea.84	2011
+Ghana.352_t1	Ghana	West Africa	3	Ghana.352	2012
+DRC.033_t1	DRC	Central Africa	3	DRC.033	2013
+Ghana.340_t1	Ghana	West Africa	3	Ghana.340	2012
+Ghana.073_t3	Ghana	West Africa	3	Ghana.073	2010
+Ghana.073_t3	Ghana	West Africa	3	Ghana.269	2010
+Ghana.073_t3	Ghana	West Africa	3	Ghana.378	2012
+Malawi.176_t1	Malawi	East Africa	3	Malawi.176	2011
+Ghana.086_t1	Ghana	West Africa	3	Ghana.086	2009
+Senegal.013_t1	Senegal	West Africa	3	Senegal.013	2010
+Ghana.439_t1	Ghana	West Africa	3	Ghana.439	2013
+Cambodia.304_t1	Cambodia	South East Asia	3	Cambodia.304	2011
+Ghana.365_t1	Ghana	West Africa	3	Ghana.365	2012
+DRC.111_t6	DRC	Central Africa	3	DRC.111	2013
+DRC.111_t6	Ghana	West Africa	3	Ghana.097	2010
+DRC.111_t6	Ghana	West Africa	3	Ghana.321	2012
+DRC.111_t6	Ghana	West Africa	3	Ghana.337	2012
+DRC.111_t6	Ghana	West Africa	3	Ghana.374	2012
+DRC.111_t6	Malawi	East Africa	3	Malawi.188	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.005	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.052	2013
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.068	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.081	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.094	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.108	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.123	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.135	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.181	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.183	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.186	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.190	2010
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.197	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.237	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.271	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.330	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.342	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.345	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.347	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.370	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.403	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.406	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.408	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.420	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.440	2012
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.450	2011
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.456	2012
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.457	2012
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.459	2012
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.467	2012
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.472	2012
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.491	2012
+Cambodia.005_t41	Cambodia	South East Asia	3	Cambodia.492	2012
+Cambodia.005_t41	Myanmar	South East Asia	3	Myanmar.37	2012
+Cambodia.005_t41	Thailand	South East Asia	3	Thailand.041	2011
+Cambodia.005_t41	Thailand	South East Asia	3	Thailand.042	2011
+Cambodia.005_t41	Thailand	South East Asia	3	Thailand.055	2011
+Cambodia.005_t41	Thailand	South East Asia	3	Thailand.152	2012
+Cambodia.005_t41	Thailand	South East Asia	3	Thailand.173	2008
+Cambodia.005_t41	Thailand	South East Asia	3	Thailand.185	2008
+Cambodia.005_t41	Thailand	South East Asia	3	Thailand.190	2008
+Cambodia.007_t1	Cambodia	South East Asia	3	Cambodia.007	2011
+Cambodia.093_t6	Cambodia	South East Asia	3	Cambodia.093	2010
+Cambodia.093_t6	Cambodia	South East Asia	3	Cambodia.249	2011
+Cambodia.093_t6	Cambodia	South East Asia	3	Cambodia.432	2011
+Cambodia.093_t6	Laos	South East Asia	3	Laos.75	2012
+Cambodia.093_t6	Thailand	South East Asia	3	Thailand.131	2012
+Cambodia.093_t6	NF135-5_C10	Lab	3	NF135-5_C10	"NA"
+Cambodia.083_t6	Cambodia	South East Asia	3	Cambodia.083	2010
+Cambodia.083_t6	Cambodia	South East Asia	3	Cambodia.086	2010
+Cambodia.083_t6	Cambodia	South East Asia	3	Cambodia.196	2011
+Cambodia.083_t6	Laos	South East Asia	3	Laos.57	2012
+Cambodia.083_t6	Thailand	South East Asia	3	Thailand.175	2008
+Cambodia.083_t6	Viet_Nam	South East Asia	3	Viet_Nam.034	2011
+Ghana.274_t1	Ghana	West Africa	3	Ghana.274	2011
+Cambodia.074_t5	Cambodia	South East Asia	3	Cambodia.074	2009
+Cambodia.074_t5	Cambodia	South East Asia	3	Cambodia.226	2011
+Cambodia.074_t5	Cambodia	South East Asia	3	Cambodia.291	2011
+Cambodia.074_t5	Cambodia	South East Asia	3	Cambodia.477	2012
+Cambodia.074_t5	Cambodia	South East Asia	3	Cambodia.487	2012
+Thailand.198_t1	Thailand	South East Asia	3	Thailand.198	2008
+Senegal.022_t1	Senegal	West Africa	3	Senegal.022	2011
+Ghana.053_t2	Ghana	West Africa	3	Ghana.053	2009
+Ghana.053_t2	Ghana	West Africa	3	Ghana.096	2010
+Malawi.170_t1	Malawi	East Africa	3	Malawi.170	2011
+Gambia.28_t1	Gambia	West Africa	3	Gambia.28	2008
+Ghana.134_t2	Ghana	West Africa	3	Ghana.134	2010
+Ghana.134_t2	Ghana	West Africa	3	Ghana.385	2013
+Ghana.180_t1	Ghana	West Africa	3	Ghana.180	2010
+Ghana.483_t1	Ghana	West Africa	3	Ghana.483	2013
+Ghana.082_t1	Ghana	West Africa	3	Ghana.082	2009
+Bangladesh.20_t2	Bangladesh	South East Asia	3	Bangladesh.20	2012
+Bangladesh.20_t2	Bangladesh	South East Asia	3	Bangladesh.24	2012
+Ghana.351_t1	Ghana	West Africa	3	Ghana.351	2012
+Malawi.069_t1	Malawi	East Africa	3	Malawi.069	2011
+Malawi.235_t1	Malawi	East Africa	3	Malawi.235	2011
+Ghana.329_t1	Ghana	West Africa	3	Ghana.329	2013
+DRC.066_t2	DRC	Central Africa	3	DRC.066	2013
+DRC.066_t2	Malawi	East Africa	3	Malawi.248	2011
+Malawi.185_t1	Malawi	East Africa	3	Malawi.185	2011
+Malawi.072_t1	Malawi	East Africa	3	Malawi.072	2011
+Malawi.131_t1	Malawi	East Africa	3	Malawi.131	2011
+India.2_t2	India	India	3	India.2	2013
+India.2_t2	India	India	3	India.5	2012
+Thailand.166_t2	Thailand	South East Asia	2	Thailand.166	2014
+Thailand.166_t2	Thailand	South East Asia	2	Thailand.261	2014
+Laos.61_t1	Laos	South East Asia	2	Laos.61	2012
+Viet_Nam.055_t1	Viet_Nam	South East Asia	2	Viet_Nam.055	2011
+Cambodia.101_t19	Cambodia	South East Asia	2	Cambodia.101	2010
+Cambodia.101_t19	Cambodia	South East Asia	2	Cambodia.103	2010
+Cambodia.101_t19	Cambodia	South East Asia	2	Cambodia.167	2010
+Cambodia.101_t19	Cambodia	South East Asia	2	Cambodia.212	2011
+Cambodia.101_t19	Cambodia	South East Asia	2	Cambodia.378	2011
+Cambodia.101_t19	Cambodia	South East Asia	2	Cambodia.425	2011
+Cambodia.101_t19	Laos	South East Asia	2	Laos.06	2011
+Cambodia.101_t19	Laos	South East Asia	2	Laos.55	2011
+Cambodia.101_t19	Laos	South East Asia	2	Laos.73	2012
+Cambodia.101_t19	Thailand	South East Asia	2	Thailand.019	2011
+Cambodia.101_t19	Thailand	South East Asia	2	Thailand.072	2012
+Cambodia.101_t19	Thailand	South East Asia	2	Thailand.078	2012
+Cambodia.101_t19	Thailand	South East Asia	2	Thailand.216	2011
+Cambodia.101_t19	Thailand	South East Asia	2	Thailand.237	2012
+Cambodia.101_t19	Thailand	South East Asia	2	Thailand.255	2012
+Cambodia.101_t19	Thailand	South East Asia	2	Thailand.256	2012
+Cambodia.101_t19	Viet_Nam	South East Asia	2	Viet_Nam.005	2011
+Cambodia.101_t19	Viet_Nam	South East Asia	2	Viet_Nam.017	2011
+Cambodia.101_t19	Viet_Nam	South East Asia	2	Viet_Nam.033	2011
+Laos.09_t2	Laos	South East Asia	2	Laos.09	2011
+Laos.09_t2	Laos	South East Asia	2	Laos.50	2011
+Malawi.010_t1	Malawi	East Africa	3	Malawi.010	2011
+Mali.61_t1	Mali	West Africa	3	Mali.61	2007
+Bangladesh.04_t8	Bangladesh	South East Asia	3	Bangladesh.04	2012
+Bangladesh.04_t8	Myanmar	South East Asia	3	Myanmar.44	2012
+Bangladesh.04_t8	Myanmar	South East Asia	3	Myanmar.48	2012
+Bangladesh.04_t8	Myanmar	South East Asia	3	Myanmar.51	2012
+Bangladesh.04_t8	Myanmar	South East Asia	3	Myanmar.55	2012
+Bangladesh.04_t8	Thailand	South East Asia	3	Thailand.018	2011
+Bangladesh.04_t8	Thailand	South East Asia	3	Thailand.135	2012
+Bangladesh.04_t8	Thailand	South East Asia	3	Thailand.239	2012
+Ghana.059_t3	Ghana	West Africa	3	Ghana.059	2009
+Ghana.059_t3	Laos	South East Asia	3	Laos.66	2012
+Ghana.059_t3	Malawi	East Africa	3	Malawi.094	2011
+Bangladesh.30_t17	Bangladesh	South East Asia	3	Bangladesh.30	2012
+Bangladesh.30_t17	Cambodia	South East Asia	3	Cambodia.441	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.037	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.083	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.086	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.089	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.107	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.113	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.114	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.118	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.124	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.183	2014
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.226	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.228	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.244	2012
+Bangladesh.30_t17	Thailand	South East Asia	3	Thailand.248	2012
+Bangladesh.30_t17	EF614224	Lab	3	EF614224	"NA"
+Thailand.143_t1	Thailand	South East Asia	3	Thailand.143	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.001	2010
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.016	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.017	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.021	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.022	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.023	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.026	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.027	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.030	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.031	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.032	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.033	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.035	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.048	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.049	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.051	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.054	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.061	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.070	2013
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.112	2010
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.264	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.281	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.287	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.320	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.396	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.404	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.410	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.414	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.424	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.426	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.430	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.431	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.434	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.449	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.451	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.452	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.453	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.454	2011
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.455	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.458	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.460	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.461	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.462	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.468	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.469	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.470	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.471	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.473	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.493	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.494	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.495	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.499	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.500	2012
+Cambodia.001_t58	Cambodia	South East Asia	3	Cambodia.502	2011
+Cambodia.001_t58	Laos	South East Asia	3	Laos.16	2011
+Cambodia.001_t58	Laos	South East Asia	3	Laos.47	2011
+Cambodia.001_t58	Laos	South East Asia	3	Laos.78	2012
+Cambodia.001_t58	Viet_Nam	South East Asia	3	Viet_Nam.056	2011
+Cambodia.324_t3	Cambodia	South East Asia	3	Cambodia.324	2011
+Cambodia.324_t3	Cambodia	South East Asia	3	Cambodia.381	2011
+Cambodia.324_t3	Laos	South East Asia	3	Laos.70	2012
+Viet_Nam.068_t1	Viet_Nam	South East Asia	3	Viet_Nam.068	2011
+Laos.07_t1	Laos	South East Asia	3	Laos.07	2011
+Ghana.185_t3	Ghana	West Africa	3	Ghana.185	2010
+Ghana.185_t3	Malawi	East Africa	3	Malawi.007	2011
+Ghana.185_t3	Senegal	West Africa	3	Senegal.060	2009
+French_Guiana.12_t3	French_Guiana	South America	3	French_Guiana.12	2010
+French_Guiana.12_t3	French_Guiana	South America	3	French_Guiana.48	2012
+French_Guiana.12_t3	French_Guiana	South America	3	French_Guiana.49	2013
+Malawi.171_t1	Malawi	East Africa	3	Malawi.171	2011
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.001	2011
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.032	2011
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.064	2012
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.067	2012
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.111	2012
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.170	2014
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.172	2014
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.176	2008
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.180	2012
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.186	2008
+Thailand.001_t11	Thailand	South East Asia	3	Thailand.262	2014
+Cambodia.225_t7	Cambodia	South East Asia	3	Cambodia.225	2011
+Cambodia.225_t7	Thailand	South East Asia	3	Thailand.136	2012
+Cambodia.225_t7	Thailand	South East Asia	3	Thailand.139	2012
+Cambodia.225_t7	Thailand	South East Asia	3	Thailand.141	2012
+Cambodia.225_t7	Viet_Nam	South East Asia	3	Viet_Nam.044	2011
+Cambodia.225_t7	DD2	Lab	3	DD2	"NA"
+Cambodia.225_t7	W2	Lab	3	W2	"NA"
+Ghana.216_t3	Ghana	West Africa	3	Ghana.216	2011
+Ghana.216_t3	Guinea	West Africa	3	Guinea.94	2011
+Ghana.216_t3	Malawi	East Africa	3	Malawi.178	2011
+Cambodia.292_t5	Cambodia	South East Asia	3	Cambodia.292	2011
+Cambodia.292_t5	Laos	South East Asia	3	Laos.01	2011
+Cambodia.292_t5	Laos	South East Asia	3	Laos.23	2011
+Cambodia.292_t5	Laos	South East Asia	3	Laos.40	2011
+Cambodia.292_t5	Laos	South East Asia	3	Laos.89	2012
+Cambodia.165_t1	Cambodia	South East Asia	3	Cambodia.165	2010
